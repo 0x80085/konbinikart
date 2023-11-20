@@ -1,5 +1,7 @@
 export interface Item {
-  id: number
-  name: string
-  role: string
+  id: number;
+  emoji: string;
+  nameEnglish: string;
+  nameKatakana: string;
+  nameHiragana: string;
 }
