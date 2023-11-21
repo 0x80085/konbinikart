@@ -2,10 +2,21 @@
 
 <FlexboxLayout flexDirection="column">
   <FlexboxLayout class="m-15">
-    <Label class="h2" [text]="item.id + '. '"></Label>
+    <!-- <Label class="h2" [text]="item.id + '. '"></Label> -->
     <Label class="h2" [text]="item.emoji"></Label>
+  </FlexboxLayout>
+
+  <FlexboxLayout class="m-15">
     <Label class="h2" [text]="item.nameKatakana"></Label>
+  </FlexboxLayout>
+  <FlexboxLayout class="m-15">
     <Label class="h2" [text]="item.nameHiragana"></Label>
   </FlexboxLayout>
-  <Label class="h4 m-15" [text]="item.nameEnglish"></Label>
+  <FlexboxLayout class="m-15">
+    <Label class="h2" [text]="item.nameRomaji"></Label>
+  </FlexboxLayout>
+  <FlexboxLayout class="m-15">
+    <Label class="h4" [text]="item.nameEnglish"></Label>
+  </FlexboxLayout>
+
 </FlexboxLayout>
