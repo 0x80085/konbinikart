@@ -3,7 +3,6 @@ import { Component, OnInit } from "@angular/core";
 import { GroceryItem } from "../../models/grocery-item.model";
 import { ItemService } from "../../services/item.service";
 import { RouterExtensions } from "@nativescript/angular";
-import { alert } from "@nativescript/core";
 
 @Component({
   selector: "ns-grocery-list-editable",

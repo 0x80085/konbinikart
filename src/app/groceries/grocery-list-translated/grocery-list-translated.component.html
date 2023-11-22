@@ -6,23 +6,35 @@
 </ActionBar>
 
 <StackLayout orientation="vertical">
-  <GridLayout columns="auto, auto, auto, auto" rows="auto">
+  <GridLayout columns="70, 70, 70, auto, auto" rows="auto">
     <Button
       row="0"
       col="0"
-      text="👀 Hint"
+      text="👀"
       (tap)="enableViewVisualHint = !enableViewVisualHint"
     ></Button>
     <Button
       row="0"
       col="1"
-      text="Romaji"
-      (tap)="enableViewRomaji = !enableViewRomaji"
+      text="あ"
+      (tap)="enableViewHiragana = !enableViewHiragana"
     ></Button>
     <Button
       row="0"
       col="2"
-      text="English"
+      text="ア"
+      (tap)="enableViewKatakana = !enableViewKatakana"
+    ></Button>
+    <Button
+      row="0"
+      col="3"
+      text="RO"
+      (tap)="enableViewRomaji = !enableViewRomaji"
+    ></Button>
+    <Button
+      row="0"
+      col="4"
+      text="ENG"
       (tap)="enableViewEnglish = !enableViewEnglish"
     ></Button>
   </GridLayout>
@@ -30,18 +42,17 @@
   <GridLayout>
     <ListView [items]="items" row="1" col="0">
       <ng-template let-item="item">
-        <StackLayout
-          orientation="horizontal"
-        >
+        <StackLayout orientation="horizontal">
           <Switch
             checked="false"
             color="#BFCDAC"
             backgroundColor="green"
             offBackgroundColor="gray"
           />
-          <Label [text]="item.nameHiragana"></Label>
-          <Label text="|" class="px-15"></Label>
-          <Label [text]="item.nameKatakana"></Label>
+          <StackLayout orientation="vertical">
+            <Label *ngIf="enableViewHiragana" [text]="item.nameHiragana" ></Label>
+            <Label *ngIf="enableViewKatakana" [text]="item.nameKatakana"></Label>
+          </StackLayout>
 
           <Label *ngIf="enableViewVisualHint" [text]="item.emoji"></Label>
           <Label *ngIf="enableViewEnglish" [text]="item.nameEnglish"></Label>

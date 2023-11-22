@@ -10,6 +10,8 @@ import { ItemService } from "~/app/services/item.service";
 export class GroceryListTranslatedComponent {
   items: Array<GroceryItem>;
 
+  enableViewHiragana = true;
+  enableViewKatakana = false;
   enableViewRomaji = false;
   enableViewEnglish = false;
   enableViewVisualHint = false;
