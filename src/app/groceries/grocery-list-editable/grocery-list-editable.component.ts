@@ -10,7 +10,9 @@ import { alert } from "@nativescript/core";
   templateUrl: "./grocery-list-editable.component.html",
 })
 export class GroceryListEditableComponent implements OnInit {
-  items: Array<GroceryItem>;
+  defaultItems: Array<GroceryItem>;
+  storedItems: Array<GroceryItem>;
+  displayList: GroceryItem[];
 
   constructor(
     private itemService: ItemService,
@@ -18,13 +20,42 @@ export class GroceryListEditableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.items = this.itemService.getItems();
+    this.refreshList();
+  }
+
+  private refreshList() {
+    this.defaultItems = this.itemService.getAllDefaultItems();
+    this.storedItems = this.itemService.getGroceryItemsFromStorage();
+
+    this.displayList = this.markMatchingItems();
+  }
+
+  markMatchingItems(): GroceryItem[] {
+    const markedItems = this.defaultItems.map((item) => {
+      const existsInStorage = this.storedItems.some(
+        (storageItem) => storageItem.id === item.id
+      );
+      if (existsInStorage) {
+        return { ...item, isInStorage: true };
+      } else {
+        return { ...item, isInStorage: false };
+      }
+    });
+
+    return markedItems;
   }
 
   goBack() {
     this.routerExtensions.backToPreviousPage();
   }
-  onDelete(id: string) {
-    alert("Not implemented");
+
+  onAddItem(item: GroceryItem) {
+    this.itemService.addGroceryItem(item);
+    this.refreshList();
+  }
+
+  onDelete(id: number) {
+    this.itemService.removeGroceryItem(id);
+    this.refreshList();
   }
 }

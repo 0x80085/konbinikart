@@ -1,13 +1,11 @@
-<ActionBar title="list translated">
+<ActionBar title="しょくりょうひん りすと">
   <NavigationButton
     android.systemIcon="ic_menu_back"
     (tap)="goBack()"
   ></NavigationButton>
 </ActionBar>
 
-<StackLayout
-  orientation="vertical"
->
+<StackLayout orientation="vertical">
   <GridLayout columns="auto, auto, auto, auto" rows="auto">
     <Button
       row="0"
@@ -34,8 +32,13 @@
       <ng-template let-item="item">
         <StackLayout
           orientation="horizontal"
-          [nsRouterLink]="['/grocery-item', item.id]"
         >
+          <Switch
+            checked="false"
+            color="#BFCDAC"
+            backgroundColor="green"
+            offBackgroundColor="gray"
+          />
           <Label [text]="item.nameHiragana"></Label>
           <Label text="|" class="px-15"></Label>
           <Label [text]="item.nameKatakana"></Label>

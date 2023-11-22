@@ -16,7 +16,7 @@ export class GroceryListComponent {
   ) {}
 
   ngOnInit(): void {
-    this.items = this.itemService.getItems();
+    this.items = this.itemService.getGroceryItemsFromStorage();
   }
 
   goBack() {
