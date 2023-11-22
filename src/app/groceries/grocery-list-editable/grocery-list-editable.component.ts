@@ -13,6 +13,7 @@ export class GroceryListEditableComponent implements OnInit {
   defaultItems: Array<GroceryItem>;
   storedItems: Array<GroceryItem>;
   displayList: GroceryItem[];
+  searchQuery: string = "";
 
   constructor(
     private itemService: ItemService,
@@ -27,10 +28,10 @@ export class GroceryListEditableComponent implements OnInit {
     this.defaultItems = this.itemService.getAllDefaultItems();
     this.storedItems = this.itemService.getGroceryItemsFromStorage();
 
-    this.displayList = this.markMatchingItems();
+    this.displayList = this.markMatchingItems(this.searchQuery);
   }
 
-  markMatchingItems(): GroceryItem[] {
+  markMatchingItems(searchQuery: any): GroceryItem[] {
     const markedItems = this.defaultItems.map((item) => {
       const existsInStorage = this.storedItems.some(
         (storageItem) => storageItem.id === item.id
@@ -41,6 +42,13 @@ export class GroceryListEditableComponent implements OnInit {
         return { ...item, isInStorage: false };
       }
     });
+
+    const searchValue = searchQuery?.value?.trim() || "";
+    if (searchValue !== "") {
+      return markedItems.filter((item) =>
+        item.nameEnglish.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
 
     return markedItems;
   }
@@ -57,5 +65,10 @@ export class GroceryListEditableComponent implements OnInit {
   onDelete(id: number) {
     this.itemService.removeGroceryItem(id);
     this.refreshList();
+  }
+
+  onSearchInputChange(searchQuery: string) {
+    this.searchQuery = searchQuery;
+    this.displayList = this.markMatchingItems(this.searchQuery);
   }
 }

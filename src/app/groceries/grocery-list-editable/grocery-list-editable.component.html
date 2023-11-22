@@ -5,48 +5,54 @@
   ></NavigationButton>
 </ActionBar>
 
-<GridLayout class="p-15">
-  <ListView [items]="displayList">
-    <ng-template let-item="item">
-      <StackLayout>
-        <Label [text]="item.emoji" textAlignment="center"></Label>
-        <Label
-          [text]="item.nameEnglish"
-          textAlignment="center"
-          [nsRouterLink]="['/grocery-item', item.id]"
-        ></Label>
-        <Label
-          [text]="item.nameRomaji"
-          textAlignment="center"
-          [nsRouterLink]="['/grocery-item', item.id]"
-        ></Label>
-        <Label
-          [text]="item.nameHiragana"
-          textAlignment="center"
-          [nsRouterLink]="['/grocery-item', item.id]"
-        ></Label>
-        <Label
-          [text]="item.nameKatakana"
-          textAlignment="center"
-          [nsRouterLink]="['/grocery-item', item.id]"
-        ></Label>
-        <Button
-          *ngIf="!item.isInStorage"
-          text="🛒 Add to list"
-          (tap)="onAddItem(item)"
-        ></Button>
-        <Label
-          *ngIf="item.isInStorage"
-          text="This is on your shopping list ✅ 🛒"
-          textAlignment="center"
-          class="m-15"
-        ></Label>
-        <Button
-          *ngIf="item.isInStorage"
-          text="❌ Delete from list"
-          (tap)="onDelete(item.id)"
-        ></Button>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+<StackLayout orientation="vertical">
+  <GridLayout columns="*" rows="auto">
+    <TextField hint="Search" [(ngModel)]="searchQuery" (textChange)="onSearchInputChange($event)"></TextField>
+  </GridLayout>
+  <GridLayout class="p-15">
+    <ListView [items]="displayList">
+      <ng-template let-item="item">
+        <StackLayout>
+          <Label [text]="item.emoji" textAlignment="center"></Label>
+          <Label
+            [text]="item.nameEnglish"
+            textAlignment="center"
+            [nsRouterLink]="['/grocery-item', item.id]"
+          ></Label>
+          <Label
+            [text]="item.nameRomaji"
+            textAlignment="center"
+            [nsRouterLink]="['/grocery-item', item.id]"
+          ></Label>
+          <Label
+            [text]="item.nameHiragana"
+            textAlignment="center"
+            [nsRouterLink]="['/grocery-item', item.id]"
+          ></Label>
+          <Label
+            [text]="item.nameKatakana"
+            textAlignment="center"
+            [nsRouterLink]="['/grocery-item', item.id]"
+          ></Label>
+          <Button
+            *ngIf="!item.isInStorage"
+            text="🛒 Add to list"
+            (tap)="onAddItem(item)"
+          ></Button>
+          <Label
+            *ngIf="item.isInStorage"
+            text="This is on your shopping list ✅ 🛒"
+            textAlignment="center"
+            class="m-15"
+          ></Label>
+          <Button
+            *ngIf="item.isInStorage"
+            text="❌ Delete from list"
+            (tap)="onDelete(item.id)"
+          ></Button>
+        </StackLayout>
+      </ng-template>
+    </ListView>
+  </GridLayout>
+</StackLayout>
+
