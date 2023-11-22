@@ -1,4 +1,9 @@
-<ActionBar title="KonbiniKart 🛒"></ActionBar>
+<ActionBar title="KonbiniKart 🛒">
+  <NavigationButton
+    android.systemIcon="ic_menu_info_details"
+    [nsRouterLink]="['/about']"
+  ></NavigationButton>
+</ActionBar>
 <!-- コンビニ -->
 <GridLayout columns="*" rows="75, 150, 150, 150">
   <Button

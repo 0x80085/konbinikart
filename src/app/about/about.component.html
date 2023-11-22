@@ -1,0 +1,23 @@
+<ActionBar title="About">
+  <NavigationButton
+    android.systemIcon="ic_menu_back"
+    (tap)="goBack()"
+  ></NavigationButton>
+</ActionBar>
+
+<GridLayout rows="auto, auto">
+  <StackLayout row="0" horizontalAlignment="center" verticalAlignment="top" class="m-15">
+    <Label text="KonbiniKart - Your Japanese Shopping Companion"></Label>
+  </StackLayout>
+  <StackLayout row="1" class="m-15">
+    <Label
+      text="- Study Japanese: While shopping or use the flashcards for studying at home or abroad."
+    ></Label>
+    <Label
+      text="- AI-Generated UI Images: Most images in the app are either emojis or AI generated images created though LeonardoAI."
+    ></Label>
+    <Label
+      text="- Powered by NativeScript and Angular. Leveraging Wanakana.js for seamless Kanji conversions."
+    ></Label>
+  </StackLayout>
+</GridLayout>

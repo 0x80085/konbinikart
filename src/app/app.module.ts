@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
 import { GroceryListEditableComponent } from "./groceries/grocery-list-editable/grocery-list-editable.component";
 import { GroceryListTranslatedComponent } from "./groceries/grocery-list-translated/grocery-list-translated.component";
 import { GroceryItemDetailComponent } from "./groceries/grocery-item-detail/grocery-item-detail.component";
@@ -17,6 +18,7 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutComponent,
     GroceryListComponent,
     GroceryListEditableComponent,
     GroceryItemDetailComponent,

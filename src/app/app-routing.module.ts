@@ -8,11 +8,13 @@ import { GroceryListTranslatedComponent } from './groceries/grocery-list-transla
 import { GroceryListComponent } from './groceries/grocery-list/grocery-list.component'
 import { GroceryItemDetailEditableComponent } from './groceries/grocery-item-detail-editable/grocery-item-detail-editable.component'
 import { HomeComponent } from './home/home.component'
+import { AboutComponent } from './about/about.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   
   { path: 'home', component: HomeComponent  },
+  { path: 'about', component: AboutComponent  },
 
   { path: 'groceries', component: GroceryListComponent },
   { path: 'edit-groceries', component: GroceryListEditableComponent },
