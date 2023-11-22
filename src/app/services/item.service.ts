@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { Item } from './item'
+import { GroceryItem } from '../models/grocery-item.model'
 import { DATA } from './data'
 
 @Injectable({
@@ -9,11 +9,11 @@ import { DATA } from './data'
 export class ItemService {
   private items = DATA;
 
-  getItems(): Array<Item> {
+  getItems(): Array<GroceryItem> {
     return this.items
   }
 
-  getItem(id: number): Item {
+  getItem(id: number): GroceryItem {
     return this.items.filter((item) => item.id === id)[0]
   }
 }

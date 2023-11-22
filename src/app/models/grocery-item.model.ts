@@ -1,4 +1,4 @@
-export interface Item {
+export interface GroceryItem {
   id: number;
   emoji: string;
   nameEnglish: string;

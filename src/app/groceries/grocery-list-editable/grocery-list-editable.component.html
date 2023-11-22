@@ -1,0 +1,37 @@
+<ActionBar title="Edit grocery list">
+  <NavigationButton
+    android.systemIcon="ic_menu_back"
+    (tap)="goBack()"
+  ></NavigationButton>
+</ActionBar>
+
+<GridLayout>
+  <ListView [items]="items">
+    <ng-template let-item="item">
+      <StackLayout>
+        <Label [text]="item.emoji"></Label>
+        <Label
+          [text]="item.nameEnglish"
+          [nsRouterLink]="['/grocery-item', item.id]"
+        ></Label>
+        <Label
+          [text]="item.nameRomaji"
+          [nsRouterLink]="['/grocery-item', item.id]"
+        ></Label>
+        <Label
+          [text]="item.nameHiragana"
+          [nsRouterLink]="['/grocery-item', item.id]"
+        ></Label>
+        <Label
+          [text]="item.nameKatakana"
+          [nsRouterLink]="['/grocery-item', item.id]"
+        ></Label>
+        <Button
+          text="Edit"
+          [nsRouterLink]="['/edit-grocery-item', item.id]"
+        ></Button>
+        <Button text="Delete" (tap)="onDelete(item.id)"></Button>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

@@ -1,4 +1,10 @@
-<ActionBar title="Details"></ActionBar>
+<ActionBar title="grocery-item-detail-editable">
+  <NavigationButton
+    android.systemIcon="ic_menu_back"
+    (tap)="goBack()"
+  ></NavigationButton>
+</ActionBar>
+
 
 <FlexboxLayout flexDirection="column">
   <FlexboxLayout class="m-15">
@@ -18,5 +24,4 @@
   <FlexboxLayout class="m-15">
     <Label class="h4" [text]="item.nameEnglish"></Label>
   </FlexboxLayout>
-
 </FlexboxLayout>

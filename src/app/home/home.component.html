@@ -1,0 +1,28 @@
+<ActionBar title="KonbiniKart 🛒"></ActionBar>
+<!-- コンビニ -->
+<GridLayout columns="*" rows="75, 150, 150, 150">
+  <Button
+    row="1"
+    col="0"
+    text="Translated grocery list"
+    class="h3"
+    textAlignment="center"
+    [nsRouterLink]="['/groceries-translated']"
+  ></Button>
+  <Button
+    row="2"
+    col="0"
+    text="View grocery list"
+    class="h3"
+    textAlignment="center"
+    [nsRouterLink]="['/groceries']"
+  ></Button>
+  <Button
+    row="3"
+    col="0"
+    class="h3"
+    textAlignment="center"
+    text="Edit grocery list"
+    [nsRouterLink]="['/edit-groceries']"
+  ></Button>
+</GridLayout>

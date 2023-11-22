@@ -1,0 +1,53 @@
+<ActionBar title="list translated">
+  <NavigationButton
+    android.systemIcon="ic_menu_back"
+    (tap)="goBack()"
+  ></NavigationButton>
+</ActionBar>
+
+<StackLayout
+  orientation="vertical"
+>
+  <GridLayout columns="auto, auto, auto, auto" rows="auto">
+    <Button
+      row="0"
+      col="0"
+      text="👀 Hint"
+      (tap)="enableViewVisualHint = !enableViewVisualHint"
+    ></Button>
+    <Button
+      row="0"
+      col="1"
+      text="Romaji"
+      (tap)="enableViewRomaji = !enableViewRomaji"
+    ></Button>
+    <Button
+      row="0"
+      col="2"
+      text="English"
+      (tap)="enableViewEnglish = !enableViewEnglish"
+    ></Button>
+  </GridLayout>
+
+  <GridLayout>
+    <ListView [items]="items" row="1" col="0">
+      <ng-template let-item="item">
+        <StackLayout
+          orientation="horizontal"
+          [nsRouterLink]="['/grocery-item', item.id]"
+        >
+          <Label [text]="item.nameHiragana"></Label>
+          <Label text="|" class="px-15"></Label>
+          <Label [text]="item.nameKatakana"></Label>
+
+          <Label *ngIf="enableViewVisualHint" [text]="item.emoji"></Label>
+          <Label *ngIf="enableViewEnglish" [text]="item.nameEnglish"></Label>
+          <Label
+            *ngIf="enableViewRomaji"
+            [text]="'(' + item.nameRomaji + ')'"
+          ></Label>
+        </StackLayout>
+      </ng-template>
+    </ListView>
+  </GridLayout>
+</StackLayout>
