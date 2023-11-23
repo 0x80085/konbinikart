@@ -1,0 +1,12 @@
+Button {
+    height: auto;
+    border-radius: 35px;
+    padding: 100px;
+    padding-left: 100px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}

@@ -9,25 +9,29 @@
   <Button
     row="1"
     col="0"
-    text="Translated grocery list"
-    class="h3"
-    textAlignment="center"
+    textAlignment="left"
     [nsRouterLink]="['/groceries-translated']"
-  ></Button>
-  <Button
-    row="2"
-    col="0"
-    text="View grocery list"
-    class="h3"
-    textAlignment="center"
-    [nsRouterLink]="['/groceries']"
-  ></Button>
+  >
+    <FormattedString>
+      <Span text="Groceries" class="h1 bold"></Span>
+      <Span text="&#13;&#10;Shop and learn" class="h3"></Span>
+    </FormattedString>
+  </Button>
+  <Button row="2" col="0" textAlignment="left" [nsRouterLink]="['/groceries']">
+    <FormattedString>
+      <Span text="View" class="h1 bold"></Span>
+      <Span text="&#13;&#10;Check all your groceries" class="h3"></Span>
+    </FormattedString>
+  </Button>
   <Button
     row="3"
     col="0"
-    class="h3"
-    textAlignment="center"
-    text="Add items to grocery list"
+    textAlignment="left"
     [nsRouterLink]="['/edit-groceries']"
-  ></Button>
+  >
+    <FormattedString>
+      <Span text="Edit" class="h1 bold"></Span>
+      <Span text="&#13;&#10;Manage your grocery list" class="h3"></Span>
+    </FormattedString>
+  </Button>
 </GridLayout>
