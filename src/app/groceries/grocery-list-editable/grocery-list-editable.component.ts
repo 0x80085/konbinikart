@@ -7,6 +7,7 @@ import { RouterExtensions } from "@nativescript/angular";
 @Component({
   selector: "ns-grocery-list-editable",
   templateUrl: "./grocery-list-editable.component.html",
+  styleUrls:["./grocery-list-editable.component.css"]
 })
 export class GroceryListEditableComponent implements OnInit {
   defaultItems: Array<GroceryItem>;

@@ -1,0 +1,8 @@
+.item-added {
+  border-left-color: greenyellow;
+  border-left-width: 5dp;
+}
+
+.item {
+  border-radius: 15dp;
+}

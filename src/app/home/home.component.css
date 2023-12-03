@@ -1,11 +1,37 @@
-Button {
-    height: auto;
+ActionBar {
+    background-color: var(--background-color);
+
+}
+
+GridLayout {
+    background-color: var(--background-color);
+}
+
+
+.btn {
+    height: 360px;
     border-radius: 35px;
-    padding: 100px;
     padding-left: 100px;
     font-size: 24px;
     font-weight: bold;
+    background-color: var(--primary-color);
 }
+
+.btn.ns-dark {
+
+    background-color: var(--primary-color);
+}
+
+.text {
+
+    color: var(--text-color);
+}
+
+.text.ns-dark {
+
+    color: var(--text-color);
+}
+
 
 .bold {
     font-weight: bold;

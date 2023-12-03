@@ -7,29 +7,31 @@
 
 <StackLayout orientation="vertical">
   <GridLayout columns="*" rows="auto">
-    <TextField hint="Search" [(ngModel)]="searchQuery" (textChange)="onSearchInputChange($event)"></TextField>
+    <TextField
+      hint="Search"
+      [(ngModel)]="searchQuery"
+      (textChange)="onSearchInputChange($event)"
+    ></TextField>
   </GridLayout>
   <GridLayout class="p-15">
     <ListView [items]="displayList">
       <ng-template let-item="item">
-        <StackLayout>
-          <Label [text]="item.emoji" textAlignment="center"></Label>
-          <Label
-            [text]="item.nameEnglish"
-            textAlignment="center"
-            [nsRouterLink]="['/grocery-item', item.id]"
-          ></Label>
+        <StackLayout class="item" [class.item-added]="item.isInStorage">
+          <Label class="h1" [text]="item.emoji" textAlignment="center"></Label>
+          <Label class="h2" [text]="item.nameEnglish" textAlignment="center"></Label>
           <Label
             [text]="item.nameRomaji"
             textAlignment="center"
             [nsRouterLink]="['/grocery-item', item.id]"
           ></Label>
           <Label
+          class="h3"
             [text]="item.nameHiragana"
             textAlignment="center"
             [nsRouterLink]="['/grocery-item', item.id]"
           ></Label>
           <Label
+          class="h3"
             [text]="item.nameKatakana"
             textAlignment="center"
             [nsRouterLink]="['/grocery-item', item.id]"
@@ -39,12 +41,6 @@
             text="🛒 Add to list"
             (tap)="onAddItem(item)"
           ></Button>
-          <Label
-            *ngIf="item.isInStorage"
-            text="This is on your shopping list ✅ 🛒"
-            textAlignment="center"
-            class="m-15"
-          ></Label>
           <Button
             *ngIf="item.isInStorage"
             text="❌ Delete from list"
@@ -55,4 +51,3 @@
     </ListView>
   </GridLayout>
 </StackLayout>
-

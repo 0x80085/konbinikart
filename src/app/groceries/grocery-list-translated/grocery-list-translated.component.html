@@ -50,11 +50,11 @@
             offBackgroundColor="gray"
           />
           <StackLayout orientation="vertical">
-            <Label *ngIf="enableViewHiragana" [text]="item.nameHiragana" ></Label>
-            <Label *ngIf="enableViewKatakana" [text]="item.nameKatakana"></Label>
+            <Label class="h2 translated" *ngIf="enableViewHiragana" [text]="item.nameHiragana" ></Label>
+            <Label class="h2 translated" *ngIf="enableViewKatakana" [text]="item.nameKatakana"></Label>
           </StackLayout>
 
-          <Label *ngIf="enableViewVisualHint" [text]="item.emoji"></Label>
+          <Label class="h2" *ngIf="enableViewVisualHint" [text]="item.emoji"></Label>
           <Label *ngIf="enableViewEnglish" [text]="item.nameEnglish"></Label>
           <Label
             *ngIf="enableViewRomaji"

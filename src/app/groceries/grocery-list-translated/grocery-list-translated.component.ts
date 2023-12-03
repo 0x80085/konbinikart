@@ -6,6 +6,7 @@ import { ItemService } from "~/app/services/item.service";
 @Component({
   selector: "ns-grocery-list-translated",
   templateUrl: "./grocery-list-translated.component.html",
+  styleUrls:["./grocery-list-translated.component.css"]
 })
 export class GroceryListTranslatedComponent {
   items: Array<GroceryItem>;
