@@ -6,15 +6,14 @@
 </ActionBar>
 
 <StackLayout orientation="vertical">
-  <GridLayout columns="70, 150, 70, auto" rows="auto">
-    <Button
+  <GridLayout columns="150, 70, 70, auto" rows="auto">
+    <FlexboxLayout
+      flexDirection="row"
+      justifyContent="space-between"
       row="0"
       col="0"
-      text="👀"
-      [class.selected]="enableViewVisualHint"
-      (tap)="enableViewVisualHint = !enableViewVisualHint"
-    ></Button>
-    <StackLayout orientation="horizontal" row="0" col="1">
+      class="toggle"
+    >
       <Button
         [class.selected]="enableViewHiragana"
         (tap)="enableViewHiragana = true; enableViewKatakana = false"
@@ -25,15 +24,22 @@
         (tap)="enableViewHiragana = false; enableViewKatakana = true"
         text="ア"
       ></Button>
-    </StackLayout>
+    </FlexboxLayout>
+    <Button
+      row="0"
+      col="1"
+      text="👀"
+      [class.selected]="enableViewVisualHint"
+      (tap)="enableViewVisualHint = !enableViewVisualHint"
+    ></Button>
     <Button
       row="0"
       col="2"
       text="RO"
       [class.selected]="enableViewRomaji"
       (tap)="enableViewRomaji = !enableViewRomaji"
-      ></Button>
-      <Button
+    ></Button>
+    <Button
       row="0"
       col="3"
       text="ENG"
@@ -53,12 +59,12 @@
           />
           <StackLayout orientation="vertical">
             <Label
-              class="h2 translated"
+              class="h1 translated"
               *ngIf="enableViewHiragana"
               [text]="item.nameHiragana"
             ></Label>
             <Label
-              class="h2 translated"
+              class="h1 translated"
               *ngIf="enableViewKatakana"
               [text]="item.nameKatakana"
             ></Label>

@@ -2,10 +2,26 @@
     font-weight: 400;
 }
 
+.toggle {
+    border-width: 1;
+    border-radius: 150;
+    border-color: var(--secondary-color);
+    height: 150px;
+}
+
+.toggle button {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 150;
+}
+
 button {
     width: 50;
 }
 
 button.selected {
+    font-weight: 600;
     background-color: var(--secondary-color);
 }
