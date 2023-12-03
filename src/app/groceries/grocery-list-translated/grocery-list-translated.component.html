@@ -6,39 +6,41 @@
 </ActionBar>
 
 <StackLayout orientation="vertical">
-  <GridLayout columns="70, 70, 70, auto, auto" rows="auto">
+  <GridLayout columns="70, 150, 70, auto" rows="auto">
     <Button
       row="0"
       col="0"
       text="👀"
+      [class.selected]="enableViewVisualHint"
       (tap)="enableViewVisualHint = !enableViewVisualHint"
     ></Button>
-    <Button
-      row="0"
-      col="1"
-      text="あ"
-      (tap)="enableViewHiragana = !enableViewHiragana"
-    ></Button>
+    <StackLayout orientation="horizontal" row="0" col="1">
+      <Button
+        [class.selected]="enableViewHiragana"
+        (tap)="enableViewHiragana = true; enableViewKatakana = false"
+        text="あ"
+      ></Button>
+      <Button
+        [class.selected]="enableViewKatakana"
+        (tap)="enableViewHiragana = false; enableViewKatakana = true"
+        text="ア"
+      ></Button>
+    </StackLayout>
     <Button
       row="0"
       col="2"
-      text="ア"
-      (tap)="enableViewKatakana = !enableViewKatakana"
-    ></Button>
-    <Button
+      text="RO"
+      [class.selected]="enableViewRomaji"
+      (tap)="enableViewRomaji = !enableViewRomaji"
+      ></Button>
+      <Button
       row="0"
       col="3"
-      text="RO"
-      (tap)="enableViewRomaji = !enableViewRomaji"
-    ></Button>
-    <Button
-      row="0"
-      col="4"
       text="ENG"
+      [class.selected]="enableViewEnglish"
       (tap)="enableViewEnglish = !enableViewEnglish"
     ></Button>
   </GridLayout>
-
   <GridLayout>
     <ListView [items]="items" row="1" col="0">
       <ng-template let-item="item">
@@ -50,11 +52,23 @@
             offBackgroundColor="gray"
           />
           <StackLayout orientation="vertical">
-            <Label class="h2 translated" *ngIf="enableViewHiragana" [text]="item.nameHiragana" ></Label>
-            <Label class="h2 translated" *ngIf="enableViewKatakana" [text]="item.nameKatakana"></Label>
+            <Label
+              class="h2 translated"
+              *ngIf="enableViewHiragana"
+              [text]="item.nameHiragana"
+            ></Label>
+            <Label
+              class="h2 translated"
+              *ngIf="enableViewKatakana"
+              [text]="item.nameKatakana"
+            ></Label>
           </StackLayout>
 
-          <Label class="h2" *ngIf="enableViewVisualHint" [text]="item.emoji"></Label>
+          <Label
+            class="h2"
+            *ngIf="enableViewVisualHint"
+            [text]="item.emoji"
+          ></Label>
           <Label *ngIf="enableViewEnglish" [text]="item.nameEnglish"></Label>
           <Label
             *ngIf="enableViewRomaji"

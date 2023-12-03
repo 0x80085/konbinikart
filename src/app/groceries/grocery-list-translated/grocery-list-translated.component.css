@@ -1,3 +1,11 @@
-.translated{
+.translated {
     font-weight: 400;
+}
+
+button {
+    width: 50;
+}
+
+button.selected {
+    background-color: var(--secondary-color);
 }
