@@ -8,6 +8,7 @@ import { RouterExtensions } from "@nativescript/angular";
 @Component({
   selector: "ns-grocery-item-detail",
   templateUrl: "./grocery-item-detail.component.html",
+  styleUrls:["./grocery-item-detail.component.css"]
 })
 export class GroceryItemDetailComponent implements OnInit {
   item: GroceryItem;

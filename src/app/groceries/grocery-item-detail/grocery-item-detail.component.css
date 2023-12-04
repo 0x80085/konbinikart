@@ -1,0 +1,15 @@
+*, ActionBar {
+    background-color: var(--background-color);
+}
+
+.card {
+    background-color: var(--primary-color);
+    border-radius: 10;
+    box-shadow: 0 4 6 rgba(0, 0, 0, 0.1);
+    padding: 20;
+    color: white;
+}
+
+Label, FlexboxLayout {
+    background-color: transparent;
+}
