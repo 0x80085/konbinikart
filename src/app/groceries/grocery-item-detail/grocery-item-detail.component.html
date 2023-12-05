@@ -6,24 +6,60 @@
 </ActionBar>
 
 <GridLayout rows="auto, *, auto" columns="*">
-  <StackLayout row="1" col="0" verticalAlignment="center" horizontalAlignment="center">
+  <StackLayout
+    row="1"
+    col="0"
+    verticalAlignment="center"
+    horizontalAlignment="center"
+  >
+    <StackLayout
+      row="1"
+      col="0"
+      verticalAlignment="center"
+      horizontalAlignment="center"
+    >
       <FlexboxLayout flexDirection="column" class="card">
-          <FlexboxLayout class="m-15" flexDirection="column" justifyContent="center" alignItems="center"  >
-              <Label class="h1 " [text]="item.emoji" ></Label>
-          </FlexboxLayout>
-          <FlexboxLayout class="m-15" flexDirection="column" justifyContent="center" alignItems="center">
-              <Label class="h2" [text]="item.nameKatakana"></Label>
-          </FlexboxLayout>
-          <FlexboxLayout class="m-15" flexDirection="column" justifyContent="center" alignItems="center">
-              <Label class="h2" [text]="item.nameHiragana"></Label>
-          </FlexboxLayout>
-          <FlexboxLayout class="m-15" flexDirection="column" justifyContent="center" alignItems="center">
-              <Label class="h2" [text]="item.nameRomaji"></Label>
-          </FlexboxLayout>
-          <FlexboxLayout class="m-15" flexDirection="column" justifyContent="center" alignItems="center">
-              <Label class="h2" [text]="item.nameEnglish"></Label>
-          </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h1" [text]="item.emoji"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="item.nameKatakana"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="item.nameHiragana"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="item.nameRomaji"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="item.nameEnglish"></Label>
+        </FlexboxLayout>
       </FlexboxLayout>
+    </StackLayout>
   </StackLayout>
 </GridLayout>
-

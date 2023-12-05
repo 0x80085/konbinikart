@@ -1,13 +1,12 @@
-<ActionBar title="KonbiniKart 🛒">
+<ActionBar title="KonbiniKart 🛒" class="top">
   <NavigationButton
     android.systemIcon="ic_menu_info_details"
     [nsRouterLink]="['/about']"
   ></NavigationButton>
 </ActionBar>
 <!-- コンビニ -->
-<GridLayout columns="*" rows="75, 150, 150, 150">
+<GridLayout columns="*" rows="75, 150, 150, 150" class="content">
   <Button
-    class="btn"
     row="1"
     col="0"
     textAlignment="left"
@@ -20,7 +19,6 @@
   </Button>
   <Button
     row="2"
-    class="btn"
     col="0"
     textAlignment="left"
     [nsRouterLink]="['/groceries']"
@@ -31,7 +29,6 @@
     </FormattedString>
   </Button>
   <Button
-    class="btn"
     row="3"
     col="0"
     textAlignment="left"
