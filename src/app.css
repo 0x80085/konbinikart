@@ -1,26 +1,8 @@
-/* @import '@nativescript/theme/css/core.css'; */
-/* @import '@nativescript/theme/css/default.css'; */
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/forest.css';
 
-/* Light Mode Colors */
-* {
-  --primary-color: #FF9A8B; /* Peachy Pink */
-  --secondary-color: #1abc9c; /* Darker Green */
-  --background-color: #F4F4F4; /* Light Grey */
-  --text-color: #333333; /* Dark Grey */
-  --text-light-color:#FFFFFF;
-  --accent-color: #FF6B6B; /* Light Coral */
-}
-
-/* Dark Mode Colors */
-*.ns-dark {
-  --primary-color: #1f2f3d; /* Dark Blue */
-  --secondary-color: #1abc9c; /* Darker Green */
-  --background-color: #0e141a; /* Very Dark Grey */
-  --text-color: #FFFFFF; /* White */
-  --text-light-color:#333333;
-  --accent-color: #c0392b; /* Dark Red */
-}
+/* 
 
 ActionBar {
-  background-color: var(--background-color);
-}
+   
+} */

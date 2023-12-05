@@ -15,12 +15,12 @@
       class="toggle"
     >
       <Button
-        [class.selected]="enableViewHiragana"
+        [class.-primary]="enableViewHiragana"
         (tap)="enableViewHiragana = true; enableViewKatakana = false"
         text="あ"
       ></Button>
       <Button
-        [class.selected]="enableViewKatakana"
+        [class.-primary]="enableViewKatakana"
         (tap)="enableViewHiragana = false; enableViewKatakana = true"
         text="ア"
       ></Button>
@@ -29,21 +29,21 @@
       row="0"
       col="1"
       text="👀"
-      [class.selected]="enableViewVisualHint"
+      [class.-primary]="enableViewVisualHint"
       (tap)="enableViewVisualHint = !enableViewVisualHint"
     ></Button>
     <Button
       row="0"
       col="2"
       text="RO"
-      [class.selected]="enableViewRomaji"
+      [class.-primary]="enableViewRomaji"
       (tap)="enableViewRomaji = !enableViewRomaji"
     ></Button>
     <Button
       row="0"
       col="3"
       text="ENG"
-      [class.selected]="enableViewEnglish"
+      [class.-primary]="enableViewEnglish"
       (tap)="enableViewEnglish = !enableViewEnglish"
     ></Button>
   </GridLayout>

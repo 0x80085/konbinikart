@@ -49,12 +49,14 @@
             ></Label>
             <Button
               class="item-btn add"
+              [class.-primary]="!item.isInStorage"
               *ngIf="!item.isInStorage"
               text="Add to list"
               (tap)="onAddItem(item)"
             ></Button>
             <Button
-              class="item-btn delete"
+              class="item-btn"
+              [class.delete]="item.isInStorage"
               *ngIf="item.isInStorage"
               text="Delete from list"
               (tap)="onDelete(item.id)"

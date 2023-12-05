@@ -1,7 +1,7 @@
 .content {
   padding-left: 5;
   padding-right: 5;
-  background-color: var(--background-color);
+   
 }
 
 .searchField {
@@ -20,16 +20,14 @@
 
 .item-btn {
   border-radius: 15;
+  font-weight: 800;
+  font-size: 16;
 }
 
 .item-btn.add {
-  background-color: var(--secondary-color);
-  color: white;
-  font-weight: 500;
+  color: var(--dark-text-color);
 }
 
 .item-btn.delete {
-  background-color: var(--accent-color);
-  color: white;
-  font-weight: 500;
+  background-color: var(--color-error);
 }

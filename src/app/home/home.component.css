@@ -1,37 +1,21 @@
-.top {
-    background-color: var(--background-color);
-}
-.top.ns-dark {
-    background-color: var(--background-color);
-}
-
-
 Button {
     height: 360px;
     border-radius: 35px;
     padding-left: 100px;
     font-size: 24px;
-    font-weight: bold;
-    background-color: var(--secondary-color);
 }
 
-.text {
-
-    color: var(--text-light-color);
+/* .text {
+    color: var(--light-text-color);
 }
 
-.text.ns-dark {
+.ns-dark.text {
+    color: var(--dark-background);
+} */
 
-    font-weight: 400;
-    color: var(--text-color);
-    color: var(--text-light-color);
+.semi-bold {
+    font-weight: 800;
 }
-
-.content.ns-dark {
-    background-color: var(--background-color);
-    /* background-color: red; */
-}
-
 
 .bold {
     font-weight: bold;
