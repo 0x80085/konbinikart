@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
 
 import { GroceryItem } from "../../models/grocery-item.model";
 import { ItemService } from "../../services/item.service";
 import { RouterExtensions } from "@nativescript/angular";
+import { TextField } from "@nativescript/core";
 
 @Component({
   selector: "ns-grocery-list-editable",
   templateUrl: "./grocery-list-editable.component.html",
-  styleUrls:["./grocery-list-editable.component.css"]
+  styleUrls: ["./grocery-list-editable.component.css"],
 })
 export class GroceryListEditableComponent implements OnInit {
   defaultItems: Array<GroceryItem>;
@@ -20,6 +21,8 @@ export class GroceryListEditableComponent implements OnInit {
     private routerExtensions: RouterExtensions
   ) {}
 
+  @ViewChild("searchField", { static: false }) searchFieldRef: ElementRef<TextField>;
+  
   ngOnInit(): void {
     this.refreshList();
   }
@@ -65,6 +68,13 @@ export class GroceryListEditableComponent implements OnInit {
   onDelete(id: number) {
     this.itemService.removeGroceryItem(id);
     this.refreshList();
+  }
+  
+  onClearSearch() {
+    if (this.searchFieldRef && this.searchFieldRef.nativeElement) {
+      this.searchFieldRef.nativeElement.text = ""; // Clear the text in the TextField
+      this.refreshList();
+    }
   }
 
   onSearchInputChange(searchQuery: string) {

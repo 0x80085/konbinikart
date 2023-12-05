@@ -5,47 +5,61 @@
   ></NavigationButton>
 </ActionBar>
 
-<StackLayout orientation="vertical">
+<StackLayout orientation="vertical" class="content">
   <GridLayout columns="*" rows="auto">
-    <TextField
-      hint="Search"
-      [(ngModel)]="searchQuery"
-      (textChange)="onSearchInputChange($event)"
-    ></TextField>
+    <StackLayout orientation="horizontal">
+      <TextField
+        class="searchField"
+        #searchField
+        hint="🔎︎ Search"
+        [(ngModel)]="searchQuery"
+        (textChange)="onSearchInputChange($event)"
+      ></TextField>
+      <Button class="clearSearch" text="X" (tap)="onClearSearch()"></Button>
+    </StackLayout>
   </GridLayout>
   <GridLayout class="p-15">
     <ListView [items]="displayList">
       <ng-template let-item="item">
-        <StackLayout class="item" [class.item-added]="item.isInStorage">
-          <Label class="h1" [text]="item.emoji" textAlignment="center"></Label>
-          <Label class="h2" [text]="item.nameEnglish" textAlignment="center"></Label>
-          <Label
-            [text]="item.nameRomaji"
-            textAlignment="center"
-            [nsRouterLink]="['/grocery-item', item.id]"
-          ></Label>
-          <Label
-          class="h3"
-            [text]="item.nameHiragana"
-            textAlignment="center"
-            [nsRouterLink]="['/grocery-item', item.id]"
-          ></Label>
-          <Label
-          class="h3"
-            [text]="item.nameKatakana"
-            textAlignment="center"
-            [nsRouterLink]="['/grocery-item', item.id]"
-          ></Label>
-          <Button
-            *ngIf="!item.isInStorage"
-            text="🛒 Add to list"
-            (tap)="onAddItem(item)"
-          ></Button>
-          <Button
-            *ngIf="item.isInStorage"
-            text="❌ Delete from list"
-            (tap)="onDelete(item.id)"
-          ></Button>
+        <StackLayout class="item">
+          <StackLayout class="inner-stacklayout">
+            <Label
+              class="h1"
+              [text]="item.emoji"
+              textAlignment="center"
+            ></Label>
+            <Label
+              class="h2"
+              [text]="item.nameHiragana"
+              textAlignment="center"
+            ></Label>
+            <Label
+              class="h2"
+              [text]="item.nameKatakana"
+              textAlignment="center"
+            ></Label>
+            <Label
+              [text]="item.nameRomaji"
+              textAlignment="center"
+            ></Label>
+            <Label
+              class="h3"
+              [text]="item.nameEnglish"
+              textAlignment="center"
+            ></Label>
+            <Button
+              class="item-btn add"
+              *ngIf="!item.isInStorage"
+              text="Add to list"
+              (tap)="onAddItem(item)"
+            ></Button>
+            <Button
+              class="item-btn delete"
+              *ngIf="item.isInStorage"
+              text="Delete from list"
+              (tap)="onDelete(item.id)"
+            ></Button>
+          </StackLayout>
         </StackLayout>
       </ng-template>
     </ListView>
