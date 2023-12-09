@@ -1,32 +1,36 @@
 .img {
-    border-bottom-width: 3;
+    border-bottom-width: 1;
     border-color: var(--light-accent);
+
 }
 
-.btn-here {
+.img.ns-dark {
+    border-color: var(--dark-secondary);
+}
+
+.btn-big {
     height: 130dpi;
     margin-top: 100dpi;
     border-radius: 35px;
     padding-left: 100px;
     font-size: 24px;
     background-color: var(--dark-accent);
-    border-color: var(--light-accent);
-    border-width: 3;
-
+    border-width: 0;
 }
 
-.btn-here.ns-dark {
+.btn-big.ns-dark {
     background-color: var(--dark-accent);
 }
 
 .text {
+    font-weight: 100;
     color: var(--color-forest);
-
 }
 
 .semi-bold {
     color: var(--light-accent);
 }
+
 .semi-bold.ns-dark {
     font-weight: 800;
 }

@@ -1,10 +1,10 @@
-<GridLayout rows="200, 140, 140, 140" columns="*" class="content">
-  <Image class="img" row="0" col="0" src="" stretch="aspectFill"></Image>
+<GridLayout rows="250, 140, 140, 140" columns="*" class="content">
+  
   <Image class="img" row="0" col="0" [src]="darkMode ? 'https://cdn.leonardo.ai/users/1e6dda61-3dd6-4d33-aade-899e39053b5d/generations/8810d6d4-9583-4f14-a944-36824bb96934/AlbedoBase_XL_A_cute_Japanese_konbini_store_solid_color_blob_b_1.jpg' : 'https://cdn.leonardo.ai/users/1e6dda61-3dd6-4d33-aade-899e39053b5d/generations/125294e8-5f17-495b-83c4-6f41a688bfc8/AlbedoBase_XL_A_cute_Japanese_konbini_store_solid_color_blob_b_1.jpg'" stretch="aspectFill"></Image>
 
   <Button
     row="1"
-    class="btn-here"
+    class="btn-big"
     col="0"
     textAlignment="left"
     [nsRouterLink]="['/groceries-translated']"
@@ -17,7 +17,7 @@
   <Button
     row="2"
     col="0"
-    class="btn-here"
+    class="btn-big"
     textAlignment="left"
     [nsRouterLink]="['/groceries']"
   >
@@ -30,7 +30,7 @@
     row="3"
     col="0"
     textAlignment="left"
-    class="btn-here"
+    class="btn-big"
     [nsRouterLink]="['/edit-groceries']"
   >
     <FormattedString>
