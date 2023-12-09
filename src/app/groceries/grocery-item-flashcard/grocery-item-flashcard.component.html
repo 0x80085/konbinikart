@@ -1,0 +1,85 @@
+<ActionBar title="Item detail">
+  <NavigationButton
+    android.systemIcon="ic_menu_back"
+    (tap)="goBack()"
+  ></NavigationButton>
+</ActionBar>
+
+<GridLayout rows="auto, *, auto" columns="*">
+  <StackLayout
+    row="1"
+    col="0"
+    verticalAlignment="center"
+    horizontalAlignment="center"
+  >
+    <StackLayout
+      row="1"
+      col="0"
+      verticalAlignment="center"
+      horizontalAlignment="center"
+    >
+      <FlexboxLayout flexDirection="column" class="card" *ngIf="selectedItem">
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h1" [text]="selectedItem.emoji"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="selectedItem.nameKatakana"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="selectedItem.nameHiragana"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="selectedItem.nameRomaji"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout
+          class="m-15"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Label class="h2" [text]="selectedItem.nameEnglish"></Label>
+        </FlexboxLayout>
+      </FlexboxLayout>
+    </StackLayout>
+    <StackLayout
+      *ngIf="!selectedItem"
+      horizontalAlignment="center"
+      verticalAlignment="center"
+    >
+      <Label text="No item found"></Label>
+    </StackLayout>
+  </StackLayout>
+
+  <StackLayout row="2" col="0">
+    <StackLayout orientation="horizontal" class="toggle-buttons">
+      <Button text="Toggle English" (tap)="toggleEnglish()"></Button>
+      <Button text="Toggle Romaji" (tap)="toggleRomaji()"></Button>
+      <Button text="Toggle hint" (tap)="toggleHint()"></Button>
+    </StackLayout>
+
+    <StackLayout orientation="horizontal" class="nav-buttons">
+      <Button text="Previous" (tap)="showPreviousItem()"></Button>
+      <Button text="Next" (tap)="showNextItem()"></Button>
+    </StackLayout>
+  </StackLayout>
+</GridLayout>

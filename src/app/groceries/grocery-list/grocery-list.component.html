@@ -5,6 +5,8 @@
   ></NavigationButton>
 </ActionBar>
 
+<Button text="Start study" *ngIf="items.length > 0" [nsRouterLink]="['/study']"></Button>
+
 <GridLayout>
   <ListView [items]="items">
     <ng-template let-item="item">
