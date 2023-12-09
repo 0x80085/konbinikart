@@ -8,6 +8,10 @@
     height: 150px;
 }
 
+.toggle {
+    border-width: 0;
+}
+
 .toggle button {
     width: 50%;
     height: 100%;
@@ -18,8 +22,4 @@
 
 button {
     width: 50;
-}
-
-button.selected {
-    font-weight: 600;
 }

@@ -19,15 +19,19 @@
 
 
 .item-btn {
+  padding: 0;
+  margin-bottom: 15dpi;
+  height: 30dpi;
   border-radius: 15;
   font-weight: 800;
-  font-size: 16;
+  font-size: 14;
 }
 
 .item-btn.add {
+  background-color: var(--color-forest);
   color: var(--dark-text-color);
 }
 
 .item-btn.delete {
-  background-color: var(--color-error);
+  background-color: var(--color-ruby);
 }
