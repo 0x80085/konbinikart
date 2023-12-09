@@ -1,45 +1,41 @@
-<ActionBar title="KonbiniKart 🛒" class="top">
-  <NavigationButton
-    android.systemIcon="ic_menu_info_details"
-    [nsRouterLink]="['/about']"
-  ></NavigationButton>
-</ActionBar>
-<!-- コンビニ -->
-<GridLayout columns="*" rows="75, 150, 150, 150" class="content">
+<GridLayout rows="200, 140, 140, 140" columns="*" class="content">
+  <Image class="img" row="0" col="0" src="" stretch="aspectFill"></Image>
+  <Image class="img" row="0" col="0" [src]="darkMode ? 'https://cdn.leonardo.ai/users/1e6dda61-3dd6-4d33-aade-899e39053b5d/generations/8810d6d4-9583-4f14-a944-36824bb96934/AlbedoBase_XL_A_cute_Japanese_konbini_store_solid_color_blob_b_1.jpg' : 'https://cdn.leonardo.ai/users/1e6dda61-3dd6-4d33-aade-899e39053b5d/generations/125294e8-5f17-495b-83c4-6f41a688bfc8/AlbedoBase_XL_A_cute_Japanese_konbini_store_solid_color_blob_b_1.jpg'" stretch="aspectFill"></Image>
+
   <Button
     row="1"
+    class="btn-here"
     col="0"
-    
     textAlignment="left"
     [nsRouterLink]="['/groceries-translated']"
   >
     <FormattedString>
-      <Span text="Groceries" class="h1 text bold text"></Span>
-      <Span text="&#13;&#10;Shop and learn" class="h3 text semi-bold"></Span>
+      <Span text="Groceries" class="text h1 bold"></Span>
+      <Span text="&#13;&#10;Shop and learn" class="text h3 semi-bold"></Span>
     </FormattedString>
   </Button>
   <Button
     row="2"
     col="0"
-    
+    class="btn-here"
     textAlignment="left"
     [nsRouterLink]="['/groceries']"
   >
     <FormattedString>
-      <Span text="View" class="h1 text bold text"></Span>
-      <Span text="&#13;&#10;Check all your groceries" class="h3 text semi-bold"></Span>
+      <Span text="View" class="text h1 bold text"></Span>
+      <Span text="&#13;&#10;Check all your groceries" class="text h3 semi-bold"></Span>
     </FormattedString>
   </Button>
   <Button
     row="3"
     col="0"
-    
     textAlignment="left"
+    class="btn-here"
     [nsRouterLink]="['/edit-groceries']"
   >
     <FormattedString>
-      <Span text="Edit" class="h1 text bold"></Span>
-      <Span text="&#13;&#10;Manage your grocery list" class="h3 text semi-bold"></Span>
+      <Span text="Edit" class="text h1 bold"></Span>
+      <Span text="&#13;&#10;Manage your grocery list" class="text h3 semi-bold"></Span>
     </FormattedString>
   </Button>
 </GridLayout>

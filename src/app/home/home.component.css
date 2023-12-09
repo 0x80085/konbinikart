@@ -1,22 +1,32 @@
-Button {
-    height: 360px;
+.img {
+    border-bottom-width: 3;
+    border-color: var(--light-accent);
+}
+
+.btn-here {
+    height: 130dpi;
+    margin-top: 100dpi;
     border-radius: 35px;
     padding-left: 100px;
     font-size: 24px;
+    background-color: var(--dark-accent);
+    border-color: var(--light-accent);
+    border-width: 3;
+
 }
 
-/* .text {
-    color: var(--light-text-color);
+.btn-here.ns-dark {
+    background-color: var(--dark-accent);
 }
 
-.ns-dark.text {
-    color: var(--dark-background);
-} */
+.text {
+    color: var(--color-forest);
+
+}
 
 .semi-bold {
-    font-weight: 800;
+    color: var(--light-accent);
 }
-
-.bold {
-    font-weight: bold;
+.semi-bold.ns-dark {
+    font-weight: 800;
 }
