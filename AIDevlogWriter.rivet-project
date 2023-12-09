@@ -99,10 +99,21 @@ data:
 
               \r
 
-              The article should focus on the commit messages. We
-              assume the app and developer context is already known to the
-              reader and theer's no need to mention the dev or app prupose in
-              the results. \r
+              The article should focus on the commit messages, it
+              is of very little importance to mention the app itself, even so
+              with the developer. Focus on the features in the commit messages.
+              Do no focus on the developer doing things, rather speak from a
+              general development perspective. \r
+
+              We assume the app and developer context is already
+              known to the reader and there's no need to mention the dev or app
+              prupose in the results. The app is nnot released yet so there's no
+              public way to download it yet.\r
+
+              \r
+
+              Avoid mentions of hard work or other over-pleasing
+              quotes. the developer needs no praise.\r
 
               \r
 
@@ -136,6 +147,95 @@ data:
           outgoingConnections:
             - output->"Chat" FDaDef97D_MJ5hg9A3C_B/prompt
           visualData: 629.9222686268996/705.4501115618058/330/13//
+    wAA-W_hovS5riQQZ0zEtg:
+      metadata:
+        description: ""
+        id: wAA-W_hovS5riQQZ0zEtg
+        name: Wordpress seo
+      nodes:
+        '[9rHMlkvltHtU8-NO4UH3f]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 1444.0129220894382/585.1700675901225/330/21//
+        '[AqFfb9wbTM4i72NR_nDFX]:text "Text"':
+          data:
+            text: "\r
+
+              ARTICLTE TEXT\r
+
+              --- \r
+
+              \r
+
+              {{article}}\r
+
+              \r\n"
+          outgoingConnections:
+            - output->"Chat" pWTb8CVx2W_zaRwdug4Kx/prompt
+          visualData: 415.11046471493455/589.2293178534616/330/20//
+        '[UqNivPnijwxXjbDXmTwDD]:text "Instructions"':
+          data:
+            text: "\r
+
+              You will be given an wordpress article text, please
+              generate a SEO Description and SEO ttile and SEO tags for this
+              article text.  \r
+
+              \r
+
+              \r
+
+              \r\n"
+          outgoingConnections:
+            - output->"Text" _90-FlVWfz8istb-r7S_a/instructions
+          visualData: -67.7453746802596/413.3530665571616/330/16//
+        '[_90-FlVWfz8istb-r7S_a]:text "Text"':
+          data:
+            text: "\r
+
+              INSTRUCTIONS: \r
+
+              --- \r
+
+              {{instructions}}\r
+
+              \r\n"
+          outgoingConnections:
+            - output->"Chat" pWTb8CVx2W_zaRwdug4Kx/systemPrompt
+          visualData: 453.3150230496532/294.3362140328309/330/18//
+        '[pWTb8CVx2W_zaRwdug4Kx]:chat "Chat"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 1024
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" 9rHMlkvltHtU8-NO4UH3f/input
+          visualData: 881.3155048044301/486.3099343994356/230/17//
+        '[t-eUDZJlSP5NUMTeH3lfp]:userInput "User Input"':
+          data:
+            prompt: Please input the article?
+            useInput: false
+          outgoingConnections:
+            - output->"Text" AqFfb9wbTM4i72NR_nDFX/article
+          visualData: -16.90470816793928/557.7742308439194/280/15//
   metadata:
     description: ""
     id: RtkFlj1-UT2WvInfauxA1
