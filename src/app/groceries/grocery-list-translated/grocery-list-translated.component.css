@@ -6,18 +6,29 @@
     border-width: 1;
     border-radius: 150;
     height: 150px;
+    background-color: var(--dark-background-alt-5);
 }
 
 .toggle {
     border-width: 0;
+    android-elevation: 2;
 }
 
-.toggle button {
+.toggle button,
+.toggle button:focus,
+.toggle button:hover {
+    android-elevation: 0;
     width: 50%;
     height: 100%;
     margin: 0;
     padding: 0;
     border-radius: 150;
+    background-color: var(--dark-background-alt-5);
+}
+
+.toggle button.active {
+    background-color: var(--dark-secondary);
+    color: var(--dark-btn-color-inverse);
 }
 
 button {

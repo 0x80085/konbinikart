@@ -15,12 +15,12 @@
       class="toggle"
     >
       <Button
-        [class.-primary]="enableViewHiragana"
+        [class.active]="enableViewHiragana"
         (tap)="enableViewHiragana = true; enableViewKatakana = false"
         text="あ"
       ></Button>
       <Button
-        [class.-primary]="enableViewKatakana"
+        [class.active]="enableViewKatakana"
         (tap)="enableViewHiragana = false; enableViewKatakana = true"
         text="ア"
       ></Button>
