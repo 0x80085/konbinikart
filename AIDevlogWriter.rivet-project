@@ -147,6 +147,108 @@ data:
           outgoingConnections:
             - output->"Chat" FDaDef97D_MJ5hg9A3C_B/prompt
           visualData: 629.9222686268996/705.4501115618058/330/13//
+    m1zZxDVdiB_aIxvYDklqs:
+      metadata:
+        description: ""
+        id: m1zZxDVdiB_aIxvYDklqs
+        name: generalistic product/team update devlog
+      nodes:
+        '[GBY5vO72nGmPpLtj6N8ZN]:text "Text"':
+          data:
+            text: "\r
+
+              Make a devlog blog aricle written from a standpoint
+              of a dev team. \r
+
+              \r
+
+              Please make it blog/article style.\r
+
+              \r
+
+              Please make it as if you are not a part of the team
+              but a observatory bystander who doesnt mention he's there.\r
+
+              \r
+
+              You will reecive context about the team here: \r
+
+              \r
+
+              CONTEXT OF APP:\r
+
+              ---\r
+
+              \r
+
+              The commits will be made to a repository which holds
+              the sourceode for an application called KonbiniKart. \r
+
+              This app's purpose is to teach people japanese in a
+              playful way; combining gorcery shopping list and translations.\r
+
+              The app is not yet released.\r
+
+              The app is developed by a solo dev. \r
+
+              The app is only available on android.\r
+
+              The app is free and open source.\r
+
+              \r\n"
+          outgoingConnections:
+            - output->"Chat" ON6PMeKTPrGACxszPgqJz/systemPrompt
+          visualData: 664.5017071747623/138.69405615593675/330/2//
+        '[GBl189d_8vuhXc4lXztZx]:userInput "User Input"':
+          data:
+            prompt: list of topcis to write about?
+            text: ""
+            useInput: false
+          outgoingConnections:
+            - output->"Text" MGqMRFwuEt17eCMFbop0C/input
+          visualData: 198.66542069011203/463.65586598546633/280/6//
+        '[MGqMRFwuEt17eCMFbop0C]:text "Text"':
+          data:
+            text: "THINSG TO WRITE ABOUT\r
+
+              -----\r
+
+              \r
+
+              {{input}}"
+          outgoingConnections:
+            - output->"Chat" ON6PMeKTPrGACxszPgqJz/prompt
+          visualData: 664.8329051305564/570.8210400900961/330/7//
+        '[ON6PMeKTPrGACxszPgqJz]:chat "Chat"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 1024
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Text" w_pyqfdD69iM2B_v3TdCQ/input
+          visualData: 1237.2035895978643/416.04787392985406/230/1//
+        '[w_pyqfdD69iM2B_v3TdCQ]:text "Text"':
+          data:
+            text: "{{input}}"
+          visualData: 1713.7207787813236/456.5884532401749/330/8//
     wAA-W_hovS5riQQZ0zEtg:
       metadata:
         description: ""
