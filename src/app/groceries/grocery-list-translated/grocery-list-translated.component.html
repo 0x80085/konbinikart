@@ -51,12 +51,10 @@
     <ListView [items]="items" row="1" col="0">
       <ng-template let-item="item">
         <StackLayout orientation="horizontal">
-          <Switch
-            checked="false"
-            color="#BFCDAC"
-            backgroundColor="green"
-            offBackgroundColor="gray"
-          />
+          <Button
+            [text]="item.checked ? '✅' : '☑️'"
+            (tap)="onItemChecked(item)"
+          ></Button>
           <StackLayout orientation="vertical">
             <Label
               class="h1 translated"
