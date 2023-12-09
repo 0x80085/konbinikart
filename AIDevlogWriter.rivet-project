@@ -1,0 +1,143 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    MY2WKqD-EWppuy9b_5Pcs:
+      metadata:
+        description: ""
+        id: MY2WKqD-EWppuy9b_5Pcs
+        name: Make devlog from git commits
+      nodes:
+        '[5YUfQeOI1jO_oGdhp1a_0]:text "💰R E S U L T"':
+          data:
+            text: "{{input}}"
+          visualData: 1576.8989954614958/493.10322689926903/330/null//
+        '[FDaDef97D_MJ5hg9A3C_B]:chat "Chat"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 1024
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"💰R E S U L T" 5YUfQeOI1jO_oGdhp1a_0/input
+          visualData: 1120.3102131099777/393.2488999271037/230/16//
+        '[TWoLRT-B5giLzAtsVvHT9]:text "INFO"':
+          data:
+            text: "\r
+
+              ## HOW TO USE \r
+
+              \r
+
+              execute this in repo of choice 👇\r
+
+              \r
+
+              git log --since=midnight --until=23:59:59 --oneline
+              master\r
+
+              \r
+
+              \r
+
+              and paste result into modal when running \r
+
+              \r
+
+              it will gen a devlog post."
+          visualData: -13.235933946845762/-159.46166633918165/727.5871440442106/22//
+        '[eEVurJoR8PmVnB1a-00Vt]:userInput "User Input"':
+          data:
+            prompt: Input a list of commits please
+            useInput: false
+          outgoingConnections:
+            - output->"Format commits" xPUqF-RSSZS512bZYwW-L/input
+          visualData: 262.5842708399123/683.6251292937897/280/4//
+        '[kXFUpbpUpd8tnpLsdoOKK]:text "Instructions"':
+          data:
+            text: "Instructions:\r
+
+              --- \r
+
+              \r
+
+              Make a devlog blog kind of summary. \r
+
+              \r
+
+              You will recieve a list of git commits and will need
+              to distill a summary for it. \r
+
+              \r
+
+              The said summary wil be featured on a blog, please
+              make it blog/article style.\r
+
+              Please make sure not to be too technical an
+              detailed. There is no need to mention the commit messages, dates,
+              branches, commit IDs or git information. \r
+
+              \r
+
+              The article should focus on the commit messages. We
+              assume the app and developer context is already known to the
+              reader and theer's no need to mention the dev or app prupose in
+              the results. \r
+
+              \r
+
+              \r
+
+              CONTEXT:\r
+
+              ---\r
+
+              \r
+
+              The commits will be made to a repository which holds
+              the sourceode for an application called KonbiniKart. \r
+
+              This app's purpose is to teach people japanese in a
+              playful way; combining gorcery shopping list and translations.\r
+
+              The app is not yet released.\r
+
+              The app is developed by a solo dev. \r
+
+              The app is only available on android.\r
+
+              The app is free and open source."
+          outgoingConnections:
+            - output->"Chat" FDaDef97D_MJ5hg9A3C_B/systemPrompt
+          visualData: 400/204/454/8//
+        '[xPUqF-RSSZS512bZYwW-L]:text "Format commits"':
+          data:
+            text: "COMMITS:\r\n---\r\n\r\n{{input}}"
+          outgoingConnections:
+            - output->"Chat" FDaDef97D_MJ5hg9A3C_B/prompt
+          visualData: 629.9222686268996/705.4501115618058/330/13//
+  metadata:
+    description: ""
+    id: RtkFlj1-UT2WvInfauxA1
+    title: Untitled Project
+  plugins: []
