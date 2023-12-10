@@ -39,7 +39,11 @@ export class GroceryListTranslatedComponent {
   onItemChecked(item: DisplayGroceryItem): void {
     const index = this.items.indexOf(item);
 
-    if (index === -1 || !this.items[index] || !('checked' in this.items[index])) {
+    if (
+      index === -1 ||
+      !this.items[index] ||
+      !("checked" in this.items[index])
+    ) {
       return; // Exit if the item is not found or lacks 'checked' property
     }
 
@@ -50,8 +54,14 @@ export class GroceryListTranslatedComponent {
       this.items.push(checkedItem); // Move checked item to the bottom
     } else {
       const uncheckedItem = this.items.splice(index, 1)[0];
-      const firstUncheckedIndex = this.items.findIndex((item) => !('checked' in item));
-      this.items.splice(firstUncheckedIndex !== -1 ? firstUncheckedIndex : 0, 0, uncheckedItem);
+      const firstUncheckedIndex = this.items.findIndex(
+        (item) => !("checked" in item)
+      );
+      this.items.splice(
+        firstUncheckedIndex !== -1 ? firstUncheckedIndex : 0,
+        0,
+        uncheckedItem
+      );
     }
   }
 }

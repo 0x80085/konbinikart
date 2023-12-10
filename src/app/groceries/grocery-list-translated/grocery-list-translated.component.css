@@ -34,3 +34,7 @@
 button {
     width: 50;
 }
+
+.checkbox {
+    android-elevation: 0;
+}
