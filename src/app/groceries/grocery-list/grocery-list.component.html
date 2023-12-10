@@ -5,12 +5,21 @@
   ></NavigationButton>
 </ActionBar>
 
-<Button text="Start study" *ngIf="items.length > 0" [nsRouterLink]="['/study']"></Button>
-
-<GridLayout>
-  <ListView [items]="items">
+<GridLayout columns="*" rows="150, *">
+  <Button
+    col="0"
+    row="0"
+    text="Start study"
+    class="-primary"
+    *ngIf="items.length > 0"
+    [nsRouterLink]="['/study']"
+  ></Button>
+  <ListView [items]="items" col="0" row="1">
     <ng-template let-item="item">
-      <StackLayout orientation="horizontal" [nsRouterLink]="['/grocery-item', item.id]">
+      <StackLayout
+        orientation="horizontal"
+        [nsRouterLink]="['/grocery-item', item.id]"
+      >
         <Label class="h3" [text]="item.emoji"></Label>
         <Label class="h3" [text]="item.nameEnglish"></Label>
         <Label class="h5" [text]="'(' + item.nameRomaji + ')'"></Label>
