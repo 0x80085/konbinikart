@@ -5,6 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { HomeComponent } from "./home/home.component";
+import { ActionBarComponent } from "./action-bar/action-bar.component";
 import { AboutComponent } from "./about/about.component";
 import { GroceryListEditableComponent } from "./groceries/grocery-list-editable/grocery-list-editable.component";
 import { GroceryListTranslatedComponent } from "./groceries/grocery-list-translated/grocery-list-translated.component";
@@ -18,6 +19,7 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
   imports: [NativeScriptModule, AppRoutingModule],
   declarations: [
     AppComponent,
+    ActionBarComponent,
     HomeComponent,
     AboutComponent,
     GroceryListComponent,
