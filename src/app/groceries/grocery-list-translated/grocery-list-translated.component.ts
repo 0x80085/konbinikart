@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { RouterExtensions } from "@nativescript/angular";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 import { ItemService } from "~/app/services/item.service";
 
@@ -23,17 +22,12 @@ export class GroceryListTranslatedComponent {
 
   constructor(
     private itemService: ItemService,
-    private routerExtensions: RouterExtensions
   ) {}
 
   ngOnInit(): void {
     this.items = this.itemService
       .getGroceryItemsFromStorage()
       .map((it) => ({ ...it, checked: false }));
-  }
-
-  goBack() {
-    this.routerExtensions.backToPreviousPage();
   }
 
   onItemChecked(item: DisplayGroceryItem): void {

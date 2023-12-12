@@ -10,16 +10,9 @@ import { ItemService } from "~/app/services/item.service";
 export class GroceryListComponent {
   items: Array<GroceryItem>;
 
-  constructor(
-    private itemService: ItemService,
-    private routerExtensions: RouterExtensions
-  ) {}
+  constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
     this.items = this.itemService.getGroceryItemsFromStorage();
-  }
-
-  goBack() {
-    this.routerExtensions.backToPreviousPage();
   }
 }

@@ -1,13 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { RouterExtensions } from "@nativescript/angular";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 import { ItemService } from "~/app/services/item.service";
 
 @Component({
   selector: "ns-grocery-item-flashcard",
   templateUrl: "./grocery-item-flashcard.component.html",
-  styleUrls:["./grocery-item-flashcard.component.css"]
+  styleUrls: ["./grocery-item-flashcard.component.css"],
 })
 export class GroceryItemFlashcardComponent implements OnInit {
   selectedItem: GroceryItem;
@@ -21,15 +19,7 @@ export class GroceryItemFlashcardComponent implements OnInit {
 
   totalScore: number = 0; // Variable to store the total score of the flashcard session
 
-  constructor(
-    private itemService: ItemService,
-    private route: ActivatedRoute,
-    private routerExtensions: RouterExtensions
-  ) {}
-
-  goBack() {
-    this.routerExtensions.backToPreviousPage();
-  }
+  constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
     this.items = this.itemService.getGroceryItemsFromStorage(); // Fetch your list of items here
@@ -45,9 +35,8 @@ export class GroceryItemFlashcardComponent implements OnInit {
 
   showNextItem() {
     // Save current score to totalScore
-    alert(`score total: ${this.totalScore} + ${this.points}`)
+    alert(`score total: ${this.totalScore} + ${this.points}`);
     this.totalScore += this.points;
-
 
     // Reset toggles for English and Romaji
     this.showEnglish = true;

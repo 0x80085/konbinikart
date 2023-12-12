@@ -2,7 +2,6 @@ import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
 
 import { GroceryItem } from "../../models/grocery-item.model";
 import { ItemService } from "../../services/item.service";
-import { RouterExtensions } from "@nativescript/angular";
 import { TextField } from "@nativescript/core";
 
 @Component({
@@ -18,7 +17,6 @@ export class GroceryListEditableComponent implements OnInit {
 
   constructor(
     private itemService: ItemService,
-    private routerExtensions: RouterExtensions
   ) {}
 
   @ViewChild("searchField", { static: false }) searchFieldRef: ElementRef<TextField>;
@@ -54,10 +52,6 @@ export class GroceryListEditableComponent implements OnInit {
     }
 
     return markedItems;
-  }
-
-  goBack() {
-    this.routerExtensions.backToPreviousPage();
   }
 
   onAddItem(item: GroceryItem) {
