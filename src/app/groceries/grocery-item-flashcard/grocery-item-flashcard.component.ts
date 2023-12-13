@@ -36,31 +36,31 @@ export class GroceryItemFlashcardComponent implements OnInit {
   }
 
   showNextItem() {
-
     
-    // todo change/remove
+    
     alert(`score total: ${this.totalScore} + ${this.points}`);
-    
-    // Save current score to totalScore
-    const reachedEnd = this.currentItemIndex + 1 === this.items.length;
-
     this.totalScore += this.points;
     
+    const reachedEnd = this.currentItemIndex + 1 === this.items.length;
     if (reachedEnd) {
       // disable next
       alert('study is over haha\n\r' + `score total: ${this.totalScore} + ${this.points}`)
       return;
     }
  
-    // Reset toggles for English and Romaji
-    this.showEnglish = true;
-    this.showRomaji = true;
+    this.resetToggles();
 
     // Reset points for the next card
     this.points = 100;
 
     // Load next item
     this.loadItem(this.currentItemIndex + 1);
+  }
+
+  private resetToggles() {
+    this.showEnglish = false;
+    this.showRomaji = false;
+    this.showHint = false;
   }
 
   showPreviousItem() {

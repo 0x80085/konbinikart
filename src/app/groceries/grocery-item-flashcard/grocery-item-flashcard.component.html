@@ -16,34 +16,23 @@
         justifyContent="center"
         alignItems="center"
       >
+        <Label class="h1" [text]="selectedItem.nameKatakana"></Label>
+      </FlexboxLayout>
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Label class="h1" [text]="selectedItem.nameHiragana"></Label>
+      </FlexboxLayout>
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Label class="h1" [text]="showHint ? selectedItem.emoji : '?'"></Label>
-      </FlexboxLayout>
-      <FlexboxLayout
-        class="m-15"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Label class="h2" [text]="selectedItem.nameKatakana"></Label>
-      </FlexboxLayout>
-      <FlexboxLayout
-        class="m-15"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Label class="h2" [text]="selectedItem.nameHiragana"></Label>
-      </FlexboxLayout>
-      <FlexboxLayout
-        class="m-15"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Label
-          class="h2"
-          [text]="showRomaji ? selectedItem.nameRomaji : '?'"
-        ></Label>
       </FlexboxLayout>
       <FlexboxLayout
         class="m-15"
@@ -54,6 +43,17 @@
         <Label
           class="h2"
           [text]="showEnglish ? selectedItem.nameEnglish : '?'"
+        ></Label>
+      </FlexboxLayout>
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Label
+          class="h2"
+          [text]="showRomaji ? selectedItem.nameRomaji : '?'"
         ></Label>
       </FlexboxLayout>
     </FlexboxLayout>
@@ -72,9 +72,21 @@
       justifyContent="space-between"
       alignItems="center"
     >
-      <Button text="👀" (tap)="toggleHint()" [class.-primary]="showHint"></Button>
-      <Button text="ENG" (tap)="toggleEnglish()" [class.-primary]="showEnglish"></Button>
-      <Button text="RO" (tap)="toggleRomaji()" [class.-primary]="showRomaji"></Button>
+      <Button
+        text="👀"
+        (tap)="toggleHint()"
+        [class.-primary]="showHint"
+      ></Button>
+      <Button
+        text="ENG"
+        (tap)="toggleEnglish()"
+        [class.-primary]="showEnglish"
+      ></Button>
+      <Button
+        text="RO"
+        (tap)="toggleRomaji()"
+        [class.-primary]="showRomaji"
+      ></Button>
     </FlexboxLayout>
 
     <FlexboxLayout
