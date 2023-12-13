@@ -9,6 +9,19 @@
     *ngIf="items.length > 0"
     [nsRouterLink]="['/study']"
   ></Button>
+  <FlexBoxLayout
+    *ngIf="items.length === 0"
+    flexDirection="column"
+    justifyContent="center"
+    alignItems="center"
+  >
+    <Label text="No items found"></Label>
+    <Button
+      text="Go add some items!"
+      class="-primary edit-groceries-btn-link h3"
+      [nsRouterLink]="['/edit-groceries']"
+    ></Button>
+  </FlexBoxLayout>
   <ListView [items]="items" col="0" row="1">
     <ng-template let-item="item">
       <StackLayout
