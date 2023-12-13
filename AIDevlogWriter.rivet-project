@@ -102,8 +102,9 @@ data:
               The article should focus on the commit messages, it
               is of very little importance to mention the app itself, even so
               with the developer. Focus on the features in the commit messages.
-              Do no focus on the developer doing things, rather speak from a
-              general development perspective. \r
+              Do not focus on the developer doing things, rather speak from a
+              general development perspective as if it was a look behind the
+              scenes. \r
 
               We assume the app and developer context is already
               known to the reader and there's no need to mention the dev or app
