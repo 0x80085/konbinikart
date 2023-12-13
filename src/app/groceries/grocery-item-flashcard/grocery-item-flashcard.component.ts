@@ -15,15 +15,17 @@ export class GroceryItemFlashcardComponent implements OnInit {
   showEnglish: boolean = false;
   showRomaji: boolean = false;
   showHint: boolean = false;
+  
   points: number = 100;
-
-  totalScore: number = 0; // Variable to store the total score of the flashcard session
+  totalScore: number = 0;
+  maxScore: number = 0;
 
   constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
-    this.items = this.itemService.getGroceryItemsFromStorage(); // Fetch your list of items here
+    this.items = this.itemService.getGroceryItemsFromStorage();
     this.loadItem(this.currentItemIndex);
+    this.maxScore = 100 * this.items.length;
   }
 
   loadItem(index: number) {
@@ -34,8 +36,10 @@ export class GroceryItemFlashcardComponent implements OnInit {
   }
 
   showNextItem() {
-    // Save current score to totalScore
+    // todo change/remove
     alert(`score total: ${this.totalScore} + ${this.points}`);
+    
+    // Save current score to totalScore
     this.totalScore += this.points;
 
     // Reset toggles for English and Romaji
@@ -54,8 +58,8 @@ export class GroceryItemFlashcardComponent implements OnInit {
   }
 
   toggleEnglish() {
-    this.showEnglish = !this.showEnglish;
     if (!this.showEnglish) {
+      this.showEnglish = !this.showEnglish;
       this.deductPoints(10);
     }
   }
@@ -76,6 +80,5 @@ export class GroceryItemFlashcardComponent implements OnInit {
 
   deductPoints(amount: number) {
     this.points -= amount;
-    // Handle points deduction logic here, such as displaying alerts or updating a score display
   }
 }
