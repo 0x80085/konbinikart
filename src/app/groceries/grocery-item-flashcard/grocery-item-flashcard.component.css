@@ -1,24 +1,30 @@
-StackLayout {
+.container {
     border-radius: 10;
-    box-shadow: 0 4 6 rgba(0, 0, 0, 0.1);
     width: 80%;
     padding: 1;
+    background-color: var(--dark-text-color);
 }
 
-StackLayout StackLayout {
-    background-color: var(--light-primary);
-    width: 100%;
-}
-
-.card {
-
+.card { 
     padding: 20;
     width: 100%;
     border-radius: 10;
+    border-width: 1;
+    background-color: var(--light-primary);
+    border-color: var(--dark-text-color);
 }
 
+.controls{
+    width: 80%;
+    margin-bottom: 25;
+    padding: 20;
+    border-width: 1;
+    border-color: var(--dark-text-color);
+    background-color: var(--light-primary);
+    border-radius: 10;
+}
 
-Label,
-FlexboxLayout {
-    background-color: transparent;
+Button {
+    padding: 5;
+    border-radius: 10;
 }

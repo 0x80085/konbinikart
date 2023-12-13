@@ -5,61 +5,58 @@
   <StackLayout
     row="1"
     col="0"
+    class="container"
     verticalAlignment="center"
     horizontalAlignment="center"
   >
-    <StackLayout
-      row="1"
-      col="0"
-      verticalAlignment="center"
-      horizontalAlignment="center"
-    >
-      <FlexboxLayout flexDirection="column" class="card" *ngIf="selectedItem">
-        <FlexboxLayout
-          class="m-15"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Label
-            class="h1"
-            [text]="showHint ? selectedItem.emoji : '?'"
-          ></Label>
-        </FlexboxLayout>
-        <FlexboxLayout
-          class="m-15"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Label class="h2" [text]="selectedItem.nameKatakana"></Label>
-        </FlexboxLayout>
-        <FlexboxLayout
-          class="m-15"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Label class="h2" [text]="selectedItem.nameHiragana"></Label>
-        </FlexboxLayout>
-        <FlexboxLayout
-          class="m-15"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Label class="h2" [text]="showRomaji ? selectedItem.nameRomaji : '?'"></Label>
-        </FlexboxLayout>
-        <FlexboxLayout
-          class="m-15"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Label class="h2" [text]="showEnglish ? selectedItem.nameEnglish : '?'"></Label>
-        </FlexboxLayout>
+    <FlexboxLayout flexDirection="column" class="card" *ngIf="selectedItem">
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Label class="h1" [text]="showHint ? selectedItem.emoji : '?'"></Label>
       </FlexboxLayout>
-    </StackLayout>
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Label class="h2" [text]="selectedItem.nameKatakana"></Label>
+      </FlexboxLayout>
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Label class="h2" [text]="selectedItem.nameHiragana"></Label>
+      </FlexboxLayout>
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Label
+          class="h2"
+          [text]="showRomaji ? selectedItem.nameRomaji : '?'"
+        ></Label>
+      </FlexboxLayout>
+      <FlexboxLayout
+        class="m-15"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Label
+          class="h2"
+          [text]="showEnglish ? selectedItem.nameEnglish : '?'"
+        ></Label>
+      </FlexboxLayout>
+    </FlexboxLayout>
     <StackLayout
       *ngIf="!selectedItem"
       horizontalAlignment="center"
@@ -69,16 +66,24 @@
     </StackLayout>
   </StackLayout>
 
-  <StackLayout row="2" col="0">
-    <StackLayout orientation="horizontal" class="toggle-buttons">
-      <Button text="Toggle English" (tap)="toggleEnglish()"></Button>
-      <Button text="Toggle Romaji" (tap)="toggleRomaji()"></Button>
-      <Button text="Toggle hint" (tap)="toggleHint()"></Button>
-    </StackLayout>
+  <StackLayout class="controls" row="2" col="0">
+    <FlexboxLayout
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Button text="👀" (tap)="toggleHint()" [class.-primary]="showHint"></Button>
+      <Button text="ENG" (tap)="toggleEnglish()" [class.-primary]="showEnglish"></Button>
+      <Button text="RO" (tap)="toggleRomaji()" [class.-primary]="showRomaji"></Button>
+    </FlexboxLayout>
 
-    <StackLayout orientation="horizontal" class="nav-buttons">
+    <FlexboxLayout
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
       <Button text="Previous" (tap)="showPreviousItem()"></Button>
       <Button text="Next" (tap)="showNextItem()"></Button>
-    </StackLayout>
+    </FlexboxLayout>
   </StackLayout>
 </GridLayout>

@@ -36,12 +36,22 @@ export class GroceryItemFlashcardComponent implements OnInit {
   }
 
   showNextItem() {
+
+    
     // todo change/remove
     alert(`score total: ${this.totalScore} + ${this.points}`);
     
     // Save current score to totalScore
-    this.totalScore += this.points;
+    const reachedEnd = this.currentItemIndex + 1 === this.items.length;
 
+    this.totalScore += this.points;
+    
+    if (reachedEnd) {
+      // disable next
+      alert('study is over haha\n\r' + `score total: ${this.totalScore} + ${this.points}`)
+      return;
+    }
+ 
     // Reset toggles for English and Romaji
     this.showEnglish = true;
     this.showRomaji = true;
