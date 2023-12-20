@@ -281,6 +281,12 @@ data:
 
               \r
 
+              some tags to always include are: \r
+
+              angular, nativescript, Blogging, Postaday,
+              development, ui, ux, mobile, developer, devlog, AI, japanese, user
+              friendly, leanardo ai\r
+
               \r
 
               \r\n"
@@ -333,7 +339,7 @@ data:
             useInput: false
           outgoingConnections:
             - output->"Text" AqFfb9wbTM4i72NR_nDFX/article
-          visualData: -16.90470816793928/557.7742308439194/280/15//
+          visualData: -53.45983059350047/618.2308042246802/280/22//
   metadata:
     description: ""
     id: RtkFlj1-UT2WvInfauxA1
