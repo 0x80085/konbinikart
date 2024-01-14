@@ -1,2 +1,6 @@
 @import '@nativescript/theme/css/core.css';
 @import '@nativescript/theme/css/forest.css';
+
+*, Label {
+    font-family: "Inter", "Inter-Regular"; font-weight: 400;
+}
