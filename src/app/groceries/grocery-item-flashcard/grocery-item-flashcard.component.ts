@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RouterExtensions } from "@nativescript/angular";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 import { ItemService } from "~/app/services/item.service";
 
@@ -15,12 +16,15 @@ export class GroceryItemFlashcardComponent implements OnInit {
   showEnglish: boolean = false;
   showRomaji: boolean = false;
   showHint: boolean = false;
-  
+
   points: number = 100;
   totalScore: number = 0;
   maxScore: number = 0;
 
-  constructor(private itemService: ItemService) {}
+  constructor(
+    private itemService: ItemService,
+    private routerExtensions: RouterExtensions
+  ) {}
 
   ngOnInit(): void {
     this.items = this.itemService.getGroceryItemsFromStorage();
@@ -36,18 +40,18 @@ export class GroceryItemFlashcardComponent implements OnInit {
   }
 
   showNextItem() {
-    
-    
-    alert(`score total: ${this.totalScore} + ${this.points}`);
     this.totalScore += this.points;
-    
-    const reachedEnd = this.currentItemIndex + 1 === this.items.length;
-    if (reachedEnd) {
-      // disable next
-      alert('study is over haha\n\r' + `score total: ${this.totalScore} + ${this.points}`)
+
+    const iscompleted = this.isCompleteSession();
+
+    if (iscompleted) {
+      this.routerExtensions.navigate([
+        `/study-completed/${this.totalScore}/${this.maxScore}`,
+        { score: this.totalScore, max: this.maxScore },
+      ]);
       return;
     }
- 
+
     this.resetToggles();
 
     // Reset points for the next card
@@ -56,6 +60,9 @@ export class GroceryItemFlashcardComponent implements OnInit {
     // Load next item
     this.loadItem(this.currentItemIndex + 1);
   }
+
+  private isCompleteSession = () =>
+    this.currentItemIndex + 1 === this.items.length;
 
   private resetToggles() {
     this.showEnglish = false;

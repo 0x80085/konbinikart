@@ -30,6 +30,7 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
     StudyCompleteComponent,
     GroceryItemDetailEditableComponent,
     GroceryListTranslatedComponent,
+    StudyCompleteComponent,
   ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],

@@ -1,1 +1,23 @@
-<p>study-complete works!</p>
+
+<StackLayout
+row="0"
+horizontalAlignment="center"
+verticalAlignment="top"
+class="m-15"
+>
+
+<Label textWrap="true" text="study-complete works!"></Label>
+
+<Label textWrap="true" text="totalScore"></Label>
+<Label textWrap="true" [text]="totalScore"></Label>
+
+<Label textWrap="true" text="maxScore"></Label>
+<Label textWrap="true" [text]="maxScore"></Label>
+
+<Button
+text="Back to groceries overview"
+class="-primary h3 p-15"
+[nsRouterLink]="['/groceries']"
+></Button>
+
+</StackLayout>
