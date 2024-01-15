@@ -15,9 +15,8 @@ Solidify your Japanese vocabulary with custom flashcards tied to your grocery it
 ### Prerequisites
 - Ensure you have the latest version of NativeScript installed on your development environment.
 
-[huh]([url](https://docs.nativescript.org/setup/windows))
 
-https://docs.nativescript.org/setup/windows
+https://docs.nativescript.org/setup
 
 ### Installation
 1. Clone the repository: `git clone https://github.com/YourRepo/KonbiniKart.git`
