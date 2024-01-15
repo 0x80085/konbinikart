@@ -8,6 +8,7 @@
     class="-primary"
     *ngIf="items.length > 0"
     [nsRouterLink]="['/study']"
+    [skipLocationChange]="true"
   ></Button>
   <FlexBoxLayout
     *ngIf="items.length === 0"
