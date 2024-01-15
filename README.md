@@ -4,14 +4,11 @@ Welcome to KonbiniKart, an Android app crafted with NativeScript that seamlessly
 
 ## Key Features
 
-### 1. Smart Grocery Lists
-Effortlessly manage your shopping with our digital cart feature. KonbiniKart makes creating and organizing your grocery lists a seamless and enjoyable experience, ensuring you never miss an essential item.
+### 1. Japanese Translation Teaching
+Immerse yourself in the Japanese language as you shop. Providing an interactive learning experience while you navigate through the aisles.
 
-### 2. Japanese Translation Teaching
-Immerse yourself in the Japanese language as you shop. KonbiniKart offers on-the-fly translations for common grocery items, providing an interactive learning experience while you navigate through the aisles.
-
-### 3. Flashcards for Language Reinforcement
-Solidify your Japanese vocabulary with custom flashcards tied to your grocery items. These flashcards are designed to enhance retention, allowing you to reinforce your language skills with each shopping trip.
+### 2. Flashcards for Language Reinforcement
+Solidify your Japanese vocabulary with custom flashcards tied to your grocery items. These flashcards are designed to enhance retention, allowing you to reinforce your language skills while preparing for your next shopping trip.
 
 ## Getting Started
 
