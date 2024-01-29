@@ -18,7 +18,7 @@ export class GroceryListComponent implements OnInit, AfterContentChecked {
   }
   
   ngAfterContentChecked(): void {
-    // on back clicked doesnt re-init page, so thi is needed
+    // on back clicked doesnt re-init page, so this is needed
     this.items = this.itemService.getGroceryItemsFromStorage();
   }
 }

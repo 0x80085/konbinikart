@@ -1,41 +1,116 @@
-<GridLayout rows="250, 140, 140, 140" columns="*" class="content">
-  
-  <Image class="img" row="0" col="0" [src]="darkMode ? 'https://cdn.leonardo.ai/users/1e6dda61-3dd6-4d33-aade-899e39053b5d/generations/8810d6d4-9583-4f14-a944-36824bb96934/AlbedoBase_XL_A_cute_Japanese_konbini_store_solid_color_blob_b_1.jpg' : 'https://cdn.leonardo.ai/users/1e6dda61-3dd6-4d33-aade-899e39053b5d/generations/125294e8-5f17-495b-83c4-6f41a688bfc8/AlbedoBase_XL_A_cute_Japanese_konbini_store_solid_color_blob_b_0.jpg?w=512'" stretch="aspectFill"></Image>
+<StackLayout marginLeft="20" marginRight="20">
+  <!-- Logo -->
+  <Label
+    textWrap="true"
+    text="KonbiniKart 🛒"
+    height="100"
+    fontWeight="bold"
+    fontSize="20"
+  ></Label>
+  <!-- section 1 title -->
 
-  <Button
-    row="1"
-    class="btn-big"
-    col="0"
-    textAlignment="left"
+  <FlexboxLayout
+    flexWrap="wrap"
+    justifyContent="space-between"
+    marginBottom="12"
+  >
+    <Label
+      textWrap="true"
+      verticalAlignment="bottom"
+      text="Ready for a shopping spree?"
+      fontWeight="bold"
+      height="30"
+      fontSize="16"
+    ></Label>
+    <Label
+      text="Edit"
+      textAlignment="center"
+      fontWeight="bold"
+      borderRadius="12"
+      color="black"
+      width="50"
+      backgroundColor="#F1F1CC"
+      [nsRouterLink]="['/edit-groceries']"
+    ></Label>
+  </FlexboxLayout>
+
+  <!-- Button Translated List -->
+  <StackLayout
+    paddingTop="15"
+    paddingBottom="15"
+    borderRadius="12"
     [nsRouterLink]="['/groceries-translated']"
+    class="button-list"
   >
-    <FormattedString>
-      <Span text="Groceries" class="text h1 bold"></Span>
-      <Span text="&#13;&#10;Shop and learn" class="text h3 semi-bold"></Span>
-    </FormattedString>
-  </Button>
-  <Button
-    row="2"
-    col="0"
-    class="btn-big"
-    textAlignment="left"
-    [nsRouterLink]="['/groceries']"
+    <Label
+      textWrap="true"
+      text="Weekly menu"
+      horizontalAlignment="center"
+      textAlignment="center"
+      height="30"
+      width="100%"
+      fontSize="14"
+      fontWeight="300"
+    ></Label>
+    <Label
+      textWrap="true"
+      [text]="items.length"
+      height="45"
+      fontWeight="bold"
+      fontSize="40"
+      horizontalAlignment="center"
+    ></Label>
+    <Label
+      textWrap="true"
+      text="items"
+      height="33"
+      horizontalAlignment="center"
+    ></Label>
+  </StackLayout>
+
+  <StackLayout height="10%"></StackLayout>
+
+  <!-- section 2 title -->
+  <Label
+    margingTop="130"
+    textWrap="true"
+    verticalAlignment="bottom"
+    text="Study before you go!"
+    fontWeight="bold"
+    height="30"
+    fontSize="16"
+    marginBottom="12"
+  ></Label>
+  <!-- Button Study -->
+  <StackLayout
+    paddingTop="15"
+    paddingBottom="15"
+    borderRadius="12"
+    paddingLeft="20"
+    [nsRouterLink]="['/study']"
+    class="button-study"
   >
-    <FormattedString>
-      <Span text="View" class="text h1 bold text"></Span>
-      <Span text="&#13;&#10;Check all your groceries" class="text h3 semi-bold"></Span>
-    </FormattedString>
-  </Button>
-  <Button
-    row="3"
-    col="0"
-    textAlignment="left"
-    class="btn-big"
-    [nsRouterLink]="['/edit-groceries']"
-  >
-    <FormattedString>
-      <Span text="Edit" class="text h1 bold"></Span>
-      <Span text="&#13;&#10;Manage your grocery list" class="text h3 semi-bold"></Span>
-    </FormattedString>
-  </Button>
-</GridLayout>
+    <Label
+      textWrap="true"
+      text="Weekly menu"
+      height="30"
+      fontSize="14"
+      fontWeight="300"
+      horizontalAlignment="left"
+    ></Label>
+    <Label
+      textWrap="true"
+      [text]="items.length + ' items'"
+      height="45"
+      fontWeight="bold"
+      fontSize="20"
+      horizontalAlignment="left"
+    ></Label>
+    <Label
+      textWrap="true"
+      text="Last session results: -to/do-"
+      height="33"
+      horizontalAlignment="left"
+    ></Label>
+  </StackLayout>
+</StackLayout>

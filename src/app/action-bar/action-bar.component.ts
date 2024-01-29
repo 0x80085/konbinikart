@@ -22,13 +22,13 @@ export class ActionBarComponent {
 
   onActionBarLoadedLoaded() {
     if (isAndroid) {
-      let androidToolbar = this.page.actionBar.nativeView;
-      androidToolbar
-        .getNavigationIcon()
-        .setColorFilter(
-          android.graphics.Color.parseColor(this.backBtnColor),
-          (<any>android.graphics).PorterDuff.Mode.SRC_ATOP
-        );
+      // let androidToolbar = this.page.actionBar.nativeView;
+      // androidToolbar
+      //   .getNavigationIcon()
+      //   .setColorFilter(
+      //     android.graphics.Color.parseColor(this.backBtnColor),
+      //     (<any>android.graphics).PorterDuff.Mode.SRC_ATOP
+      //   );
     }
   }
 }
