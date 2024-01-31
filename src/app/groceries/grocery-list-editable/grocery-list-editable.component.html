@@ -1,6 +1,4 @@
-<ns-action-bar></ns-action-bar>
-
-<StackLayout orientation="vertical" class="content">
+<ns-action-bar>
   <GridLayout columns="*" rows="auto">
     <StackLayout orientation="horizontal">
       <TextField
@@ -13,6 +11,9 @@
       <Button class="clearSearch" text="X" (tap)="onClearSearch()"></Button>
     </StackLayout>
   </GridLayout>
+</ns-action-bar>
+
+<StackLayout orientation="vertical" class="content">
   <GridLayout class="p-15">
     <ListView [items]="displayList">
       <ng-template let-item="item">
