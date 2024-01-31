@@ -1,27 +1,42 @@
-<GridLayout rows="auto" columns="54, 3*, *" paddingTop="14" paddingBottom="14">
+<GridLayout rows="auto" columns="84, 3*, *" paddingTop="14" paddingBottom="14">
   <!-- Visual hint  -->
   <Button
-  backgourndColor="red"
+    androidElevation="0"
     row="0"
     col="0"
+    height="100%"
+    width="100%"
+    class="no-elevation"
     [text]="enableViewVisualHint ? item.emoji : '❓'"
-    borderRadius="12"
+    borderRadius="100"
+    fontSize="32"
     (tap)="onTapHint()"
   ></Button>
 
-  <!-- Japanese -->
   <StackLayout row="0" col="1" orientation="vertical">
+    <!-- Japanese -->
     <Label
-      class="h2 translated"
+      fontSize="16"
       *ngIf="!enableViewEnglish"
       [text]="isHiraganaMode() ? item.nameHiragana : item.nameKatakana"
+      [textDecoration]="item.checked ? 'line-through' : ''"
     ></Label>
+    <!-- English -->
     <Label
-      class="h2 translated"
+      fontSize="16"
       *ngIf="enableViewEnglish"
       [text]="item.nameEnglish"
+      [textDecoration]="item.checked ? 'line-through' : ''"
     ></Label>
-    <Label *ngIf="enableViewRomaji" [text]="item.nameRomaji"></Label>
+    <!-- Romaji -->
+    <Label
+      fontSize="16"
+      [text]="getRomajiLabelText()"
+      color="#B0AEAE"
+      [textDecoration]="
+        item.checked && item.hintLevel > 0 ? 'line-through' : ''
+      "
+    ></Label>
   </StackLayout>
   <!-- Increase hint level button -->
 
@@ -29,6 +44,7 @@
   <Button
     row="0"
     col="2"
+    class="no-elevation"
     [text]="item?.checked ? '✅' : item?.hintLevel"
     (tap)="checkItemAsCompleted()"
   ></Button>

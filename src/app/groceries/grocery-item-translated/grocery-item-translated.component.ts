@@ -4,7 +4,7 @@ import {
   Input,
   OnChanges,
   Output,
-  SimpleChanges
+  SimpleChanges,
 } from "@angular/core";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 
@@ -58,21 +58,29 @@ export class GroceryItemTranslatedComponent implements OnChanges {
     this.setHintState();
   }
 
+  getRomajiLabelText() {
+    const thinkingFace = "( •̀ - • )";
+    const happyFace = "(⁀-⁀)";
+    const face = this.item.checked ? happyFace : thinkingFace;
+
+    return this.enableViewRomaji ? this.item.nameRomaji : face;
+  }
+
   private setHintState() {
-      switch (this.item.hintLevel) {
+    switch (this.item.hintLevel) {
       case 0:
         this.enableViewRomaji = false;
         this.enableViewVisualHint = false;
         this.enableViewEnglish = false;
         break;
       case 1:
-        this.enableViewRomaji = true
+        this.enableViewRomaji = true;
         break;
       case 2:
-        console.log((this.enableViewVisualHint = true));
+        this.enableViewVisualHint = true;
         break;
       case 3:
-        this.enableViewEnglish = true
+        this.enableViewEnglish = true;
         break;
     }
   }
