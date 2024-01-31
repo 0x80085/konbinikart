@@ -13,20 +13,17 @@ export interface DisplayGroceryItem extends GroceryItem {
 })
 export class GroceryListTranslatedComponent {
   items: Array<DisplayGroceryItem>;
-
-  enableViewHiragana = true;
-  enableViewKatakana = false;
-  enableViewRomaji = false;
-  enableViewEnglish = false;
-  enableViewVisualHint = false;
+  translateMode: "hiragana" | "katakana" = "hiragana";
 
   constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
-    this.items = this.itemService
-      .getGroceryItemsFromStorage()
-      .map((it) => ({ ...it, checked: false }));
+    this.loadGroceries();
   }
+
+  changeTranslateMode = () =>
+    (this.translateMode =
+      this.translateMode == "hiragana" ? "katakana" : "hiragana");
 
   onItemChecked(item: DisplayGroceryItem): void {
     const index = this.items.indexOf(item);
@@ -39,8 +36,16 @@ export class GroceryListTranslatedComponent {
       return; // Exit if the item is not found or lacks 'checked' property
     }
 
-    this.items[index].checked = !this.items[index].checked; // Toggle the 'checked' property
+    this.checkItem(index);
+    this.reshuffleGroceries(index);
+  }
+  private loadGroceries() {
+    this.items = this.itemService
+      .getGroceryItemsFromStorage()
+      .map((it) => ({ ...it, checked: false }));
+  }
 
+  private reshuffleGroceries(index: number) {
     if (this.items[index].checked) {
       const checkedItem = this.items.splice(index, 1)[0];
       this.items.push(checkedItem); // Move checked item to the bottom
@@ -55,5 +60,9 @@ export class GroceryListTranslatedComponent {
         uncheckedItem
       );
     }
+  }
+
+  private checkItem(index: number) {
+    this.items[index].checked = !this.items[index].checked;
   }
 }
