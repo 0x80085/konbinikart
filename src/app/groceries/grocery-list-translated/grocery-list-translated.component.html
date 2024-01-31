@@ -45,36 +45,11 @@
   <GridLayout>
     <ListView [items]="items" row="1" col="0">
       <ng-template let-item="item">
-        <StackLayout orientation="horizontal">
-          <Button
-            class="checkbox"
-            [text]="item.checked ? '✅' : '⬜'"
-            (tap)="onItemChecked(item)"
-          ></Button>
-          <StackLayout orientation="vertical">
-            <Label
-              class="h1 translated"
-              *ngIf="enableViewHiragana"
-              [text]="item.nameHiragana"
-            ></Label>
-            <Label
-              class="h1 translated"
-              *ngIf="enableViewKatakana"
-              [text]="item.nameKatakana"
-            ></Label>
-          </StackLayout>
-
-          <Label
-            class="h2"
-            *ngIf="enableViewVisualHint"
-            [text]="item.emoji"
-          ></Label>
-          <Label *ngIf="enableViewEnglish" [text]="item.nameEnglish"></Label>
-          <Label
-            *ngIf="enableViewRomaji"
-            [text]="'(' + item.nameRomaji + ')'"
-          ></Label>
-        </StackLayout>
+        <ns-grocery-item-translated
+          [item]="item"
+          [translateMode]="enableViewHiragana ? 'hiragana' : 'katakana'"
+          (onCheckItem)="onItemChecked(item, $event.hintLevel)"
+        ></ns-grocery-item-translated>
       </ng-template>
     </ListView>
   </GridLayout>

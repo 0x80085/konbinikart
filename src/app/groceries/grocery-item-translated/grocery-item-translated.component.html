@@ -1,0 +1,24 @@
+<StackLayout orientation="horizontal">
+  <Button text="HINT" (tap)="onTapHint()"></Button>
+  <StackLayout orientation="vertical">
+    <Label
+      class="h1 translated"
+      *ngIf="isHiraganaMode()"
+      [text]="item.nameHiragana"
+    ></Label>
+    <Label
+      class="h1 translated"
+      *ngIf="isKatakanaMode()"
+      [text]="item.nameKatakana"
+    ></Label>
+  </StackLayout>
+
+  <Label class="h2" *ngIf="enableViewVisualHint" [text]="item.emoji"></Label>
+  <Label *ngIf="enableViewEnglish" [text]="item.nameEnglish"></Label>
+  <Label *ngIf="enableViewRomaji" [text]="'(' + item.nameRomaji + ')'"></Label>
+  <Button
+    class="checkbox"
+    [text]="item?.checked ? '✅' : '⬜'"
+    (tap)="checkItemAsCompleted()"
+  ></Button>
+</StackLayout>

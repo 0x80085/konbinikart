@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 import { ItemService } from "~/app/services/item.service";
 
-interface DisplayGroceryItem extends GroceryItem {
+export interface DisplayGroceryItem extends GroceryItem {
   checked: boolean;
 }
 
@@ -20,9 +20,7 @@ export class GroceryListTranslatedComponent {
   enableViewEnglish = false;
   enableViewVisualHint = false;
 
-  constructor(
-    private itemService: ItemService,
-  ) {}
+  constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
     this.items = this.itemService
