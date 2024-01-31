@@ -1,24 +1,35 @@
-<StackLayout orientation="horizontal">
-  <Button text="HINT" (tap)="onTapHint()"></Button>
-  <StackLayout orientation="vertical">
-    <Label
-      class="h1 translated"
-      *ngIf="isHiraganaMode()"
-      [text]="item.nameHiragana"
-    ></Label>
-    <Label
-      class="h1 translated"
-      *ngIf="isKatakanaMode()"
-      [text]="item.nameKatakana"
-    ></Label>
-  </StackLayout>
-
-  <Label class="h2" *ngIf="enableViewVisualHint" [text]="item.emoji"></Label>
-  <Label *ngIf="enableViewEnglish" [text]="item.nameEnglish"></Label>
-  <Label *ngIf="enableViewRomaji" [text]="'(' + item.nameRomaji + ')'"></Label>
+<GridLayout rows="auto" columns="54, 3*, *" paddingTop="14" paddingBottom="14">
+  <!-- Visual hint  -->
   <Button
-    class="checkbox"
-    [text]="item?.checked ? '✅' : '⬜'"
+  backgourndColor="red"
+    row="0"
+    col="0"
+    [text]="enableViewVisualHint ? item.emoji : '❓'"
+    borderRadius="12"
+    (tap)="onTapHint()"
+  ></Button>
+
+  <!-- Japanese -->
+  <StackLayout row="0" col="1" orientation="vertical">
+    <Label
+      class="h2 translated"
+      *ngIf="!enableViewEnglish"
+      [text]="isHiraganaMode() ? item.nameHiragana : item.nameKatakana"
+    ></Label>
+    <Label
+      class="h2 translated"
+      *ngIf="enableViewEnglish"
+      [text]="item.nameEnglish"
+    ></Label>
+    <Label *ngIf="enableViewRomaji" [text]="item.nameRomaji"></Label>
+  </StackLayout>
+  <!-- Increase hint level button -->
+
+  <!-- Checkbox -->
+  <Button
+    row="0"
+    col="2"
+    [text]="item?.checked ? '✅' : item?.hintLevel"
     (tap)="checkItemAsCompleted()"
   ></Button>
-</StackLayout>
+</GridLayout>
