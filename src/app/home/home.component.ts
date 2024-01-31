@@ -12,15 +12,16 @@ export class HomeComponent {
   darkMode: boolean;
   items: GroceryItem[];
 
-  constructor(
-    private page: Page,
-    private itemService: ItemService
-  ) {
+  constructor(private page: Page, private itemService: ItemService) {
     // Hide the action bar on this page
     this.page.actionBarHidden = true;
-    this.items = this.itemService.getGroceryItemsFromStorage();
+    this.loadItems();
 
     // this.detectDarkMode();
+  }
+
+  private loadItems() {
+    this.items = this.itemService.getGroceryItemsFromStorage();
   }
 
   // detectDarkMode() {
@@ -35,10 +36,8 @@ export class HomeComponent {
   //   }
   // }
 
-  cancelEventPropagation($event){
-    console.log($event);
-    
-    $event.stopPropagation();
-    return false;
+  ngAfterContentChecked(): void {
+    // on back clicked doesnt re-init page, so this is needed
+    this.loadItems();
   }
 }
