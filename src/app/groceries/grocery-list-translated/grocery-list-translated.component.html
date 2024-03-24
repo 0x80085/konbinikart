@@ -22,9 +22,8 @@
 </ns-action-bar>
 
 <StackLayout orientation="vertical">
- 
   <GridLayout>
-    <ListView [items]="items" row="1" col="0">
+    <ListView *ngIf="items?.length ?? 0 > 0" [items]="items" row="1" col="0">
       <ng-template let-item="item">
         <ns-grocery-item-translated
           [item]="item"
@@ -33,5 +32,14 @@
         ></ns-grocery-item-translated>
       </ng-template>
     </ListView>
+    <Button
+      row="1"
+      col="0"
+      height="100"
+      width="300"
+      *ngIf="!items || items.length === 0"
+      text="Add groceries"
+      [nsRouterLink]="['/edit-groceries']"
+    ></Button>
   </GridLayout>
 </StackLayout>
