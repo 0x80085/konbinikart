@@ -1,7 +1,7 @@
 .content {
   padding-left: 5;
   padding-right: 5;
-   
+
 }
 
 .searchField {
@@ -28,10 +28,12 @@
 }
 
 .item-btn.add {
-  background-color: var(--color-forest);
+  background-color: var(--light-primary);
   color: var(--dark-text-color);
 }
 
 .item-btn.delete {
-  background-color: var(--color-ruby);
+  background-color: transparent;
+  font-weight: 600;
+  color: red;
 }

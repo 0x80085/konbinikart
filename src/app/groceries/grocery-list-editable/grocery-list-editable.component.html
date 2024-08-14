@@ -51,6 +51,7 @@
             ></Button>
             <Button
               class="item-btn delete"
+              android.elevation="0"
               *ngIf="item.isInStorage"
               text="Delete from list"
               (tap)="onDelete(item.id)"
