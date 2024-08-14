@@ -35,10 +35,9 @@
     <Button
       row="1"
       col="0"
-      height="100"
-      width="300"
       *ngIf="!items || items.length === 0"
-      text="Add groceries"
+      text="Add some groceries!"
+      class="edit-groceries-cta bounce"
       [nsRouterLink]="['/edit-groceries']"
     ></Button>
   </GridLayout>

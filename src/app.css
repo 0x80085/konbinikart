@@ -1,6 +1,27 @@
 @import '@nativescript/theme/css/core.css';
-@import '@nativescript/theme/css/blue.css';
+@import '@nativescript/theme/css/default.css';
 
 *, Label {
     font-family: "Inter", "Inter-Regular"; font-weight: 400;
+}
+
+
+/* Bounce Animation */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        transform: translateY(5);
+        animation-timing-function: ease-out;
+    }
+}
+
+.bounce {
+    display: inline-block;
+    animation: bounce 0.5s infinite;
 }
