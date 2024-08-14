@@ -12,6 +12,9 @@ export class ActionBarComponent {
   @Input()
   title = "";
 
+  @Input()
+  showBackButton = true;
+
   backBtnColor = "#000000";
 
   constructor(private page: Page, private routerExtensions: RouterExtensions) {}
