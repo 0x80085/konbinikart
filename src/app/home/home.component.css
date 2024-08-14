@@ -1,15 +1,22 @@
 .button-edit {
-    color: black;
-    background: var(--color-grey);
+    border-width: 1;
+    border-color: var(--color-grey);
+    border-style: solid;
 }
 
 .button-list {
     color: black;
+    border-width: 1;
+    border-color: var(--color-grey);
+    border-style: solid;
     background: linear-gradient(180deg, var(--color-white) 0%, var(--color-grey) 100%);
 }
 
 .button-study {
     color: black;
+    border-width: 1;
+    border-color: var(--color-grey);
+    border-style: solid;
     background: linear-gradient(180deg, var(--color-white) 0%, var(--color-grey) 100%);
 }
 
