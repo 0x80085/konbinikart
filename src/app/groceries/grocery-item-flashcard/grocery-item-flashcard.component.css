@@ -1,3 +1,7 @@
+.cards-remaining {
+    text-align: center;
+}
+
 .container {
     border-radius: 10;
     width: 80%;
@@ -5,26 +9,34 @@
     background-color: var(--dark-text-color);
 }
 
-.card { 
+.card {
     padding: 20;
     width: 100%;
     border-radius: 10;
     border-width: 1;
-    background-color: var(--light-primary);
-    border-color: var(--dark-text-color);
+    /* background-color: var(--color-blue); */
+    border-color: var(--color-blue);
 }
 
-.controls{
+.controls {
     width: 80%;
     margin-bottom: 25;
     padding: 20;
     border-width: 1;
-    border-color: var(--dark-text-color);
-    background-color: var(--light-primary);
+    border-color: var(--color-blue);
+    /* background-color: var(--light-primary); */
     border-radius: 10;
 }
 
 Button {
     padding: 5;
     border-radius: 10;
+}
+
+.next-card {
+    width: 100%;
+}
+
+.striked-through {
+    text-decoration: line-through;
 }

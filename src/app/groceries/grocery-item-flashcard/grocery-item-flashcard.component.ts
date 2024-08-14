@@ -3,6 +3,10 @@ import { RouterExtensions } from "@nativescript/angular";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 import { ItemService } from "~/app/services/item.service";
 
+enum Points {
+  OneCardMaxScore = 30
+}
+
 @Component({
   selector: "ns-grocery-item-flashcard",
   templateUrl: "./grocery-item-flashcard.component.html",
@@ -17,7 +21,7 @@ export class GroceryItemFlashcardComponent implements OnInit {
   showRomaji: boolean = false;
   showHint: boolean = false;
 
-  points: number = 100;
+  points: number = Points.OneCardMaxScore;
   totalScore: number = 0;
   maxScore: number = 0;
 
@@ -29,7 +33,7 @@ export class GroceryItemFlashcardComponent implements OnInit {
   ngOnInit(): void {
     this.items = this.itemService.getGroceryItemsFromStorage();
     this.loadItem(this.currentItemIndex);
-    this.maxScore = 100 * this.items.length;
+    this.maxScore = Points.OneCardMaxScore * this.items.length;
   }
 
   loadItem(index: number) {
@@ -54,10 +58,8 @@ export class GroceryItemFlashcardComponent implements OnInit {
 
     this.resetToggles();
 
-    // Reset points for the next card
-    this.points = 100;
+    this.points = Points.OneCardMaxScore;
 
-    // Load next item
     this.loadItem(this.currentItemIndex + 1);
   }
 
@@ -68,10 +70,6 @@ export class GroceryItemFlashcardComponent implements OnInit {
     this.showEnglish = false;
     this.showRomaji = false;
     this.showHint = false;
-  }
-
-  showPreviousItem() {
-    this.loadItem(this.currentItemIndex - 1);
   }
 
   toggleEnglish() {
