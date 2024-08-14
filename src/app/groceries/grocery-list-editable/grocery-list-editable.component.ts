@@ -17,10 +17,10 @@ export class GroceryListEditableComponent implements OnInit {
 
   constructor(
     private itemService: ItemService,
-  ) {}
+  ) { }
 
   @ViewChild("searchField", { static: false }) searchFieldRef: ElementRef<TextField>;
-  
+
   ngOnInit(): void {
     this.refreshList();
   }
@@ -37,11 +37,8 @@ export class GroceryListEditableComponent implements OnInit {
       const existsInStorage = this.storedItems.some(
         (storageItem) => storageItem.id === item.id
       );
-      if (existsInStorage) {
-        return { ...item, isInStorage: true };
-      } else {
-        return { ...item, isInStorage: false };
-      }
+
+      return { ...item, isInStorage: existsInStorage }
     });
 
     const searchValue = searchQuery?.value?.trim() || "";
@@ -50,7 +47,6 @@ export class GroceryListEditableComponent implements OnInit {
         item.nameEnglish.toLowerCase().includes(searchValue.toLowerCase())
       );
     }
-
     return markedItems;
   }
 
@@ -63,7 +59,7 @@ export class GroceryListEditableComponent implements OnInit {
     this.itemService.removeGroceryItem(id);
     this.refreshList();
   }
-  
+
   onClearSearch() {
     if (this.searchFieldRef && this.searchFieldRef.nativeElement) {
       this.searchFieldRef.nativeElement.text = ""; // Clear the text in the TextField
