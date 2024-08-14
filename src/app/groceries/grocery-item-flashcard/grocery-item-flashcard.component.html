@@ -1,7 +1,11 @@
-<ns-action-bar [showBackButton]="false" [title]="'Score '+ totalScore + '/' + maxScore"></ns-action-bar>
+<ns-action-bar
+  [title]="items.length > 0 ? 'Score ' + totalScore + '/' + maxScore : ''"
+  [showBackButton]="true"
+>
+</ns-action-bar>
 
 <GridLayout rows="auto, *, auto" columns="*">
-  <Label class="cards-remaining" row="0" col="0"
+  <Label class="cards-remaining" row="0" col="0" *ngIf="items.length > 0"
     >{{ currentItemIndex + 1 }} / {{ items.length }}</Label
   >
   <StackLayout
@@ -64,11 +68,18 @@
       horizontalAlignment="center"
       verticalAlignment="center"
     >
-      <Label text="No item found"></Label>
+      <Button
+        row="1"
+        col="0"
+        *ngIf="!items || items.length === 0"
+        text="Add some groceries!"
+        class="edit-groceries-cta bounce"
+        [nsRouterLink]="['/edit-groceries']"
+      ></Button>
     </StackLayout>
   </StackLayout>
 
-  <StackLayout class="controls" row="2" col="0">
+  <StackLayout class="controls" row="2" col="0" *ngIf="items.length > 0">
     <FlexboxLayout
       flexDirection="row"
       justifyContent="flex-start"
@@ -93,7 +104,7 @@
         [class.-primary]="showEnglish"
         [class.striked-through]="showEnglish"
         *ngIf="showRomaji && showHint"
-        ></Button>
+      ></Button>
     </FlexboxLayout>
 
     <FlexboxLayout

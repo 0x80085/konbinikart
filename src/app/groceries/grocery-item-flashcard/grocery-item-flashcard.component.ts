@@ -28,7 +28,7 @@ export class GroceryItemFlashcardComponent implements OnInit {
   constructor(
     private itemService: ItemService,
     private routerExtensions: RouterExtensions
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.items = this.itemService.getGroceryItemsFromStorage();
@@ -44,6 +44,10 @@ export class GroceryItemFlashcardComponent implements OnInit {
   }
 
   showNextItem() {
+    if (this.items.length === 0) {
+      return
+    }
+
     this.totalScore += this.points;
 
     const iscompleted = this.isCompleteSession();

@@ -40,3 +40,13 @@ Button {
 .striked-through {
     text-decoration: line-through;
 }
+
+.edit-groceries-cta {
+    background-color: var(--dark-secondary);
+    color: var(--dark-btn-color-inverse);
+    font-weight: bold;
+    border-radius: 150;
+    height: 50;
+    width: 300;
+
+}

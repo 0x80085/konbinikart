@@ -6,6 +6,7 @@
       row="0"
       col="2"
       class="toggle"
+      *ngIf="items.length > 0"
     >
       <Button
         [class.active]="translateMode === 'hiragana'"
