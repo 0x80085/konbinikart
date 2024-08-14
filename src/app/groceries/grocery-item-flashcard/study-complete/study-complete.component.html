@@ -1,24 +1,27 @@
+<StackLayout row="0" horizontalAlignment="center" verticalAlignment="center">
+  <Label textWrap="true" text="Completed study session!" class="h3"></Label>
 
-<StackLayout
-row="0"
-horizontalAlignment="center"
-verticalAlignment="top"
-class="m-15"
->
+  <StackLayout>
+    <Label
+      class="score-text"
+      textWrap="true"
+      fontWeight="bold"
+      fontSize="20"
+      text="Score"
+    ></Label>
+    <Label
+      class="score-text"
+      textWrap="true"
+      fontWeight="bold"
+      fontSize="20"
+      [text]="totalScore + '/' + maxScore"
+    ></Label>
+  </StackLayout>
 
-<Label textWrap="true" text="study-complete works!"></Label>
-
-<Label textWrap="true" text="totalScore"></Label>
-<Label textWrap="true" [text]="totalScore"></Label>
-
-<Label textWrap="true" text="maxScore"></Label>
-<Label textWrap="true" [text]="maxScore"></Label>
-
-<Button
-text="Back to groceries overview"
-class="-primary h3 p-15"
-[nsRouterLink]="['/groceries']"
-[skipLocationChange]="true"
-></Button>
-
+  <Button
+    text="Back to Home"
+    class="-primary"
+    [nsRouterLink]="['/']"
+    [skipLocationChange]="true"
+  ></Button>
 </StackLayout>
