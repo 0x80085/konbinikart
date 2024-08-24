@@ -1,25 +1,25 @@
-/* .no-elevation {
-    android-elevation: 0;
-} */
-
 .container {
     border-radius: 10;
 }
 
 .container.checked {
-    background-color: var(--dark-btn-color-inverse);
+    background-color: var(--light-disabled);
+}
+
+.ns-dark.container.checked {
+    background-color: var(--dark-disabled);
 }
 
 .check-btn {
+    font-size: 18;
     border-radius: 10;
-}
-
-.ns-dark.check-btn {
-    android-elevation: 0;
     background-color: transparent;
+    android-elevation: 0;
 }
 
 .hint-btn {
     border-radius: 100;
     opacity: 0.8;
+    background-color: transparent;
+    
 }

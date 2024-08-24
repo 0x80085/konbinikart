@@ -6,7 +6,7 @@
     col="0"
     class="no-elevation hint-btn"
     [text]="getHintButtonText()"
-    [fontSize]="enableViewVisualHint ? 32 : 14"
+    [fontSize]="enableViewVisualHint || item.checked ? 32 : 14"
     (tap)="onTapHint()"
   ></Button>
 
@@ -30,6 +30,7 @@
       fontSize="16"
       color="#B0AEAE"
       [text]="getBottomLabelText()"
+      [class.bounce-scale]="item?.hintLevel > 0"
       [textDecoration]="item.checked ? 'line-through' : ''"
       [textDecoration]="
         item.checked && item.hintLevel > 0 ? 'line-through' : ''

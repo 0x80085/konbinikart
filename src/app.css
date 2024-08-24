@@ -21,7 +21,25 @@
     }
 }
 
+@keyframes bounce-and-scale {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        animation-timing-function: ease-in;
+    }
+    
+    50% {
+        transform: translateY(3) scale(0.95);
+        animation-timing-function: ease-out;
+    }
+}
+
 .bounce {
     display: inline-block;
     animation: bounce 0.5s infinite;
+}
+
+.bounce-scale {
+    animation: bounce-and-scale 0.5s forwards;
 }
