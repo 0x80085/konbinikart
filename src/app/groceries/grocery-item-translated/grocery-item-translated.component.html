@@ -1,36 +1,36 @@
-<GridLayout rows="auto" columns="84, 3*, *" paddingTop="14" paddingBottom="14">
+<GridLayout rows="auto" columns="84, 3*, *" paddingTop="14" paddingBottom="14" class="container" [class.checked]="item?.checked">
   <!-- Visual hint  -->
   <Button
     androidElevation="0"
     row="0"
     col="0"
-    class="no-elevation"
-    [text]="enableViewVisualHint ? item.emoji : '❓'"
-    borderRadius="100"
-    fontSize="32"
+    class="no-elevation hint-btn"
+    [text]="getHintButtonText()"
+    [fontSize]="enableViewVisualHint ? 32 : 14"
     (tap)="onTapHint()"
   ></Button>
 
   <StackLayout row="0" col="1" orientation="vertical">
     <!-- Japanese -->
     <Label
-      fontSize="16"
-      *ngIf="!enableViewEnglish"
+      fontSize="32"
+      textWrap="true"
+      *ngIf="!enableViewEnglish || item.checked"
       [text]="isHiraganaMode() ? item.nameHiragana : item.nameKatakana"
       [textDecoration]="item.checked ? 'line-through' : ''"
     ></Label>
     <!-- English -->
     <Label
-      fontSize="16"
-      *ngIf="enableViewEnglish"
+      fontSize="32"
+      *ngIf="enableViewEnglish && !item.checked"
       [text]="item.nameEnglish"
       [textDecoration]="item.checked ? 'line-through' : ''"
     ></Label>
-    <!-- Romaji -->
     <Label
       fontSize="16"
-      [text]="getRomajiLabelText()"
       color="#B0AEAE"
+      [text]="getBottomLabelText()"
+      [textDecoration]="item.checked ? 'line-through' : ''"
       [textDecoration]="
         item.checked && item.hintLevel > 0 ? 'line-through' : ''
       "
@@ -42,8 +42,8 @@
   <Button
     row="0"
     col="2"
-    class="no-elevation"
-    [text]="item?.checked ? '✅' : item?.hintLevel"
+    class="no-elevation check-btn"
+    [text]="item?.checked ? '✅' : '⬜'"
     (tap)="checkItemAsCompleted()"
   ></Button>
 </GridLayout>

@@ -26,8 +26,6 @@ export class GroceryItemTranslatedComponent implements OnChanges {
 
   private readonly maxHintLevel = 3;
 
-  isChecked = this.item?.checked;
-
   enableViewRomaji = false;
   enableViewEnglish = false;
   enableViewVisualHint = false;
@@ -50,20 +48,36 @@ export class GroceryItemTranslatedComponent implements OnChanges {
     return this.item.hintLevel >= this.maxHintLevel;
   }
 
+  getHintButtonText() {
+
+    if (this.item.checked) {
+      return '🛒'
+    }
+    return this.enableViewVisualHint ? this.item.emoji : 'HINT'
+  }
+
   onTapHint() {
-    if (this.isMaxHintLevelReached()) {
+    if (this.isMaxHintLevelReached() || this.item.checked) {
       return;
     }
     this.item.hintLevel++;
     this.setHintState();
   }
 
-  getRomajiLabelText() {
-    const thinkingFace = "( •̀ - • )";
-    const happyFace = "(⁀-⁀)";
-    const face = this.item.checked ? happyFace : thinkingFace;
+  getBottomLabelText() {
 
-    return this.enableViewRomaji ? this.item.nameRomaji : face;
+    switch (true) {
+      case this.item.checked:
+        return this.item.nameEnglish
+        break;
+      case this.enableViewRomaji:
+        return this.item.nameRomaji
+        break;
+
+      default:
+        return ""
+        break;
+    }
   }
 
   private setHintState() {
