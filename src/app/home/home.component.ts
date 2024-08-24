@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { Page } from "@nativescript/core";
 import { GroceryItem } from "../models/grocery-item.model";
 import { ItemService } from "../services/item.service";
@@ -8,16 +8,18 @@ import { ItemService } from "../services/item.service";
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit, OnInit{
   darkMode: boolean;
   items: GroceryItem[];
 
   constructor(private page: Page, private itemService: ItemService) {
     // Hide the action bar on this page
     this.page.actionBarHidden = true;
-    this.loadItems();
-
+    
     // this.detectDarkMode();
+  }
+  ngOnInit(): void {
+    this.loadItems();
   }
 
   private loadItems() {
@@ -36,8 +38,9 @@ export class HomeComponent {
   //   }
   // }
 
-  ngAfterContentChecked(): void {
-    // on back clicked doesnt re-init page, so this is needed
-    this.loadItems();
+  ngAfterViewInit(): void {
+    this.page.on(Page.navigatedToEvent, (data) => {
+      this.loadItems();
+    });
   }
 }
