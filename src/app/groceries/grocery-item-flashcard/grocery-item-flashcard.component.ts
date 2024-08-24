@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "@nativescript/angular";
+import { Page } from "@nativescript/core";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 import { ItemService } from "~/app/services/item.service";
 
@@ -12,7 +13,7 @@ enum Points {
   templateUrl: "./grocery-item-flashcard.component.html",
   styleUrls: ["./grocery-item-flashcard.component.css"],
 })
-export class GroceryItemFlashcardComponent implements OnInit {
+export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
   selectedItem: GroceryItem;
   items: GroceryItem[];
   currentItemIndex: number = 0;
@@ -21,16 +22,34 @@ export class GroceryItemFlashcardComponent implements OnInit {
   showRomaji: boolean = false;
   showHint: boolean = false;
 
-  points: number = Points.OneCardMaxScore;
+  earnablePointsForCurrentCard: number = Points.OneCardMaxScore;
   totalScore: number = 0;
   maxScore: number = 0;
 
   constructor(
     private itemService: ItemService,
-    private routerExtensions: RouterExtensions
+    private routerExtensions: RouterExtensions,
+    private page: Page
   ) { }
 
   ngOnInit(): void {
+    this.resetSession();
+  }
+
+  ngAfterViewInit(): void {
+    this.page.on(Page.navigatedToEvent, (data) => {
+      this.resetSession();
+    });
+  }
+
+  resetSession() {
+    this.resetToggles();
+    this.currentItemIndex = 0;
+    this.maxScore = 0;
+    this.selectedItem = undefined;
+    this.totalScore = 0;
+    this.earnablePointsForCurrentCard = Points.OneCardMaxScore;
+
     this.items = this.itemService.getGroceryItemsFromStorage();
     this.loadItem(this.currentItemIndex);
     this.maxScore = Points.OneCardMaxScore * this.items.length;
@@ -48,7 +67,7 @@ export class GroceryItemFlashcardComponent implements OnInit {
       return
     }
 
-    this.totalScore += this.points;
+    this.totalScore += this.earnablePointsForCurrentCard;
 
     const iscompleted = this.isCompleteSession();
 
@@ -62,7 +81,7 @@ export class GroceryItemFlashcardComponent implements OnInit {
 
     this.resetToggles();
 
-    this.points = Points.OneCardMaxScore;
+    this.earnablePointsForCurrentCard = Points.OneCardMaxScore;
 
     this.loadItem(this.currentItemIndex + 1);
   }
@@ -74,13 +93,6 @@ export class GroceryItemFlashcardComponent implements OnInit {
     this.showEnglish = false;
     this.showRomaji = false;
     this.showHint = false;
-  }
-
-  toggleEnglish() {
-    if (!this.showEnglish) {
-      this.showEnglish = !this.showEnglish;
-      this.deductPoints(10);
-    }
   }
 
   toggleRomaji() {
@@ -97,7 +109,14 @@ export class GroceryItemFlashcardComponent implements OnInit {
     }
   }
 
+  toggleEnglish() {
+    if (!this.showEnglish) {
+      this.showEnglish = !this.showEnglish;
+      this.deductPoints(10);
+    }
+  }
+
   deductPoints(amount: number) {
-    this.points -= amount;
+    this.earnablePointsForCurrentCard -= amount;
   }
 }
