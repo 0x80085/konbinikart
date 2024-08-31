@@ -88,16 +88,17 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
 
     this.loadItem(this.currentItemIndex + 1);
   }
-  
-  openAnswerModal(){
+
+  openAnswerModal() {
     const options: ModalDialogOptions = {
       viewContainerRef: this.vcRef,
-      context: {...this.selectedItem, score: `${this.earnablePointsForCurrentCard}/${Points.OneCardMaxScore}`},
+      context: { ...this.selectedItem, score: `${this.earnablePointsForCurrentCard}/${Points.OneCardMaxScore}` },
       fullscreen: false
     };
 
     this.modalService.showModal(FlashcardAnswerModalComponent, options).then(result => {
-      this.showNextItem();
+      setTimeout(() =>
+        this.showNextItem(), 10);
     });
   }
 
