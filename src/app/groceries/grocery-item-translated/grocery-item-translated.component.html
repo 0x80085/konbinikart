@@ -32,9 +32,6 @@
       [text]="getBottomLabelText()"
       [class.bounce-scale]="item?.hintLevel > 0"
       [textDecoration]="item.checked ? 'line-through' : ''"
-      [textDecoration]="
-        item.checked && item.hintLevel > 0 ? 'line-through' : ''
-      "
     ></Label>
   </StackLayout>
   <!-- Increase hint level button -->

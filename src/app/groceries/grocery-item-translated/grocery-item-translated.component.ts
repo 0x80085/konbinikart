@@ -49,11 +49,7 @@ export class GroceryItemTranslatedComponent implements OnChanges {
   }
 
   getHintButtonText() {
-
-    if (this.item.checked) {
-      return '🛒'
-    }
-    return this.enableViewVisualHint ? this.item.emoji : 'HINT'
+    return this.enableViewVisualHint || this.item.checked ? this.item.emoji : 'HINT'
   }
 
   onTapHint() {
@@ -69,14 +65,11 @@ export class GroceryItemTranslatedComponent implements OnChanges {
     switch (true) {
       case this.item.checked:
         return this.item.nameEnglish
-        break;
       case this.enableViewRomaji:
         return this.item.nameRomaji
-        break;
 
       default:
         return ""
-        break;
     }
   }
 
