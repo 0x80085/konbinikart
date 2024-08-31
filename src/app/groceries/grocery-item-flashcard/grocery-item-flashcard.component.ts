@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, OnInit } from "@angular/core";
-import { RouterExtensions } from "@nativescript/angular";
+import { AfterViewInit, Component, OnInit, ViewContainerRef } from "@angular/core";
+import { ModalDialogOptions, ModalDialogService, RouterExtensions } from "@nativescript/angular";
 import { Page } from "@nativescript/core";
 import { GroceryItem } from "~/app/models/grocery-item.model";
 import { ItemService } from "~/app/services/item.service";
+import { FlashcardAnswerModalComponent } from "./flashcard-answer-modal/flashcard-answer-modal.component";
 
 enum Points {
   OneCardMaxScore = 30
@@ -29,7 +30,9 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
   constructor(
     private itemService: ItemService,
     private routerExtensions: RouterExtensions,
-    private page: Page
+    private page: Page,
+    private modalService: ModalDialogService,
+    private vcRef: ViewContainerRef
   ) { }
 
   ngOnInit(): void {
@@ -69,9 +72,9 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
 
     this.totalScore += this.earnablePointsForCurrentCard;
 
-    const iscompleted = this.isCompleteSession();
+    const isCompleted = this.isCompleteSession();
 
-    if (iscompleted) {
+    if (isCompleted) {
       this.routerExtensions.navigate([
         `/study-completed/${this.totalScore}/${this.maxScore}`,
         { score: this.totalScore, max: this.maxScore },
@@ -84,6 +87,18 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     this.earnablePointsForCurrentCard = Points.OneCardMaxScore;
 
     this.loadItem(this.currentItemIndex + 1);
+  }
+  
+  openAnswerModal(){
+    const options: ModalDialogOptions = {
+      viewContainerRef: this.vcRef,
+      context: {...this.selectedItem, score: `${this.earnablePointsForCurrentCard}/${Points.OneCardMaxScore}`},
+      fullscreen: false
+    };
+
+    this.modalService.showModal(FlashcardAnswerModalComponent, options).then(result => {
+      this.showNextItem();
+    });
   }
 
   private isCompleteSession = () =>

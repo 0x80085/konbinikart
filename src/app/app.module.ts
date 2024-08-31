@@ -12,6 +12,7 @@ import { GroceryListTranslatedComponent } from "./groceries/grocery-list-transla
 import { GroceryItemTranslatedComponent } from "./groceries/grocery-item-translated/grocery-item-translated.component";
 import { GroceryItemDetailComponent } from "./groceries/grocery-item-detail/grocery-item-detail.component";
 import { GroceryItemFlashcardComponent } from "./groceries/grocery-item-flashcard/grocery-item-flashcard.component";
+import { FlashcardAnswerModalComponent } from "./groceries/grocery-item-flashcard/flashcard-answer-modal/flashcard-answer-modal.component";
 import { StudyCompleteComponent } from "./groceries/grocery-item-flashcard/study-complete/study-complete.component";
 import { GroceryItemDetailEditableComponent } from "./groceries/grocery-item-detail-editable/grocery-item-detail-editable.component";
 import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.component";
@@ -28,6 +29,7 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
     GroceryListEditableComponent,
     GroceryItemDetailComponent,
     GroceryItemFlashcardComponent,
+    FlashcardAnswerModalComponent,
     StudyCompleteComponent,
     GroceryItemDetailEditableComponent,
     GroceryListTranslatedComponent,

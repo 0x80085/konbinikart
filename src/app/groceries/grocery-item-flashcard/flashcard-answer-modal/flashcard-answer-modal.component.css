@@ -1,0 +1,15 @@
+.modal-container {
+    padding: 20;
+    background-color: white;
+    border-radius: 10;
+    shadow-color: black;
+    shadow-opacity: 0.5;
+    shadow-radius: 10;
+    elevation: 10;
+    width: 80%;
+    text-align: center;
+  }
+
+  .h1 {
+    color: black;
+  }
