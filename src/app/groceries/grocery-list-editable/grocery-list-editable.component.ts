@@ -67,6 +67,11 @@ export class GroceryListEditableComponent implements OnInit {
     }
   }
 
+  onClearList() {
+    this.itemService.saveGroceryItemsToStorage([]);
+    this.refreshList();
+  }
+
   onSearchInputChange(searchQuery: string) {
     this.searchQuery = searchQuery;
     this.displayList = this.markMatchingItems(this.searchQuery);
