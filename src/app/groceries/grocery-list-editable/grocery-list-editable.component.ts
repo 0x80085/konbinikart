@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
 
 import { GroceryItem } from "../../models/grocery-item.model";
 import { ItemService } from "../../services/item.service";
-import { TextField } from "@nativescript/core";
+import { Dialogs, TextField } from "@nativescript/core";
 
 @Component({
   selector: "ns-grocery-list-editable",
@@ -68,8 +68,12 @@ export class GroceryListEditableComponent implements OnInit {
   }
 
   onClearList() {
-    this.itemService.saveGroceryItemsToStorage([]);
-    this.refreshList();
+    Dialogs.confirm("Are you sure you want to clear the grocery list?").then((result) => {
+      if (result) {
+        this.itemService.saveGroceryItemsToStorage([]);
+        this.refreshList();
+      }
+    })
   }
 
   onSearchInputChange(searchQuery: string) {
