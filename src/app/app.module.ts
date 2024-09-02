@@ -8,6 +8,7 @@ import { HomeComponent } from "./home/home.component";
 import { ActionBarComponent } from "./action-bar/action-bar.component";
 import { AboutComponent } from "./about/about.component";
 import { GroceryListEditableComponent } from "./groceries/grocery-list-editable/grocery-list-editable.component";
+import { EditableGroceryItemComponent } from "./groceries/grocery-list-editable/editable-grocery-item/editable-grocery-item.component";
 import { GroceryListTranslatedComponent } from "./groceries/grocery-list-translated/grocery-list-translated.component";
 import { GroceryItemTranslatedComponent } from "./groceries/grocery-item-translated/grocery-item-translated.component";
 import { GroceryItemDetailComponent } from "./groceries/grocery-item-detail/grocery-item-detail.component";
@@ -27,6 +28,7 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
     AboutComponent,
     GroceryListComponent,
     GroceryListEditableComponent,
+    EditableGroceryItemComponent,
     GroceryItemDetailComponent,
     GroceryItemFlashcardComponent,
     FlashcardAnswerModalComponent,

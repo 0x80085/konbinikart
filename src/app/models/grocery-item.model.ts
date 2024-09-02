@@ -6,3 +6,7 @@ export interface GroceryItem {
   nameHiragana: string;
   nameRomaji: string;
 }
+
+export interface EditableGroceryItem extends GroceryItem {
+  isInStorage: boolean;
+}

@@ -1,7 +1,6 @@
 .content {
   padding-left: 5;
   padding-right: 5;
-
 }
 
 .searchField {
@@ -13,28 +12,8 @@
   border-radius: 15;
 }
 
-.item {
-  padding: 0;
-}
-
-
-.item-btn {
-  padding: 0;
-  margin-bottom: 15dpi;
-  height: 30dpi;
-  border-radius: 15;
-  font-weight: 800;
-  font-size: 14;
-}
-
-.item-btn.add {
-  background-color: var(--light-primary);
-  color: var(--dark-text-color);
-}
-
-.item-btn.delete {
-  color: red;
-  background-color: transparent;
-  android-elevation:0;
-  font-weight: 600;
+.clear-btn{
+  background-color: blue;
+  /* padding: 5; */
+  height: 50;
 }

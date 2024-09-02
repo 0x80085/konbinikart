@@ -1,0 +1,29 @@
+<GridLayout class="item" columns="auto, *, *" rows="auto, auto, auto">
+    <!-- 1st Column: Emoji -->
+    <Label class="h1" [text]="item.emoji" textAlignment="center" col="0" rowSpan="2"></Label>
+    
+    <!-- 2nd Column: Japanese (Hiragana and Katakana) -->
+    <Label class="h2" [text]="item.nameHiragana" textAlignment="center" col="1" row="0"></Label>
+    <Label class="h2" [text]="item.nameKatakana" textAlignment="center" col="1" row="1"></Label>
+  
+    <!-- 3rd Column: Romaji and English -->
+    <Label [text]="item.nameRomaji" textAlignment="center" col="2" row="0"></Label>
+    <Label class="h3" [text]="item.nameEnglish" textAlignment="center" col="2" row="1"></Label>
+  
+    <!-- Buttons below the 3 columns -->
+    <StackLayout colSpan="3" row="2" orientation="horizontal" horizontalAlignment="center" marginTop="10dpi">
+      <Button
+        class="item-btn add"
+        *ngIf="!item.isInStorage"
+        text="Add to list"
+        (tap)="add.emit(item)"
+      ></Button>
+      <Button
+        class="item-btn delete"
+        *ngIf="item.isInStorage"
+        text="Delete from list"
+        (tap)="delete.emit(item)"
+      ></Button>
+    </StackLayout>
+  </GridLayout>
+  

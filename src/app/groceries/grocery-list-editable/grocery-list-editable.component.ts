@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
 
-import { GroceryItem } from "../../models/grocery-item.model";
+import { EditableGroceryItem, GroceryItem } from "../../models/grocery-item.model";
 import { ItemService } from "../../services/item.service";
 import { Dialogs, TextField } from "@nativescript/core";
 
@@ -12,7 +12,7 @@ import { Dialogs, TextField } from "@nativescript/core";
 export class GroceryListEditableComponent implements OnInit {
   defaultItems: Array<GroceryItem>;
   storedItems: Array<GroceryItem>;
-  displayList: GroceryItem[];
+  displayList: EditableGroceryItem[];
   searchQuery: string = "";
 
   constructor(
@@ -32,7 +32,7 @@ export class GroceryListEditableComponent implements OnInit {
     this.displayList = this.markMatchingItems(this.searchQuery);
   }
 
-  markMatchingItems(searchQuery: any): GroceryItem[] {
+  markMatchingItems(searchQuery: any): EditableGroceryItem[] {
     const markedItems = this.defaultItems.map((item) => {
       const existsInStorage = this.storedItems.some(
         (storageItem) => storageItem.id === item.id
@@ -55,8 +55,8 @@ export class GroceryListEditableComponent implements OnInit {
     this.refreshList();
   }
 
-  onDelete(id: number) {
-    this.itemService.removeGroceryItem(id);
+  onDelete(item: GroceryItem) {
+    this.itemService.removeGroceryItem(item.id);
     this.refreshList();
   }
 

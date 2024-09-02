@@ -13,44 +13,21 @@
   </GridLayout>
 </ns-action-bar>
 <FlexboxLayout flexDirection="column" class="content">
-  <!-- Button at the top -->
-  <Button text="CLEAR LIST" (tap)="onClearList()" class="clear-btn"></Button>
-
-  <!-- ListView that fills the remaining space -->
+  <Button
+    height="50"
+    flexShrink="0"
+    flexGrow="0"
+    text="CLEAR LIST"
+    (tap)="onClearList()"
+    class="clear-btn"
+  ></Button>
   <ListView [items]="displayList" flexGrow="1" class="list-view">
     <ng-template let-item="item">
-      <StackLayout class="item">
-        <Label class="h1" [text]="item.emoji" textAlignment="center"></Label>
-        <Label
-          class="h2"
-          [text]="item.nameHiragana"
-          textAlignment="center"
-        ></Label>
-        <Label
-          class="h2"
-          [text]="item.nameKatakana"
-          textAlignment="center"
-        ></Label>
-        <Label [text]="item.nameRomaji" textAlignment="center"></Label>
-        <Label
-          class="h3"
-          [text]="item.nameEnglish"
-          textAlignment="center"
-        ></Label>
-        <Button
-          class="item-btn add"
-          *ngIf="!item.isInStorage"
-          text="Add to list"
-          (tap)="onAddItem(item)"
-        ></Button>
-        <Button
-          class="item-btn delete"
-          android.elevation="0"
-          *ngIf="item.isInStorage"
-          text="Delete from list"
-          (tap)="onDelete(item.id)"
-        ></Button>
-      </StackLayout>
+      <ns-editable-grocery-item
+        [item]="item"
+        (add)="onAddItem(item)"
+        (delete)="onDelete(item)"
+      ></ns-editable-grocery-item>
     </ng-template>
   </ListView>
 </FlexboxLayout>
