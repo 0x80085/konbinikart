@@ -56,7 +56,7 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     const itemsInStorage = this.itemService.getGroceryItemsFromStorage();
     const shuffledItems = this.shuffle(itemsInStorage);
     this.items = shuffledItems;
-    
+
     this.loadItem(this.currentItemIndex);
     this.maxScore = Points.OneCardMaxScore * this.items.length;
   }
@@ -104,24 +104,7 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
         this.showNextItem(), 10);
     });
   }
-
-  private isCompleteSession = () =>
-    this.currentItemIndex + 1 === this.items.length;
-
-  private resetToggles() {
-    this.showEnglish = false;
-    this.showRomaji = false;
-    this.showHint = false;
-  }
-
-  private shuffle(array: GroceryItem[]): GroceryItem[] {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-    }
-    return array;
-  }
-
+  
   toggleRomaji() {
     if (!this.showRomaji) {
       this.showRomaji = !this.showRomaji;
@@ -143,7 +126,24 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     }
   }
 
-  deductPoints(amount: number) {
+  private isCompleteSession = () =>
+    this.currentItemIndex + 1 === this.items.length;
+
+  private resetToggles() {
+    this.showEnglish = false;
+    this.showRomaji = false;
+    this.showHint = false;
+  }
+
+  private shuffle(array: GroceryItem[]): GroceryItem[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+  }
+
+  private deductPoints(amount: number) {
     this.earnablePointsForCurrentCard -= amount;
   }
 }
