@@ -38,8 +38,17 @@ Button {
     border-radius: 10;
 }
 
+.hint-btn {
+    border-width: 1;
+    border-color: var(--dark-secondary);
+    border-radius: 10;
+}
+
 .next-card {
     width: 100%;
+    border-width: 1;
+    border-color: var(--dark-secondary);
+    border-radius: 10;
 }
 
 .striked-through {

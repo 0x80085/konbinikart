@@ -86,21 +86,24 @@
       alignItems="center"
     >
       <Button
-        text="RO"
+        text="Hint 1"
         (tap)="toggleRomaji()"
+        class="hint-btn"
         [class.-primary]="showRomaji"
         [class.striked-through]="showRomaji"
       ></Button>
       <Button
-        text="👀"
+        text="Hint 2"
         (tap)="toggleHint()"
+        class="hint-btn"
         [class.-primary]="showHint"
         [class.striked-through]="showHint"
         *ngIf="showRomaji"
       ></Button>
       <Button
-        text="ENG"
+        text="Answer"
         (tap)="toggleEnglish()"
+        class="hint-btn"
         [class.-primary]="showEnglish"
         [class.striked-through]="showEnglish"
         *ngIf="showRomaji && showHint"
@@ -112,7 +115,7 @@
       justifyContent="center"
       alignItems="center"
     >
-      <Button class="next-card" text="Next" (tap)="openAnswerModal()"></Button>
+      <Button class="next-card" text="Reveal answer" (tap)="openAnswerModal()"></Button>
     </FlexboxLayout>
   </StackLayout>
 </GridLayout>
