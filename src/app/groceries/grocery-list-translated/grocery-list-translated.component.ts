@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ItemService } from "~/app/services/item.service";
 import { DisplayGroceryItem } from "../grocery-item-translated/grocery-item-translated.component";
-import { ObservableArray } from "@nativescript/core";
+import { ObservableArray, Page } from "@nativescript/core";
 
 @Component({
   selector: "ns-grocery-list-translated",
@@ -12,15 +12,23 @@ export class GroceryListTranslatedComponent {
   items: ObservableArray<DisplayGroceryItem>;
   translateMode: "hiragana" | "katakana" = "hiragana";
 
-  constructor(private itemService: ItemService) {}
+  constructor(
+    private itemService: ItemService,
+    private page: Page,
+  ) { }
 
   ngOnInit(): void {
     this.loadGroceries();
   }
+  ngAfterViewInit(): void {
+    this.page.on(Page.navigatedToEvent, (data) => {
+      this.loadGroceries();
+    });
+  }
 
   changeTranslateMode = () =>
-    (this.translateMode =
-      this.translateMode == "hiragana" ? "katakana" : "hiragana");
+  (this.translateMode =
+    this.translateMode == "hiragana" ? "katakana" : "hiragana");
 
   onItemChecked(item: DisplayGroceryItem): void {
     const inList = this.items.find((it) => it.id === item.id);
