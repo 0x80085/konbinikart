@@ -53,7 +53,10 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     this.totalScore = 0;
     this.earnablePointsForCurrentCard = Points.OneCardMaxScore;
 
-    this.items = this.itemService.getGroceryItemsFromStorage();
+    const itemsInStorage = this.itemService.getGroceryItemsFromStorage();
+    const shuffledItems = this.shuffle(itemsInStorage);
+    this.items = shuffledItems;
+    
     this.loadItem(this.currentItemIndex);
     this.maxScore = Points.OneCardMaxScore * this.items.length;
   }
@@ -109,6 +112,14 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     this.showEnglish = false;
     this.showRomaji = false;
     this.showHint = false;
+  }
+
+  private shuffle(array: GroceryItem[]): GroceryItem[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
   }
 
   toggleRomaji() {
