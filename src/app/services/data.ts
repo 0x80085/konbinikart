@@ -37,7 +37,7 @@ export const DATA = [
     nameEnglish: "strawberry",
     nameKatakana: "イチゴ",
     nameHiragana: "いちご",
-    nameRomaji: "sutoroberii"
+    nameRomaji: "ichigo"
   },
   {
     id: 6,
