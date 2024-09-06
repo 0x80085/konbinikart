@@ -1,4 +1,6 @@
-export const DATA = [
+import { GroceryItem } from "../models/grocery-item.model";
+
+export const DATA: Array<GroceryItem> = [
   {
     id: 1,
     emoji: "🍎",
@@ -306,7 +308,7 @@ export const DATA = [
   {
     id: 39,
     emoji: "🍗",
-    nameEnglish: "Chicken",
+    nameEnglish: "chicken",
     nameKatakana: "チキン",
     nameHiragana: "ちきん",
     nameRomaji: "chikin"
