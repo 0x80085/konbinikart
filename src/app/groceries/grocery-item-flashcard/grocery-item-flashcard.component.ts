@@ -75,9 +75,7 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
 
     this.totalScore += this.earnablePointsForCurrentCard;
 
-    const isCompleted = this.isCompleteSession();
-
-    if (isCompleted) {
+    if (this.isSessionComplete()) {
       this.routerExtensions.navigate([
         `/study-completed/${this.totalScore}/${this.maxScore}`,
         { score: this.totalScore, max: this.maxScore },
@@ -126,7 +124,7 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private isCompleteSession = () =>
+  private isSessionComplete = () =>
     this.currentItemIndex + 1 === this.items.length;
 
   private resetToggles() {
