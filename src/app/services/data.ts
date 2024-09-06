@@ -13,9 +13,9 @@ export const DATA: Array<GroceryItem> = [
     id: 2,
     emoji: "🍊",
     nameEnglish: "orange",
-    nameKatakana: "オレンジ",
-    nameHiragana: "おれんじ",
-    nameRomaji: "orenji"
+    nameKatakana: "ダイダイ",
+    nameHiragana: "だいだい",
+    nameRomaji: "daidai"
   },
   {
     id: 3,
@@ -45,17 +45,17 @@ export const DATA: Array<GroceryItem> = [
     id: 6,
     emoji: "🥝",
     nameEnglish: "kiwi fruit",
-    nameKatakana: "キウイフルーツ",
-    nameHiragana: "きういふるーつ",
-    nameRomaji: "kiuifuruutsu"
+    nameKatakana: "サルナシ",
+    nameHiragana: "さるなし",
+    nameRomaji: "sarunashi"
   },
   {
     id: 7,
     emoji: "🍍",
     nameEnglish: "pineapple",
-    nameKatakana: "パイナップル",
-    nameHiragana: "ぱいなっぷる",
-    nameRomaji: "painappuru"
+    nameKatakana: "ホウライシ",
+    nameHiragana: "ほうらいし",
+    nameRomaji: "houraishi"
   },
   {
     id: 8,
@@ -85,9 +85,9 @@ export const DATA: Array<GroceryItem> = [
     id: 11,
     emoji: "🍅",
     nameEnglish: "tomato",
-    nameKatakana: "トマト",
-    nameHiragana: "とまと",
-    nameRomaji: "tomato"
+    nameKatakana: "カキ",
+    nameHiragana: "かき",
+    nameRomaji: "kaki"
   },
   {
     id: 12,
@@ -101,17 +101,17 @@ export const DATA: Array<GroceryItem> = [
     id: 13,
     emoji: "🥑",
     nameEnglish: "avocado",
-    nameKatakana: "アボカド",
-    nameHiragana: "あぼかど",
-    nameRomaji: "abokado"
+    nameKatakana: "ワニナシ",
+    nameHiragana: "わになし",
+    nameRomaji: "waninashi"
   },
   {
     id: 14,
     emoji: "🥦",
     nameEnglish: "broccoli",
-    nameKatakana: "ブロッコリー",
-    nameHiragana: "ぶろっこりー",
-    nameRomaji: "burokkorii"
+    nameKatakana: "メキャベツ",
+    nameHiragana: "めきゃべつ",
+    nameRomaji: "mekyabetsu"
   },
   {
     id: 15,
@@ -253,17 +253,17 @@ export const DATA: Array<GroceryItem> = [
     id: 32,
     emoji: "🥙",
     nameEnglish: "stuffed flatbread",
-    nameKatakana: "フラットブレッド",
-    nameHiragana: "ふらっとぶれっど",
-    nameRomaji: "furattobureddo"
+    nameKatakana: "包みパン",
+    nameHiragana: "つつみぱん",
+    nameRomaji: "tsutsumipan"
   },
   {
     id: 33,
     emoji: "🧆",
     nameEnglish: "falafel",
-    nameKatakana: "ファラフェル",
-    nameHiragana: "ふぁらふぇる",
-    nameRomaji: "farafueru"
+    nameKatakana: "ひよこ豆のコロッケ",
+    nameHiragana: "ひよこまめのころっけ",
+    nameRomaji: "hiyokomame no korokke"
   },
   {
     id: 34,
@@ -277,17 +277,17 @@ export const DATA: Array<GroceryItem> = [
     id: 35,
     emoji: "🥞",
     nameEnglish: "pancakes",
-    nameKatakana: "パンケーキ",
-    nameHiragana: "ぱんけーき",
-    nameRomaji: "pankeeki"
+    nameKatakana: "ホットケーキ",
+    nameHiragana: "ほっとけーき",
+    nameRomaji: "hottokeeki"
   },
   {
     id: 36,
     emoji: "🧇",
     nameEnglish: "waffle",
-    nameKatakana: "ワッフル",
-    nameHiragana: "わっふる",
-    nameRomaji: "waffuru"
+    nameKatakana: "焼き菓子",
+    nameHiragana: "やきがし",
+    nameRomaji: "yakigashi"
   },
   {
     id: 37,
@@ -301,17 +301,17 @@ export const DATA: Array<GroceryItem> = [
     id: 38,
     emoji: "🥩",
     nameEnglish: "steak",
-    nameKatakana: "ステーキ ",
-    nameHiragana: "すてーき ",
-    nameRomaji: "suteeki"
+    nameKatakana: "ビーフステーキ",
+    nameHiragana: "びーふすてーき",
+    nameRomaji: "biifusuteeki"
   },
   {
     id: 39,
     emoji: "🍗",
     nameEnglish: "chicken",
-    nameKatakana: "チキン",
-    nameHiragana: "ちきん",
-    nameRomaji: "chikin"
+    nameKatakana: "ニワトリ",
+    nameHiragana: "にわとり",
+    nameRomaji: "niwatori"
   },
   {
     id: 40,
@@ -381,9 +381,9 @@ export const DATA: Array<GroceryItem> = [
     id: 48,
     emoji: "🍝",
     nameEnglish: "spaghetti",
-    nameKatakana: "スパゲッティ",
-    nameHiragana: "すぱげってぃ",
-    nameRomaji: "supagetti"
+    nameKatakana: "パスタ",
+    nameHiragana: "ぱすた",
+    nameRomaji: "pasuta"
   },
   {
     id: 49,
@@ -421,9 +421,9 @@ export const DATA: Array<GroceryItem> = [
     id: 53,
     emoji: "🥡",
     nameEnglish: "takeout box",
-    nameKatakana: "テイクアウトボックス",
-    nameHiragana: "ていくあうとぼっくす",
-    nameRomaji: "teikuautobokkusu"
+    nameKatakana: "持ち帰り容器",
+    nameHiragana: "もちかえりようき",
+    nameRomaji: "mochikaeri youki"
   },
   {
     id: 54,
@@ -437,8 +437,8 @@ export const DATA: Array<GroceryItem> = [
     id: 55,
     emoji: "🦞",
     nameEnglish: "lobster",
-    nameKatakana: "ロブスター",
-    nameHiragana: "ろぶすたー",
-    nameRomaji: "robustaa"
+    nameKatakana: "伊勢エビ",
+    nameHiragana: "いせえび",
+    nameRomaji: "iseebi"
   }
 ]
