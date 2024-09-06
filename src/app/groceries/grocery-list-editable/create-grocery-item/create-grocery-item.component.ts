@@ -3,6 +3,7 @@ import { RouterExtensions } from '@nativescript/angular';
 import { action, alert } from '@nativescript/core';
 import { EditableGroceryItem } from '~/app/models/grocery-item.model';
 import { ItemService } from '~/app/services/item.service';
+import { toRomaji, toHiragana, toKatakana, isHiragana, isKatakana } from 'wanakana';
 
 @Component({
   selector: 'ns-create-grocery-item',
@@ -21,13 +22,24 @@ export class CreateGroceryItemComponent {
     isInStorage: true
   };
 
-  hiraganaRegex = /^[\u3040-\u309Fぁ-ゟー]+$/;
-  katakanaRegex = /^[\u30A0-\u30FFーｦ-ﾟ]+$/;
-
   constructor(
     private itemService: ItemService,
     private routerExtensions: RouterExtensions
   ) { }
+
+  onChangeHiragana() {
+    if (isHiragana(this.groceryItem.nameHiragana)) {
+      this.groceryItem.nameRomaji = toRomaji(this.groceryItem.nameHiragana);
+      this.groceryItem.nameKatakana = toKatakana(this.groceryItem.nameHiragana);
+    }
+  }
+  onChangeKatakana() {
+    if (isKatakana(this.groceryItem.nameKatakana)) {
+      this.groceryItem.nameRomaji = toRomaji(this.groceryItem.nameKatakana);
+      this.groceryItem.nameHiragana = toHiragana(this.groceryItem.nameKatakana);
+    }
+
+  }
 
   resetForm() {
     this.groceryItem = {
@@ -55,16 +67,16 @@ export class CreateGroceryItemComponent {
 
     if (false) {
       // Todo
-      const isHiraganaValid = this.hiraganaRegex.test(this.groceryItem.nameHiragana);
-      if (!isHiraganaValid) {
-        alert("⚠️ Please enter valid hiragana. This is not hiragana.");
-        return;
-      }
-      const isKatakanaValid = this.katakanaRegex.test(this.groceryItem.nameKatakana);
-      if (!isKatakanaValid) {
-        alert("⚠️ Please enter valid katakana. This is not katakana.");
-        return;
-      }
+      // const isHiraganaValid = this.hiraganaRegex.test(this.groceryItem.nameHiragana);
+      // if (!isHiraganaValid) {
+      //   alert("⚠️ Please enter valid hiragana. This is not hiragana.");
+      //   return;
+      // }
+      // const isKatakanaValid = this.katakanaRegex.test(this.groceryItem.nameKatakana);
+      // if (!isKatakanaValid) {
+      //   alert("⚠️ Please enter valid katakana. This is not katakana.");
+      //   return;
+      // }
     }
 
     const id = this.itemService.getAllGroceryItems().length - 1;

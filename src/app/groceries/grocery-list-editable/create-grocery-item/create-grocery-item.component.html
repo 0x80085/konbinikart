@@ -19,6 +19,7 @@
   <!-- Name in Katakana -->
   <TextField
     [(ngModel)]="groceryItem.nameKatakana"
+    (ngModelChange)="onChangeKatakana()"
     hint="Name (Katakana)"
     autocorrect="false"
     autocapitalizationType="none"
@@ -27,19 +28,14 @@
   <!-- Name in Hiragana -->
   <TextField
     [(ngModel)]="groceryItem.nameHiragana"
+    (ngModelChange)="onChangeHiragana()"
     hint="Name (Hiragana)"
     autocorrect="false"
     autocapitalizationType="none"
   ></TextField>
 
   <!-- Name in Romaji -->
-  <TextField
-    [(ngModel)]="groceryItem.nameRomaji"
-    hint="Name (Romaji)"
-    autocorrect="false"
-    autocapitalizationType="none"
-  ></TextField>
-
-  <!-- Add Item Button -->
+  <Label [text]="groceryItem.nameRomaji" marginLeft="15"></Label>
   <Button text="Save Item" (tap)="addItem()" class="save-btn"></Button>
+
 </StackLayout>
