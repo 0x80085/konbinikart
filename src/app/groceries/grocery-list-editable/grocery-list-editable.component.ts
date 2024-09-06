@@ -33,15 +33,7 @@ export class GroceryListEditableComponent implements OnInit {
   }
 
   markItemsInStorage(searchQuery: any): EditableGroceryItem[] {
-    const itemsNotInStorage = this.defaultItems
-      .filter(it => !this.storedItems.some(storedItem => storedItem.id === it.id))
-      .map(it => ({ ...it, dateLastInteraction: null, isInStorage: false }));
-
-    const mergedList: Array<EditableGroceryItem> =
-      [
-        ...itemsNotInStorage,
-        ...this.storedItems
-      ].sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
+    const mergedList: Array<EditableGroceryItem> = this.itemService.getAllGroceryItems();
 
     const searchValue = searchQuery?.value?.trim() || "";
 

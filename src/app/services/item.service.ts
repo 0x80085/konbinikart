@@ -17,14 +17,28 @@ export class ItemService {
     return this.defaultItems.map(it => ({ ...it, dateLastInteraction: null, isInStorage: false }))
   }
 
-  getItemFromDefaultList(id: number): GroceryItem {
-    return this.defaultItems.filter((item) => item.id === id)[0]
-  }
-
   getGroceryItemsFromStorage(): EditableGroceryItem[] {
     const storedItems = JSON.parse(ApplicationSettings.getString(this.storageKey, null))
-      .map(it => ({...it, dateLastInteraction: new Date(it.dateLastInteraction)}));
+      .map(it => ({ ...it, dateLastInteraction: new Date(it.dateLastInteraction) }));
     return storedItems || [];
+  }
+
+  getAllGroceryItems() {
+    const storedItems = this.getGroceryItemsFromStorage();
+
+    const defaultItemsNotInStorage = this.defaultItems
+      .filter(it => !this.getGroceryItemsFromStorage().some(storedItem => storedItem.id === it.id))
+      .map(it => ({ ...it, dateLastInteraction: null, isInStorage: false }));
+
+    const mergedList: Array<EditableGroceryItem> = [
+      ...defaultItemsNotInStorage,
+      ...storedItems
+    ].sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
+    return mergedList;
+  }
+
+  getItemFromDefaultList(id: number): GroceryItem {
+    return this.defaultItems.filter((item) => item.id === id)[0]
   }
 
   addGroceryItemToStorage(item: GroceryItem): void {
