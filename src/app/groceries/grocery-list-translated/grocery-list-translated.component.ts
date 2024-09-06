@@ -42,13 +42,13 @@ export class GroceryListTranslatedComponent {
     this.items = new ObservableArray(
       this.itemService
         .getGroceryItemsFromStorage()
+        .sort((a, b) => a.dateLastInteraction.getTime() - b.dateLastInteraction.getTime())
         .map((it) => ({ ...it, checked: false, hintLevel: 0 }))
     );
   }
 
   private reshuffleGroceries(item: DisplayGroceryItem) {
     const index = this.items.indexOf(item);
-
 
     if (item.checked) {
       this.items.splice(index, 1);

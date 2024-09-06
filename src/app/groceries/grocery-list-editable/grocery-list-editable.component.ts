@@ -11,7 +11,7 @@ import { Dialogs, TextField } from "@nativescript/core";
 })
 export class GroceryListEditableComponent implements OnInit {
   defaultItems: Array<GroceryItem>;
-  storedItems: Array<GroceryItem>;
+  storedItems: Array<EditableGroceryItem>;
   displayList: EditableGroceryItem[];
   searchQuery: string = "";
 
@@ -29,29 +29,35 @@ export class GroceryListEditableComponent implements OnInit {
     this.defaultItems = this.itemService.getAllDefaultItems();
     this.storedItems = this.itemService.getGroceryItemsFromStorage();
 
-    this.displayList = this.markMatchingItems(this.searchQuery);
+    this.displayList = this.markItemsInStorage(this.searchQuery);
   }
 
-  markMatchingItems(searchQuery: any): EditableGroceryItem[] {
-    const markedItems = this.defaultItems.map((item) => {
-      const existsInStorage = this.storedItems.some(
-        (storageItem) => storageItem.id === item.id
-      );
+  markItemsInStorage(searchQuery: any): EditableGroceryItem[] {
+    const itemsNotInStorage = this.defaultItems
+      .filter(it => !this.storedItems.some(storedItem => storedItem.id === it.id))
+      .map(it => ({ ...it, dateLastInteraction: null, isInStorage: false }));
 
-      return { ...item, isInStorage: existsInStorage }
-    });
+    const mergedList: Array<EditableGroceryItem> =
+      [
+        ...itemsNotInStorage,
+        ...this.storedItems
+      ].sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
 
     const searchValue = searchQuery?.value?.trim() || "";
+
     if (searchValue !== "") {
-      return markedItems.filter((item) =>
-        item.nameEnglish.toLowerCase().includes(searchValue.toLowerCase())
-      );
+      return mergedList.filter(this.matchesSearchQuery(searchValue));
     }
-    return markedItems;
+
+    return mergedList;
+  }
+
+  private matchesSearchQuery(searchValue: any): (value: EditableGroceryItem, index: number, array: EditableGroceryItem[]) => unknown {
+    return (item) => item.nameEnglish.toLowerCase().includes(searchValue.toLowerCase());
   }
 
   onAddItem(item: GroceryItem) {
-    this.itemService.addGroceryItem(item);
+    this.itemService.addGroceryItemToStorage(item);
     this.refreshList();
   }
 
@@ -70,7 +76,7 @@ export class GroceryListEditableComponent implements OnInit {
   onClearList() {
     Dialogs.confirm("Are you sure you want to clear the grocery list?").then((result) => {
       if (result) {
-        this.itemService.saveGroceryItemsToStorage([]);
+        this.itemService.clearGroceryItemsStorage();
         this.refreshList();
       }
     })
@@ -78,6 +84,6 @@ export class GroceryListEditableComponent implements OnInit {
 
   onSearchInputChange(searchQuery: string) {
     this.searchQuery = searchQuery;
-    this.displayList = this.markMatchingItems(this.searchQuery);
+    this.displayList = this.markItemsInStorage(this.searchQuery);
   }
 }

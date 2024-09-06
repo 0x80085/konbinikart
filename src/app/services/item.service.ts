@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { GroceryItem } from '../models/grocery-item.model'
+import { EditableGroceryItem, GroceryItem } from '../models/grocery-item.model'
 import { DATA } from './data'
 
 import { ApplicationSettings } from "@nativescript/core";
@@ -9,34 +9,28 @@ import { ApplicationSettings } from "@nativescript/core";
   providedIn: 'root',
 })
 export class ItemService {
-  
+
   private readonly defaultItems = DATA;
   private readonly storageKey = "groceryItems";
 
-  getAllDefaultItems(): Array<GroceryItem> {
-    return this.defaultItems
+  getAllDefaultItems(): Array<EditableGroceryItem> {
+    return this.defaultItems.map(it => ({ ...it, dateLastInteraction: null, isInStorage: false }))
   }
 
   getItemFromDefaultList(id: number): GroceryItem {
     return this.defaultItems.filter((item) => item.id === id)[0]
   }
-  
-  getGroceryItemsFromStorage(): GroceryItem[] {
-    const storedItems = JSON.parse(ApplicationSettings.getString(this.storageKey, "[]"));
+
+  getGroceryItemsFromStorage(): EditableGroceryItem[] {
+    const storedItems = JSON.parse(ApplicationSettings.getString(this.storageKey, null))
+      .map(it => ({...it, dateLastInteraction: new Date(it.dateLastInteraction)}));
     return storedItems || [];
   }
 
-  saveGroceryItemsToStorage(items: GroceryItem[]): void {
-    ApplicationSettings.setString(this.storageKey, JSON.stringify(items));
-  }
-
-  clearGroceryItemsStorage(): void {
-    ApplicationSettings.remove(this.storageKey);
-  }
-
-  addGroceryItem(item: GroceryItem): void {
+  addGroceryItemToStorage(item: GroceryItem): void {
+    var addedItem: EditableGroceryItem = { ...item, dateLastInteraction: new Date(), isInStorage: true }
     const items = this.getGroceryItemsFromStorage();
-    items.push(item);
+    items.push(addedItem);
     this.saveGroceryItemsToStorage(items);
   }
 
@@ -45,7 +39,11 @@ export class ItemService {
     this.saveGroceryItemsToStorage(items);
   }
 
-  updateGroceryItem(updatedItem: GroceryItem): void {
+  clearGroceryItemsStorage(): void {
+    ApplicationSettings.remove(this.storageKey);
+  }
+
+  private updateGroceryItem(updatedItem: EditableGroceryItem): void {
     const items = this.getGroceryItemsFromStorage().map(item => {
       if (item.id === updatedItem.id) {
         return updatedItem;
@@ -53,5 +51,9 @@ export class ItemService {
       return item;
     });
     this.saveGroceryItemsToStorage(items);
+  }
+
+  private saveGroceryItemsToStorage(items: EditableGroceryItem[]): void {
+    ApplicationSettings.setString(this.storageKey, JSON.stringify(items));
   }
 }

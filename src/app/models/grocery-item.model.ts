@@ -9,4 +9,5 @@ export interface GroceryItem {
 
 export interface EditableGroceryItem extends GroceryItem {
   isInStorage: boolean;
+  dateLastInteraction: Date;
 }
