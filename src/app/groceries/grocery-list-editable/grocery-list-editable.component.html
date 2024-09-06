@@ -6,7 +6,7 @@
         #searchField
         hint="Search"
         [(ngModel)]="searchQuery"
-        (textChange)="onSearchInputChange($event)"
+        (textChange)="onSearchInputChange()"
       ></TextField>
       <Button class="clearSearch" text="X" (tap)="onClearSearch()"></Button>
     </StackLayout>

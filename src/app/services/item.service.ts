@@ -33,7 +33,7 @@ export class ItemService {
     const mergedList: Array<EditableGroceryItem> = [
       ...defaultItemsNotInStorage,
       ...storedItems
-    ].sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
+    ];
     return mergedList;
   }
 

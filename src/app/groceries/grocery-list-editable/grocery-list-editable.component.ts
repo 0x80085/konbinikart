@@ -32,16 +32,18 @@ export class GroceryListEditableComponent implements OnInit {
     this.displayList = this.markItemsInStorage(this.searchQuery);
   }
 
-  markItemsInStorage(searchQuery: any): EditableGroceryItem[] {
-    const mergedList: Array<EditableGroceryItem> = this.itemService.getAllGroceryItems();
+  markItemsInStorage(searchQuery: string): EditableGroceryItem[] {
+    const allGroceryItems: Array<EditableGroceryItem> =
+      this.itemService.getAllGroceryItems()
+        .sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
 
-    const searchValue = searchQuery?.value?.trim() || "";
+    const searchValue = searchQuery?.trim() || "";
 
     if (searchValue !== "") {
-      return mergedList.filter(this.matchesSearchQuery(searchValue));
+      return allGroceryItems.filter(this.matchesSearchQuery(searchValue));
     }
 
-    return mergedList;
+    return allGroceryItems;
   }
 
   private matchesSearchQuery(searchValue: any): (value: EditableGroceryItem, index: number, array: EditableGroceryItem[]) => unknown {
@@ -74,8 +76,10 @@ export class GroceryListEditableComponent implements OnInit {
     })
   }
 
-  onSearchInputChange(searchQuery: string) {
-    this.searchQuery = searchQuery;
+  onSearchInputChange() {
+    console.log(this.searchQuery);
+    
+    this.searchQuery = this.searchQuery;
     this.displayList = this.markItemsInStorage(this.searchQuery);
   }
 }
