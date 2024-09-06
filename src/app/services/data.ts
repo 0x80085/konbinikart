@@ -75,7 +75,7 @@ export const DATA = [
     id: 10,
     emoji: "🍒",
     nameEnglish: "cherries",
-    nameKatakana: "サクランボ ",
+    nameKatakana: "サクランボ",
     nameHiragana: "さくらんぼ",
     nameRomaji: "Sakuranbo"
   },
@@ -179,8 +179,8 @@ export const DATA = [
     id: 23,
     emoji: "🥬",
     nameEnglish: "bok choy",
-    nameKatakana: "チン ゲン サイ ",
-    nameHiragana: "ちん げん さい",
+    nameKatakana: "チンゲンサイ",
+    nameHiragana: "ちんげんさい",
     nameRomaji: "chin gensai"
   },
   {
@@ -248,22 +248,6 @@ export const DATA = [
     nameRomaji: "tamare"
   },
   {
-    id: 32,
-    emoji: "🥙",
-    nameEnglish: "stuffed flatbread",
-    nameKatakana: "包みパン",
-    nameHiragana: "つつみぱん",
-    nameRomaji: "tsutsumipan"
-  },
-  {
-    id: 33,
-    emoji: "🧆",
-    nameEnglish: "falafel",
-    nameKatakana: "ひよこ豆のコロッケ",
-    nameHiragana: "ひよこまめのころっけ",
-    nameRomaji: "hiyokomame no korokke"
-  },
-  {
     id: 34,
     emoji: "🥚",
     nameEnglish: "egg",
@@ -278,14 +262,6 @@ export const DATA = [
     nameKatakana: "ホットケーキ",
     nameHiragana: "ほっとけーき",
     nameRomaji: "hottokeeki"
-  },
-  {
-    id: 36,
-    emoji: "🧇",
-    nameEnglish: "waffle",
-    nameKatakana: "焼き菓子",
-    nameHiragana: "やきがし",
-    nameRomaji: "yakigashi"
   },
   {
     id: 37,
@@ -416,14 +392,6 @@ export const DATA = [
     nameRomaji: "foochunkukkii"
   },
   {
-    id: 53,
-    emoji: "🥡",
-    nameEnglish: "takeout box",
-    nameKatakana: "持ち帰り容器",
-    nameHiragana: "もちかえりようき",
-    nameRomaji: "mochikaeri youki"
-  },
-  {
     id: 54,
     emoji: "🦀",
     nameEnglish: "crab",
@@ -435,7 +403,7 @@ export const DATA = [
     id: 55,
     emoji: "🦞",
     nameEnglish: "lobster",
-    nameKatakana: "伊勢エビ",
+    nameKatakana: "イセエビ",
     nameHiragana: "いせえび",
     nameRomaji: "iseebi"
   },
@@ -459,41 +427,41 @@ export const DATA = [
     id: 58,
     emoji: "🥛",
     nameEnglish: "milk",
-    nameKatakana: "牛乳",
-    nameHiragana: "ぎゅうにゅう",
-    nameRomaji: "gyuunyuu"
+    nameKatakana: "ミルク",
+    nameHiragana: "みるく",
+    nameRomaji: "miruku"
   },
   {
     id: 59,
     emoji: "🧀",
     nameEnglish: "cheese",
-    nameKatakana: "乳酪",
-    nameHiragana: "にゅうらく",
-    nameRomaji: "nyuuraku"
+    nameKatakana: "チーズ",
+    nameHiragana: "ちーず",
+    nameRomaji: "chiizu"
   },
   {
     id: 60,
     emoji: "🥩",
     nameEnglish: "beef",
-    nameKatakana: "牛肉",
-    nameHiragana: "ぎゅうにく",
-    nameRomaji: "gyuuniku"
+    nameKatakana: "ビーフ",
+    nameHiragana: "びーふ",
+    nameRomaji: "biifu"
   },
   {
     id: 61,
     emoji: "🐟",
     nameEnglish: "salmon",
-    nameKatakana: "鮭",
-    nameHiragana: "さけ",
-    nameRomaji: "sake"
+    nameKatakana: "サーモン",
+    nameHiragana: "さーもん",
+    nameRomaji: "saamon"
   },
   {
     id: 62,
-    emoji: "🐱🍽️",
+    emoji: "🐈",
     nameEnglish: "cat food",
-    nameKatakana: "猫の餌",
-    nameHiragana: "ねこのえさ",
-    nameRomaji: "neko no esa"
+    nameKatakana: "キャットフード",
+    nameHiragana: "きゃっとふーど",
+    nameRomaji: "kyatto fuudo"
   },
   {
     id: 63,
@@ -507,9 +475,9 @@ export const DATA = [
     id: 64,
     emoji: "🥤",
     nameEnglish: "soda",
-    nameKatakana: "炭酸飲料",
-    nameHiragana: "たんさんいんりょう",
-    nameRomaji: "tansan inryou"
+    nameKatakana: "ソーダ",
+    nameHiragana: "そーだ",
+    nameRomaji: "sooda"
   },
   {
     id: 65,
@@ -523,7 +491,7 @@ export const DATA = [
     id: 66,
     emoji: "🐟",
     nameEnglish: "mackerel",
-    nameKatakana: "鯖",
+    nameKatakana: "サバ",
     nameHiragana: "さば",
     nameRomaji: "saba"
   },
@@ -531,9 +499,9 @@ export const DATA = [
     id: 67,
     emoji: "🐟",
     nameEnglish: "tuna",
-    nameKatakana: "鮪",
-    nameHiragana: "まぐろ",
-    nameRomaji: "maguro"
+    nameKatakana: "ツナ",
+    nameHiragana: "つな",
+    nameRomaji: "tsuna"
   },
   {
     id: 68,
@@ -547,15 +515,15 @@ export const DATA = [
     id: 69,
     emoji: "🌱",
     nameEnglish: "ginger root",
-    nameKatakana: "生姜",
-    nameHiragana: "しょうが",
-    nameRomaji: "shouga"
+    nameKatakana: "ジンジャー",
+    nameHiragana: "じんじゃー",
+    nameRomaji: "jinjaa"
   },
   {
     id: 70,
     emoji: "🚬",
     nameEnglish: "cigarettes",
-    nameKatakana: "煙草",
+    nameKatakana: "タバコ",
     nameHiragana: "たばこ",
     nameRomaji: "tabako"
   },
@@ -563,9 +531,9 @@ export const DATA = [
     id: 71,
     emoji: "🍵",
     nameEnglish: "tea",
-    nameKatakana: "お茶",
-    nameHiragana: "おちゃ",
-    nameRomaji: "ocha"
+    nameKatakana: "ティー",
+    nameHiragana: "てぃー",
+    nameRomaji: "tii"
   },
   {
     id: 72,
