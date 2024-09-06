@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
 
 import { EditableGroceryItem, GroceryItem } from "../../models/grocery-item.model";
 import { ItemService } from "../../services/item.service";
-import { Dialogs, TextField } from "@nativescript/core";
+import { Dialogs, Page, TextField } from "@nativescript/core";
 
 @Component({
   selector: "ns-grocery-list-editable",
@@ -16,7 +16,7 @@ export class GroceryListEditableComponent implements OnInit {
   searchQuery: string = "";
 
   constructor(
-    private itemService: ItemService,
+    private itemService: ItemService, private page: Page,
   ) { }
 
   @ViewChild("searchField", { static: false }) searchFieldRef: ElementRef<TextField>;
@@ -25,29 +25,10 @@ export class GroceryListEditableComponent implements OnInit {
     this.refreshList();
   }
 
-  private refreshList() {
-    this.defaultItems = this.itemService.getAllDefaultItems();
-    this.storedItems = this.itemService.getGroceryItemsFromStorage();
-
-    this.displayList = this.markItemsInStorage(this.searchQuery);
-  }
-
-  markItemsInStorage(searchQuery: string): EditableGroceryItem[] {
-    const allGroceryItems: Array<EditableGroceryItem> =
-      this.itemService.getAllGroceryItems()
-        .sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
-
-    const searchValue = searchQuery?.trim() || "";
-
-    if (searchValue !== "") {
-      return allGroceryItems.filter(this.matchesSearchQuery(searchValue));
-    }
-
-    return allGroceryItems;
-  }
-
-  private matchesSearchQuery(searchValue: any): (value: EditableGroceryItem, index: number, array: EditableGroceryItem[]) => unknown {
-    return (item) => item.nameEnglish.toLowerCase().includes(searchValue.toLowerCase());
+  ngAfterViewInit(): void {
+    this.page.on(Page.navigatedToEvent, (data) => {
+      this.refreshList();
+    });
   }
 
   onAddItem(item: GroceryItem) {
@@ -77,9 +58,33 @@ export class GroceryListEditableComponent implements OnInit {
   }
 
   onSearchInputChange() {
-    console.log(this.searchQuery);
-    
     this.searchQuery = this.searchQuery;
     this.displayList = this.markItemsInStorage(this.searchQuery);
   }
+
+  private matchesSearchQuery(searchValue: any): (value: EditableGroceryItem, index: number, array: EditableGroceryItem[]) => unknown {
+    return (item) => item.nameEnglish.toLowerCase().includes(searchValue.toLowerCase());
+  }
+
+  private refreshList() {
+    this.defaultItems = this.itemService.getAllDefaultItems();
+    this.storedItems = this.itemService.getGroceryItemsFromStorage();
+
+    this.displayList = this.markItemsInStorage(this.searchQuery);
+  }
+
+  private markItemsInStorage(searchQuery: string): EditableGroceryItem[] {
+    const allGroceryItems: Array<EditableGroceryItem> =
+      this.itemService.getAllGroceryItems()
+        .sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
+
+    const searchValue = searchQuery?.trim() || "";
+
+    if (searchValue !== "") {
+      return allGroceryItems.filter(this.matchesSearchQuery(searchValue));
+    }
+
+    return allGroceryItems;
+  }
+
 }

@@ -68,7 +68,6 @@ export class CreateGroceryItemComponent {
     const id = this.itemService.getAllGroceryItems().length - 1;
 
     const newItem = { ...this.groceryItem, id: id };
-    console.log("Adding item...", newItem);
     this.itemService.addGroceryItemToStorage(newItem);
 
     action({
