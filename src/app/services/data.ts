@@ -1,6 +1,4 @@
-import { GroceryItem } from "../models/grocery-item.model";
-
-export const DATA: Array<GroceryItem> = [
+[
   {
     id: 1,
     emoji: "🍎",
@@ -440,5 +438,141 @@ export const DATA: Array<GroceryItem> = [
     nameKatakana: "伊勢エビ",
     nameHiragana: "いせえび",
     nameRomaji: "iseebi"
+  },
+  {
+    id: 56,
+    emoji: "🍞",
+    nameEnglish: "bread",
+    nameKatakana: "パン",
+    nameHiragana: "ぱん",
+    nameRomaji: "pan"
+  },
+  {
+    id: 57,
+    emoji: "🧈",
+    nameEnglish: "butter",
+    nameKatakana: "バター",
+    nameHiragana: "ばたー",
+    nameRomaji: "bataa"
+  },
+  {
+    id: 58,
+    emoji: "🥛",
+    nameEnglish: "milk",
+    nameKatakana: "牛乳",
+    nameHiragana: "ぎゅうにゅう",
+    nameRomaji: "gyuunyuu"
+  },
+  {
+    id: 59,
+    emoji: "🧀",
+    nameEnglish: "cheese",
+    nameKatakana: "乳酪",
+    nameHiragana: "にゅうらく",
+    nameRomaji: "nyuuraku"
+  },
+  {
+    id: 60,
+    emoji: "🥩",
+    nameEnglish: "beef",
+    nameKatakana: "牛肉",
+    nameHiragana: "ぎゅうにく",
+    nameRomaji: "gyuuniku"
+  },
+  {
+    id: 61,
+    emoji: "🐟",
+    nameEnglish: "salmon",
+    nameKatakana: "鮭",
+    nameHiragana: "さけ",
+    nameRomaji: "sake"
+  },
+  {
+    id: 62,
+    emoji: "🐱🍽️",
+    nameEnglish: "cat food",
+    nameKatakana: "猫の餌",
+    nameHiragana: "ねこのえさ",
+    nameRomaji: "neko no esa"
+  },
+  {
+    id: 63,
+    emoji: "🧻",
+    nameEnglish: "toilet paper",
+    nameKatakana: "トイレットペーパー",
+    nameHiragana: "といれっとぺーぱー",
+    nameRomaji: "toirettopeepaa"
+  },
+  {
+    id: 64,
+    emoji: "🥤",
+    nameEnglish: "soda",
+    nameKatakana: "炭酸飲料",
+    nameHiragana: "たんさんいんりょう",
+    nameRomaji: "tansan inryou"
+  },
+  {
+    id: 65,
+    emoji: "🍺",
+    nameEnglish: "beer",
+    nameKatakana: "ビール",
+    nameHiragana: "びーる",
+    nameRomaji: "biiru"
+  },
+  {
+    id: 66,
+    emoji: "🐟",
+    nameEnglish: "mackerel",
+    nameKatakana: "鯖",
+    nameHiragana: "さば",
+    nameRomaji: "saba"
+  },
+  {
+    id: 67,
+    emoji: "🐟",
+    nameEnglish: "tuna",
+    nameKatakana: "鮪",
+    nameHiragana: "まぐろ",
+    nameRomaji: "maguro"
+  },
+  {
+    id: 68,
+    emoji: "🥜",
+    nameEnglish: "cashew nuts",
+    nameKatakana: "カシューナッツ",
+    nameHiragana: "かしゅーなっつ",
+    nameRomaji: "kashuunattsu"
+  },
+  {
+    id: 69,
+    emoji: "🌱",
+    nameEnglish: "ginger root",
+    nameKatakana: "生姜",
+    nameHiragana: "しょうが",
+    nameRomaji: "shouga"
+  },
+  {
+    id: 70,
+    emoji: "🚬",
+    nameEnglish: "cigarettes",
+    nameKatakana: "煙草",
+    nameHiragana: "たばこ",
+    nameRomaji: "tabako"
+  },
+  {
+    id: 71,
+    emoji: "🍵",
+    nameEnglish: "tea",
+    nameKatakana: "お茶",
+    nameHiragana: "おちゃ",
+    nameRomaji: "ocha"
+  },
+  {
+    id: 72,
+    emoji: "🍌",
+    nameEnglish: "banana",
+    nameKatakana: "バナナ",
+    nameHiragana: "ばなな",
+    nameRomaji: "banana"
   }
 ]
