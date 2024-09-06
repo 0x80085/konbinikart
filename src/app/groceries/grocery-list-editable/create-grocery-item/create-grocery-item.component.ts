@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterExtensions } from '@nativescript/angular';
 import { action, alert } from '@nativescript/core';
 import { EditableGroceryItem } from '~/app/models/grocery-item.model';
 import { ItemService } from '~/app/services/item.service';
@@ -24,7 +25,8 @@ export class CreateGroceryItemComponent {
   katakanaRegex = /^[\u30A0-\u30FFーｦ-ﾟ]+$/;
 
   constructor(
-    private itemService: ItemService
+    private itemService: ItemService,
+    private routerExtensions: RouterExtensions
   ) { }
 
   resetForm() {
@@ -70,11 +72,21 @@ export class CreateGroceryItemComponent {
     const newItem = { ...this.groceryItem, id: id };
     this.itemService.addGroceryItemToStorage(newItem);
 
+    const actionsMap = {
+      "Back": () => this.routerExtensions.backToPreviousPage(),
+      "Create new": () => this.resetForm(),
+    };
+
     action({
       message: "✅ Saved to grocery list!",
       cancelable: true,
       title: "✅ Saved",
-      actions: []
-    }).then(_ => this.resetForm());
+      actions: Object.keys(actionsMap)
+    }).then((result: string) => {
+      const actionToPerform = actionsMap[result];
+      if (actionToPerform) {
+        actionToPerform();
+      }
+    });
   }
 }

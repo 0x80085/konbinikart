@@ -17,7 +17,8 @@
 }
 
 .item-btn.delete {
-    color: red;
+    color: var(--color-error);
+    opacity: 0.8;
     background-color: transparent;
     android-elevation: 0;
     font-weight: 600;
