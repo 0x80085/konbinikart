@@ -10,7 +10,7 @@ import { ItemService } from '~/app/services/item.service';
 })
 export class CreateGroceryItemComponent {
   groceryItem: EditableGroceryItem = {
-    id: 0, // You can set this dynamically if needed
+    id: 0,
     emoji: '',
     nameEnglish: '',
     nameKatakana: '',
@@ -29,7 +29,7 @@ export class CreateGroceryItemComponent {
 
   resetForm() {
     this.groceryItem = {
-      id: 0, // You can set this dynamically if needed
+      id: 0,
       emoji: '',
       nameEnglish: '',
       nameKatakana: '',
