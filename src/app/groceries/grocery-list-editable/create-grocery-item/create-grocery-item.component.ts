@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { alert } from '@nativescript/core';
+import { action, alert } from '@nativescript/core';
 import { EditableGroceryItem } from '~/app/models/grocery-item.model';
 import { ItemService } from '~/app/services/item.service';
 
@@ -27,11 +27,55 @@ export class CreateGroceryItemComponent {
     private itemService: ItemService
   ) { }
 
+  resetForm() {
+    this.groceryItem = {
+      id: 0, // You can set this dynamically if needed
+      emoji: '',
+      nameEnglish: '',
+      nameKatakana: '',
+      nameHiragana: '',
+      nameRomaji: '',
+      dateLastInteraction: new Date(),
+      isInStorage: true
+    };
+  }
+
   addItem() {
+    if (
+      this.groceryItem.nameEnglish.trim() === "" ||
+      this.groceryItem.nameHiragana.trim() === "" ||
+      this.groceryItem.nameKatakana.trim() === "" ||
+      this.groceryItem.nameRomaji.trim() === ""
+    ) {
+      alert("⚠️ Some fields are missing input.");
+      return;
+    }
+
+    if (false) {
+      // Todo
+      const isHiraganaValid = this.hiraganaRegex.test(this.groceryItem.nameHiragana);
+      if (!isHiraganaValid) {
+        alert("⚠️ Please enter valid hiragana. This is not hiragana.");
+        return;
+      }
+      const isKatakanaValid = this.katakanaRegex.test(this.groceryItem.nameKatakana);
+      if (!isKatakanaValid) {
+        alert("⚠️ Please enter valid katakana. This is not katakana.");
+        return;
+      }
+    }
+
     const id = this.itemService.getAllGroceryItems().length - 1;
 
-    console.log("Adding item...", { ...this.groceryItem, id: id });
-    this.itemService.addGroceryItemToStorage({ ...this.groceryItem, id: id });
-    alert("Saved to grocery list!");
+    const newItem = { ...this.groceryItem, id: id };
+    console.log("Adding item...", newItem);
+    this.itemService.addGroceryItemToStorage(newItem);
+
+    action({
+      message: "✅ Saved to grocery list!",
+      cancelable: true,
+      title: "✅ Saved",
+      actions: []
+    }).then(_ => this.resetForm());
   }
 }

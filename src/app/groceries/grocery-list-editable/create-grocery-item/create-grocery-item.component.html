@@ -12,6 +12,8 @@
   <TextField
     [(ngModel)]="groceryItem.nameEnglish"
     hint="Name (English)"
+    autocorrect="false"
+    autocapitalizationType="none"
   ></TextField>
 
   <!-- Name in Katakana -->
@@ -19,6 +21,7 @@
     [(ngModel)]="groceryItem.nameKatakana"
     hint="Name (Katakana)"
     autocorrect="false"
+    autocapitalizationType="none"
   ></TextField>
 
   <!-- Name in Hiragana -->
@@ -26,6 +29,7 @@
     [(ngModel)]="groceryItem.nameHiragana"
     hint="Name (Hiragana)"
     autocorrect="false"
+    autocapitalizationType="none"
   ></TextField>
 
   <!-- Name in Romaji -->
@@ -33,6 +37,7 @@
     [(ngModel)]="groceryItem.nameRomaji"
     hint="Name (Romaji)"
     autocorrect="false"
+    autocapitalizationType="none"
   ></TextField>
 
   <!-- Add Item Button -->
