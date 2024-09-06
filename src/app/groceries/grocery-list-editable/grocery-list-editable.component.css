@@ -14,8 +14,7 @@
 
 .top-container{
   height: 100;
-  padding: 0 10;
-  margin-top: 10;
+  padding: 10;
 }
 .top-btn {
   background-color: var(--light-primary);

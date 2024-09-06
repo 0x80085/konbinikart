@@ -20,6 +20,12 @@
 .hint-btn {
     border-radius: 100;
     opacity: 0.8;
+    border-width: 1;
+    border-color: white;
+    border-style: solid;
+}
+
+.hint-btn.not-clickable{
     background-color: transparent;
-    
+    border-color: transparent;
 }

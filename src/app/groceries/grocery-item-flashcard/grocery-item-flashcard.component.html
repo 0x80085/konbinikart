@@ -46,10 +46,6 @@
         justifyContent="center"
         alignItems="center"
       >
-        <Label
-          class="h2"
-          [text]="showEnglish ? selectedItem.nameEnglish : '?'"
-        ></Label>
       </FlexboxLayout>
       <FlexboxLayout
         class="m-15"
@@ -82,7 +78,7 @@
   <StackLayout class="controls" row="2" col="0" *ngIf="items.length > 0">
     <FlexboxLayout
       flexDirection="row"
-      justifyContent="flex-start"
+      justifyContent="space-between"
       alignItems="center"
     >
       <Button
@@ -99,14 +95,6 @@
         [class.-primary]="showHint"
         [class.striked-through]="showHint"
         *ngIf="showRomaji"
-      ></Button>
-      <Button
-        text="Answer"
-        (tap)="toggleEnglish()"
-        class="hint-btn"
-        [class.-primary]="showEnglish"
-        [class.striked-through]="showEnglish"
-        *ngIf="showRomaji && showHint"
       ></Button>
     </FlexboxLayout>
 
