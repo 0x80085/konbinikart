@@ -18,9 +18,10 @@ export class ItemService {
   }
 
   getGroceryItemsFromStorage(): EditableGroceryItem[] {
-    const storedItems = JSON.parse(ApplicationSettings.getString(this.storageKey, null))
+    const storageAsString = ApplicationSettings.getString(this.storageKey, "[]")
+    const storedItems = JSON.parse(storageAsString)
       .map(it => ({ ...it, dateLastInteraction: new Date(it.dateLastInteraction) }));
-    return storedItems || [];
+    return storedItems;
   }
 
   getAllGroceryItems() {
@@ -55,6 +56,7 @@ export class ItemService {
 
   clearGroceryItemsStorage(): void {
     ApplicationSettings.remove(this.storageKey);
+    ApplicationSettings.setString(this.storageKey, JSON.stringify([]));
   }
 
   private updateGroceryItem(updatedItem: EditableGroceryItem): void {
