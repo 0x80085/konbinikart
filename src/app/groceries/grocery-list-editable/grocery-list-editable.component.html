@@ -12,14 +12,30 @@
     </StackLayout>
   </GridLayout>
 </ns-action-bar>
+
 <FlexboxLayout flexDirection="column" class="content">
-  <Button
-    flexShrink="0"
-    flexGrow="0"
-    text="CLEAR LIST"
-    (tap)="onClearList()"
-    class="clear-btn"
-  ></Button>
+  <FlexboxLayout
+    flexDirection="row"
+    justifyContent="space-between"
+    alignItems="center"
+    class="top-container"
+  >
+    <!-- CLEAR LIST Button -->
+    <Button
+      text="CLEAR LIST"
+      (tap)="onClearList()"
+      class="top-btn"
+      flexGrow="1"
+    ></Button>
+
+    <!-- ADD ITEM Button -->
+    <Button
+      text="ADD ITEM"
+      [nsRouterLink]="['/create-grocery-item']"
+      class="top-btn"
+      flexGrow="1"
+    ></Button>
+  </FlexboxLayout>
   <ListView [items]="displayList" flexGrow="1" class="list-view">
     <ng-template let-item="item">
       <ns-editable-grocery-item

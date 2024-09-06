@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component'
 import { AboutComponent } from './about/about.component'
 import { GroceryItemFlashcardComponent } from './groceries/grocery-item-flashcard/grocery-item-flashcard.component'
 import { StudyCompleteComponent } from './groceries/grocery-item-flashcard/study-complete/study-complete.component'
+import { CreateGroceryItemComponent } from './groceries/grocery-list-editable/create-grocery-item/create-grocery-item.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
 
   { path: 'groceries', component: GroceryListComponent },
   { path: 'edit-groceries', component: GroceryListEditableComponent },
+  { path: 'create-grocery-item', component: CreateGroceryItemComponent },
   { path: 'groceries-translated', component: GroceryListTranslatedComponent },
 
   { path: 'study', component: GroceryItemFlashcardComponent },

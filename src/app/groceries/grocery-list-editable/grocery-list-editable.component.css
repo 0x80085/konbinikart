@@ -12,7 +12,12 @@
   border-radius: 15;
 }
 
-.clear-btn{
+.top-container{
+  height: 100;
+  padding: 0 10;
+  margin-top: 10;
+}
+.top-btn {
   background-color: var(--light-primary);
   color: var(--dark-text-color);
   height: 50;

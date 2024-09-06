@@ -1,0 +1,5 @@
+.save-btn {
+    background-color: var(--light-primary);
+    color: var(--dark-text-color);
+    height: 50;
+}

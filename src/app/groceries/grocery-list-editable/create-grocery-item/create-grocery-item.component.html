@@ -1,0 +1,40 @@
+<ns-action-bar title="Create grocery item"></ns-action-bar>
+<StackLayout padding="20" spacing="20">
+  <!-- Emoji -->
+  <TextField
+    [(ngModel)]="groceryItem.emoji"
+    hint="Emoji"
+    autocorrect="false"
+    autocapitalizationType="none"
+  ></TextField>
+
+  <!-- Name in English -->
+  <TextField
+    [(ngModel)]="groceryItem.nameEnglish"
+    hint="Name (English)"
+  ></TextField>
+
+  <!-- Name in Katakana -->
+  <TextField
+    [(ngModel)]="groceryItem.nameKatakana"
+    hint="Name (Katakana)"
+    autocorrect="false"
+  ></TextField>
+
+  <!-- Name in Hiragana -->
+  <TextField
+    [(ngModel)]="groceryItem.nameHiragana"
+    hint="Name (Hiragana)"
+    autocorrect="false"
+  ></TextField>
+
+  <!-- Name in Romaji -->
+  <TextField
+    [(ngModel)]="groceryItem.nameRomaji"
+    hint="Name (Romaji)"
+    autocorrect="false"
+  ></TextField>
+
+  <!-- Add Item Button -->
+  <Button text="Save Item" (tap)="addItem()" class="save-btn"></Button>
+</StackLayout>

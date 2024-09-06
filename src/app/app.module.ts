@@ -1,5 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "@nativescript/angular";
+import { NativeScriptFormsModule, NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -8,6 +8,7 @@ import { HomeComponent } from "./home/home.component";
 import { ActionBarComponent } from "./action-bar/action-bar.component";
 import { AboutComponent } from "./about/about.component";
 import { GroceryListEditableComponent } from "./groceries/grocery-list-editable/grocery-list-editable.component";
+import { CreateGroceryItemComponent } from "./groceries/grocery-list-editable/create-grocery-item/create-grocery-item.component";
 import { EditableGroceryItemComponent } from "./groceries/grocery-list-editable/editable-grocery-item/editable-grocery-item.component";
 import { GroceryListTranslatedComponent } from "./groceries/grocery-list-translated/grocery-list-translated.component";
 import { GroceryItemTranslatedComponent } from "./groceries/grocery-item-translated/grocery-item-translated.component";
@@ -20,7 +21,7 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
 
 @NgModule({
   bootstrap: [AppComponent],
-  imports: [NativeScriptModule, AppRoutingModule],
+  imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule ],
   declarations: [
     AppComponent,
     ActionBarComponent,
@@ -29,6 +30,7 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
     GroceryListComponent,
     GroceryListEditableComponent,
     EditableGroceryItemComponent,
+    CreateGroceryItemComponent,
     GroceryItemDetailComponent,
     GroceryItemFlashcardComponent,
     FlashcardAnswerModalComponent,
