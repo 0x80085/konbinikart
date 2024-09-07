@@ -91,6 +91,10 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
   }
 
   openAnswerModal() {
+    if (this.earnablePointsForCurrentCard === 10) {
+      this.deductPoints(10)
+    }
+
     const options: ModalDialogOptions = {
       viewContainerRef: this.vcRef,
       context: { ...this.selectedItem, score: `${this.earnablePointsForCurrentCard}/${Points.OneCardMaxScore}` },
