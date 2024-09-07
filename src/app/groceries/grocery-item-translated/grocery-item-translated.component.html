@@ -6,7 +6,7 @@
     col="0"
     class="no-elevation hint-btn"
     [class.not-clickable]="enableViewVisualHint || item.checked"
-    [isEnabled]="!enableViewVisualHint"
+    [isEnabled]="item?.hintLevel < 3"
     [text]="getHintButtonText()"
     [fontSize]="enableViewVisualHint || item.checked ? 32 : 14"
     (tap)="onTapHint()"
