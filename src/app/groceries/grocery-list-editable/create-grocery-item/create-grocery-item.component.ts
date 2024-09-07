@@ -90,7 +90,6 @@ export class CreateGroceryItemComponent {
       return;
     }
 
-
     this.itemService.addGroceryItemToStorage(newItem);
 
     const actionsMap = {
