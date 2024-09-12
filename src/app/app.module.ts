@@ -18,10 +18,26 @@ import { FlashcardAnswerModalComponent } from "./groceries/grocery-item-flashcar
 import { StudyCompleteComponent } from "./groceries/grocery-item-flashcard/study-complete/study-complete.component";
 import { GroceryItemDetailEditableComponent } from "./groceries/grocery-item-detail-editable/grocery-item-detail-editable.component";
 import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.component";
+import { FontIconModule, FontIconService } from 'nativescript-fonticon/angular';
+import { knownFolders } from "@nativescript/core";
+import { FontIconFactory } from "nativescript-fonticon";
+
+// FontIconFactory.debug = true;
+
+FontIconService.debug = true;
+
+// console.log(knownFolders.currentApp());
+// console.log(knownFolders.currentApp().getFile("./assets/ionicons.css").readTextSync());
 
 @NgModule({
   bootstrap: [AppComponent],
-  imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule ],
+  imports: [NativeScriptModule,
+    AppRoutingModule,
+    NativeScriptFormsModule,
+    FontIconModule.forRoot({
+      'ion':  knownFolders.currentApp().getFile("./assets/ionicons.css").readTextSync()
+    })
+  ],
   declarations: [
     AppComponent,
     ActionBarComponent,
@@ -43,4 +59,4 @@ import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.comp
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })
-export class AppModule {}
+export class AppModule { }

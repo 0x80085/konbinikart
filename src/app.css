@@ -1,8 +1,13 @@
 @import '@nativescript/theme/css/core.css';
 @import '@nativescript/theme/css/default.css';
 
+.ion {
+    font-family: ionicons;
+  }
+
 *, Label {
-    font-family: "Inter", "Inter-Regular"; font-weight: 400;
+    font-family: "Inter", "Inter-Regular" ; 
+    font-weight: 400;
 }
 
 

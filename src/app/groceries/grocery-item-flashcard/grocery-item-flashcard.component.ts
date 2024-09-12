@@ -43,6 +43,21 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     this.page.on(Page.navigatedToEvent, (data) => {
       this.resetSession();
     });
+    
+    // this.page.on(Page.navigatingFromEvent, (data) => {
+    //   if (this.totalScore > 0) {
+    //     const confirmationDialog = confirm("You have unsaved progress. Do you really want to leave?");
+    //     if (confirmationDialog) {
+          
+    //     }
+    //     confirmationDialog.then((result) => {
+    //       if (!result) {
+    //         // Prevent navigation if the user clicks "No"
+    //         data.returnValue = false; // This will stop navigation
+    //       }
+    //     });
+    //   }
+    // });
   }
 
   resetSession() {

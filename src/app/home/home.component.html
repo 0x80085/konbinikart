@@ -1,14 +1,20 @@
 <StackLayout marginLeft="20" marginRight="20">
   <!-- Logo -->
-  <Label
+  <Label height="100" fontWeight="bold" fontSize="20">
+    <FormattedString>
+      <Span class="ion" [text]="'ion-basket-outline' | fonticon"> </Span>
+      <Span text="KonbiniKart"> </Span>
+    </FormattedString>
+  </Label>
+
+  <!-- <Label
     textWrap="true"
-    text="KonbiniKart 🛒"
+    class="ion"
+    [text]="'ion-basket-outline' | fonticon"
     height="100"
     fontWeight="bold"
     fontSize="20"
-  ></Label>
-  <!-- section 1 title -->
-
+  ></Label> -->
   <FlexboxLayout
     flexWrap="wrap"
     justifyContent="space-between"
