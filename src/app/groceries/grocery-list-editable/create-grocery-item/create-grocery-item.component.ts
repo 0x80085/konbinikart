@@ -61,8 +61,7 @@ export class CreateGroceryItemComponent {
       this.groceryItem.emoji.trim() === "" ||
       this.groceryItem.nameEnglish.trim() === "" ||
       this.groceryItem.nameHiragana.trim() === "" ||
-      this.groceryItem.nameKatakana.trim() === "" ||
-      this.groceryItem.nameRomaji.trim() === ""
+      this.groceryItem.nameKatakana.trim() === ""
     ) {
       alert("⚠️ Some fields are missing input.");
       return;
