@@ -1,14 +1,14 @@
 <GridLayout rows="auto" columns="84, 3*, *" paddingTop="14" paddingBottom="14" class="container" [class.checked]="item?.checked">
   <!-- Visual hint  -->
   <Button
-    androidElevation="0"
+    [androidElevation]="enableViewVisualHint || item.checked? 0 : 10"
     row="0"
     col="0"
-    class="no-elevation hint-btn"
+    class="hint-btn"
     [class.not-clickable]="enableViewVisualHint || item.checked"
     [isEnabled]="item?.hintLevel < 3"
     [text]="getHintButtonText()"
-    [fontSize]="enableViewVisualHint || item.checked ? 32 : 14"
+    [fontSize]="enableViewVisualHint || item.checked ? 28 : 12"
     (tap)="onTapHint()"
   ></Button>
 

@@ -19,13 +19,16 @@
 
 .hint-btn {
     border-radius: 100;
-    opacity: 0.8;
-    border-width: 1;
-    border-color: white;
-    border-style: solid;
+    color: var(--color-primary);
+    font-size: 12;
 }
 
-.hint-btn.not-clickable{
+.hint-btn.ns-dark {
+    android-elevation: 0;
+    border-color: white;
+}
+
+.hint-btn.not-clickable {
     background-color: transparent;
     border-color: transparent;
 }
