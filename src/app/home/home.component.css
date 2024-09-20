@@ -1,3 +1,11 @@
+.top-bar>.icon {
+    font-size: 25;
+}
+
+.top-bar>.text-logo {
+    font-size: 20;
+}
+
 .button-edit {
     border-width: 1;
     border-color: var(--color-grey);
@@ -7,28 +15,29 @@
 
 .button-list {
     color: black;
+    box-shadow: 0px -1px 125px 38px rgba(0, 0, 0, 0.1);
+}
+
+.button-list.ns-dark {
     border-width: 1;
+    background-color: transparent;
     border-color: var(--color-grey);
     border-style: solid;
-    background: linear-gradient(180deg, var(--color-white) 0%, var(--color-grey) 100%);
 }
 
 .button-study {
     color: black;
+    box-shadow: 0px -1px 125px 38px rgba(0, 0, 0, 0.1);
+}
+
+.button-study.ns-dark {
     border-width: 1;
+    background-color: transparent;
     border-color: var(--color-grey);
     border-style: solid;
-    background: linear-gradient(180deg, var(--color-white) 0%, var(--color-grey) 100%);
 }
 
 .button-text {
     color: black;
 }
 
-.top-bar>.icon {
-    font-size: 23;
-}
-
-.top-bar>.text-logo {
-    font-size: 20;
-}
