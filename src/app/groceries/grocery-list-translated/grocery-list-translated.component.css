@@ -1,31 +1,44 @@
 .toggle {
     border-width: 1;
+    border-color: var(--dark-secondary);
     border-radius: 150;
     height: 150px;
-    background-color: var(--dark-background-alt-5);
+    border-radius: 150;
 }
 
-.toggle {
+.toggle.ns-dark {
     border-width: 0;
-    android-elevation: 2;
+    background-color: var(--dark-background-alt-5);
 }
 
 .toggle button,
 .toggle button:focus,
 .toggle button:hover {
-    android-elevation: 0;
     width: 50%;
     height: 100%;
     margin: 0;
     padding: 0;
     border-radius: 150;
+    background-color: transparent;
+
+}
+
+.toggle button.ns-dark {
+
     background-color: var(--dark-background-alt-5);
 }
 
 .toggle button.active {
+    color: var(--dark-btn-color-inverse);
+    background-color: var(--color-white);
+    android-elevation: 10;
+}
+
+.toggle button.ns-dark.active {
     background-color: var(--dark-secondary);
     color: var(--dark-btn-color-inverse);
 }
+
 
 button {
     width: 50;
