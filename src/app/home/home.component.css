@@ -23,3 +23,11 @@
 .button-text {
     color: black;
 }
+
+.top-bar>.icon {
+    font-size: 23;
+}
+
+.top-bar>.text-logo {
+    font-size: 20;
+}

@@ -1,20 +1,11 @@
 <StackLayout marginLeft="20" marginRight="20">
-  <!-- Logo -->
-  <Label height="100" fontWeight="bold" fontSize="20">
-    <FormattedString>
-      <Span class="ion" [text]="'ion-basket-outline' | fonticon"> </Span>
-      <Span text="KonbiniKart"> </Span>
-    </FormattedString>
-  </Label>
+  <!-- Logo bar -->
+  <StackLayout class="top-bar" height="100" orientation="horizontal" verticalAlignment="center">
+    <Label class="ion icon" [text]="'ion-basket-outline' | fonticon"></Label>
+    <Label class="text-logo" text=" KonbiniKart"></Label>
+  </StackLayout>
 
-  <!-- <Label
-    textWrap="true"
-    class="ion"
-    [text]="'ion-basket-outline' | fonticon"
-    height="100"
-    fontWeight="bold"
-    fontSize="20"
-  ></Label> -->
+  <!-- Body -->
   <FlexboxLayout
     flexWrap="wrap"
     justifyContent="space-between"
