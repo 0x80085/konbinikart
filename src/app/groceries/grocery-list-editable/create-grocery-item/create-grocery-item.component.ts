@@ -43,19 +43,6 @@ export class CreateGroceryItemComponent {
 
   }
 
-  resetForm() {
-    this.groceryItem = {
-      id: 0,
-      emoji: '',
-      nameEnglish: '',
-      nameKatakana: '',
-      nameHiragana: '',
-      nameRomaji: '',
-      dateLastInteraction: new Date(),
-      isInStorage: true
-    };
-  }
-
   addItem() {
     if (
       this.groceryItem.emoji.trim() === "" ||
@@ -107,5 +94,18 @@ export class CreateGroceryItemComponent {
         actionToPerform();
       }
     });
+  }
+
+  private resetForm() {
+    this.groceryItem = {
+      id: 0,
+      emoji: '',
+      nameEnglish: '',
+      nameKatakana: '',
+      nameHiragana: '',
+      nameRomaji: '',
+      dateLastInteraction: new Date(),
+      isInStorage: true
+    };
   }
 }

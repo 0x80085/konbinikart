@@ -20,14 +20,8 @@ import { GroceryItemDetailEditableComponent } from "./groceries/grocery-item-det
 import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.component";
 import { FontIconModule, FontIconService } from 'nativescript-fonticon/angular';
 import { knownFolders } from "@nativescript/core";
-import { FontIconFactory } from "nativescript-fonticon";
 
-// FontIconFactory.debug = true;
-
-FontIconService.debug = true;
-
-// console.log(knownFolders.currentApp());
-// console.log(knownFolders.currentApp().getFile("./assets/ionicons.css").readTextSync());
+// FontIconService.debug = true; // --> enable to debug the icon stuff
 
 @NgModule({
   bootstrap: [AppComponent],
