@@ -1,0 +1,25 @@
+<StackLayout class="modal-container" [width]="width">
+
+    <Label class="h1" [text]="items?.length + ' item(s)'"></Label>
+
+    <ListView [items]="items" flexGrow="1" class="list-view">
+        <ng-template let-item="item">
+          <ns-editable-grocery-item
+            [item]="item"
+            (delete)="onDelete(item)"
+          ></ns-editable-grocery-item>
+        </ng-template>
+      </ListView>
+
+
+<!-- 
+  <Label class="h1" text="Earned points:"></Label>
+  <Label class="h1" [text]="model.score"></Label>
+  <Label class="h1" [text]="model.emoji"></Label>
+  <Label class="h1" [text]="model.nameEnglish"></Label>
+  <Label class="h1" [text]="model.nameRomaji"></Label>
+  <Label class="h1" [text]="model.nameHiragana"></Label>
+  <Label class="h1" [text]="model.nameKatakana"></Label> -->
+
+  <Button text="Close" (tap)="closeModal()"></Button>
+</StackLayout>

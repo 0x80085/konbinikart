@@ -8,6 +8,7 @@ import { HomeComponent } from "./home/home.component";
 import { ActionBarComponent } from "./action-bar/action-bar.component";
 import { AboutComponent } from "./about/about.component";
 import { GroceryListEditableComponent } from "./groceries/grocery-list-editable/grocery-list-editable.component";
+import { ViewAddedGroceriesModalComponent } from "./groceries/grocery-list-editable/view-added-groceries-modal/view-added-groceries-modal.component";
 import { CreateGroceryItemComponent } from "./groceries/grocery-list-editable/create-grocery-item/create-grocery-item.component";
 import { EditableGroceryItemComponent } from "./groceries/grocery-list-editable/editable-grocery-item/editable-grocery-item.component";
 import { GroceryListTranslatedComponent } from "./groceries/grocery-list-translated/grocery-list-translated.component";
@@ -41,6 +42,7 @@ import { knownFolders } from "@nativescript/core";
     GroceryListEditableComponent,
     EditableGroceryItemComponent,
     CreateGroceryItemComponent,
+    ViewAddedGroceriesModalComponent,
     GroceryItemDetailComponent,
     GroceryItemFlashcardComponent,
     FlashcardAnswerModalComponent,

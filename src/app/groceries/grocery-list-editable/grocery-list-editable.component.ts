@@ -1,8 +1,10 @@
-import { Component, ViewChild, OnInit, ElementRef } from "@angular/core";
+import { Component, ViewChild, OnInit, ElementRef, ViewContainerRef } from "@angular/core";
 
 import { EditableGroceryItem, GroceryItem } from "../../models/grocery-item.model";
 import { ItemService } from "../../services/item.service";
 import { Dialogs, Page, TextField } from "@nativescript/core";
+import { ModalDialogOptions, ModalDialogService } from "@nativescript/angular";
+import { ViewAddedGroceriesModalComponent } from "./view-added-groceries-modal/view-added-groceries-modal.component";
 
 @Component({
   selector: "ns-grocery-list-editable",
@@ -16,7 +18,10 @@ export class GroceryListEditableComponent implements OnInit {
   searchQuery: string = "";
 
   constructor(
-    private itemService: ItemService, private page: Page,
+    private itemService: ItemService, 
+    private page: Page,
+    private vcRef: ViewContainerRef,
+    private modalService: ModalDialogService,
   ) { }
 
   @ViewChild("searchField", { static: false }) searchFieldRef: ElementRef<TextField>;
@@ -55,6 +60,20 @@ export class GroceryListEditableComponent implements OnInit {
         this.refreshList();
       }
     })
+  }
+
+  onOpenViewGroceries() {
+    const options: ModalDialogOptions = {
+      viewContainerRef: this.vcRef,
+      context: null,
+      fullscreen: false
+    };
+
+    this.modalService.showModal(ViewAddedGroceriesModalComponent, options)
+    // .then(result => {
+    //   setTimeout(() =>
+    //     this.showNextItem(), 10);
+    // });
   }
 
   onSearchInputChange() {

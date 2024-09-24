@@ -32,6 +32,12 @@
       class="top-btn"
       flexGrow="1"
     ></Button>
+    <Button
+      text="View list"
+      (tap)="onOpenViewGroceries()"
+      class="top-btn"
+      flexGrow="1"
+    ></Button>
   </FlexboxLayout>
   <ListView [items]="displayList" flexGrow="1" class="list-view">
     <ng-template let-item="item">
