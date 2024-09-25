@@ -31,11 +31,13 @@ export class AppComponent implements OnInit {
       Application.android.on(
         Application.AndroidApplication.activityBackPressedEvent,
         (data: AndroidActivityBackPressedEventData) => {
-          
+
           console.log(this.currentRoute);
-          
+
           // Check if we are on the specific page you want to guard
-          if (this.currentRoute === '/study') {  // <-- Change '/your-page' to the actual route
+          if (this.currentRoute === '/study'
+            || this.currentRoute === "/groceries-translated"
+          ) {  // <-- Change '/your-page' to the actual route
             // Prevent back navigation and show the confirmation dialog
             data.cancel = true;
             this.confirmExit();
