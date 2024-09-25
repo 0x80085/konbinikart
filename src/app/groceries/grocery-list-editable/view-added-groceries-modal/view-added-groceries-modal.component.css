@@ -1,0 +1,19 @@
+.modal-container {
+    padding: 10;
+}
+
+Label {
+    height: 10%;
+}
+
+ListView {
+    height: 80%;
+}
+
+Button {
+    padding: 10;
+    height: 10%;
+    background-color: var(--light-primary);
+    color: var(--dark-text-color);
+    border-radius: 100%;
+}

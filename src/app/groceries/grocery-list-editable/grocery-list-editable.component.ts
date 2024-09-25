@@ -70,10 +70,10 @@ export class GroceryListEditableComponent implements OnInit {
     };
 
     this.modalService.showModal(ViewAddedGroceriesModalComponent, options)
-    // .then(result => {
-    //   setTimeout(() =>
-    //     this.showNextItem(), 10);
-    // });
+    .then(result => {
+      setTimeout(() =>
+        this.refreshList(), 10);
+    });
   }
 
   onSearchInputChange() {

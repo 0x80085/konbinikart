@@ -12,14 +12,25 @@ import { ItemService } from '~/app/services/item.service';
 export class ViewAddedGroceriesModalComponent {
   items: GroceryItem[];
   width: number;
+  height: number;
 
-  constructor(private params: ModalDialogParams, private itemsService: ItemService) {
+  constructor(private params: ModalDialogParams, private itemService: ItemService) {
     // this.model = params.context;
     this.width = Screen.mainScreen.widthDIPs * 0.8
-    this.items = this.itemsService.getGroceryItemsFromStorage();
+    this.height = Screen.mainScreen.heightDIPs * 0.6
+    this.refreshList();
+  }
+
+  onDelete(item: GroceryItem) {
+    this.itemService.removeGroceryItem(item.id);
+    this.refreshList();
   }
 
   closeModal() {
     this.params.closeCallback();
+  }
+
+  private refreshList() {
+    this.items = this.itemService.getGroceryItemsFromStorage();
   }
 }
