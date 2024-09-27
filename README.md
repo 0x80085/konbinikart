@@ -41,6 +41,6 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 - A special thanks to the supportive NativeScript community.
-- Japanese language learning resources used in this app are credited to AI, we are currently analysing integrations with working on Japanese language API integrations.
+- Japanese language learning resources used in this app are credited to AI, we are currently analysing integrations with Japanese language API integrations.
 
 Discover the seamless integration of grocery shopping and Japanese language learning with KonbiniKart! Enjoy your learning and shopping journey! 🛒📚🇯🇵

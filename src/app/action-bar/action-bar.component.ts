@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { isAndroid } from "@nativescript/core/platform";
-import { Page } from "@nativescript/core";
+import { Page, confirm } from "@nativescript/core";
 import { RouterExtensions } from "@nativescript/angular";
 
 @Component({
@@ -15,12 +15,28 @@ export class ActionBarComponent {
   @Input()
   showBackButton = true;
 
+  @Input()
+  askToConfirmOnBackPress = false;
+
   backBtnColor = "#000000";
 
-  constructor(private page: Page, private routerExtensions: RouterExtensions) {}
+  constructor(private page: Page, private routerExtensions: RouterExtensions) { }
 
   goBack() {
-    this.routerExtensions.backToPreviousPage();
+    if (this.askToConfirmOnBackPress) {
+      confirm({
+        title: 'Confirm Exit',
+        message: 'Are you sure you want to leave this page?',
+        okButtonText: 'Yes',
+        cancelButtonText: 'No',
+      }).then((result) => {
+        if (result) {
+          this.routerExtensions.backToPreviousPage();
+        }
+      });
+    } else {
+      this.routerExtensions.backToPreviousPage();
+    }
   }
 
   onActionBarLoadedLoaded() {

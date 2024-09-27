@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
 
   currentRoute: string = ''; // Store the current route
 
-
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
 
