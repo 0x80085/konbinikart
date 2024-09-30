@@ -1,3 +1,9 @@
+.page{
+    height: 100%;
+    width: 100%;
+    padding: 100;
+}
+
 .score-text {
     text-align: center;
 }
