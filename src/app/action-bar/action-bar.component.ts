@@ -26,7 +26,7 @@ export class ActionBarComponent {
     if (this.askToConfirmOnBackPress) {
       confirm({
         title: 'Confirm Exit',
-        message: 'Are you sure you want to leave this page?',
+        message: 'You will lose progress when you navigate away from this page. Are you sure you want to leave this page?',
         okButtonText: 'Yes',
         cancelButtonText: 'No',
       }).then((result) => {
