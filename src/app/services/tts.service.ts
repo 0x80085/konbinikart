@@ -30,4 +30,8 @@ export class TTSService {
 
         this.helloJava.speakJapanese(text);
     }
+    getMode(): string {
+
+        return this.helloJava.getMode();
+    }
 }
