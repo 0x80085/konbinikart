@@ -4,9 +4,6 @@
 >
 </ns-action-bar>
 
-
-
-
 <Button
   row="1"
   col="0"
@@ -16,8 +13,11 @@
   [nsRouterLink]="['/edit-groceries']"
 ></Button>
 
-
-<GridLayout rows="auto, *, auto" columns="*" *ngIf="selectedItem && items?.length > 0">
+<GridLayout
+  rows="auto, *, auto"
+  columns="*"
+  *ngIf="selectedItem && items?.length > 0"
+>
   <Label class="cards-remaining" row="0" col="0" *ngIf="items.length > 0"
     >{{ currentItemIndex + 1 }} / {{ items.length }}</Label
   >
@@ -81,6 +81,11 @@
       alignItems="center"
     >
       <Button
+        [text]="'ion-volume-medium-outline' | fonticon"
+        (tap)="speakTTSInJapanese()"
+        class="hint-btn speak-btn ion"
+      ></Button>
+      <Button
         text="Hint 1"
         (tap)="toggleRomaji()"
         class="hint-btn"
@@ -102,7 +107,11 @@
       justifyContent="center"
       alignItems="center"
     >
-      <Button class="next-card" text="Reveal answer" (tap)="openAnswerModal()"></Button>
+      <Button
+        class="next-card"
+        text="Reveal answer"
+        (tap)="openAnswerModal()"
+      ></Button>
     </FlexboxLayout>
   </StackLayout>
 </GridLayout>
