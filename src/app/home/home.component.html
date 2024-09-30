@@ -1,8 +1,8 @@
 <StackLayout paddingLeft="20" paddingRight="20">
   <!-- Logo bar -->
   <StackLayout class="top-bar" height="100" orientation="horizontal" verticalAlignment="center">
-    <Label class="ion icon" [text]="'ion-cart-outline' | fonticon"></Label>
-    <Label class="text-logo" text=" KonbiniKart"></Label>
+    <Label class="ion icon" [text]="'ion-cart-outline' | fonticon" [nsRouterLink]="['/about']"></Label>
+    <Label class="text-logo" text=" KonbiniKart" [nsRouterLink]="['/about']"></Label>
   </StackLayout>
 
   <!-- Body -->

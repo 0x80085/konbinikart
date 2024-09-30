@@ -1,30 +1,62 @@
 <ns-action-bar></ns-action-bar>
+<ScrollView>
+  <GridLayout rows="auto, auto, auto, auto">
+    <!-- App Name and Description -->
+    <StackLayout
+      row="0"
+      horizontalAlignment="center"
+      verticalAlignment="top"
+      class="m-15"
+    >
+      <Label
+        textWrap="true"
+        text="KonbiniKart - Your Japanese Shopping Companion"
+        class="h2"
+      ></Label>
+      <Label
+        textWrap="true"
+        text="KonbiniKart is an Android-exclusive app designed to help users navigate the world of Japanese shopping while learning the language. With features that blend language learning and shopping convenience, it’s a unique tool for anyone interested in both Japanese culture and daily life."
+      ></Label>
+    </StackLayout>
 
-<GridLayout rows="auto, auto">
-  <StackLayout
-    row="0"
-    horizontalAlignment="center"
-    verticalAlignment="top"
-    class="m-15"
-  >
-    <Label
-      textWrap="true"
-      text="KonbiniKart - Your Japanese Shopping Companion"
-      class="h2"
-    ></Label>
-  </StackLayout>
-  <StackLayout row="1" class="m-15">
-    <Label
-      textWrap="true"
-      text="- Study Japanese: While shopping or use the flashcards for studying at home or abroad."
-    ></Label>
-    <Label
-      textWrap="true"
-      text="- AI-Generated UI Images: Most images in the app are either emojis or AI generated images created though LeonardoAI."
-    ></Label>
-    <Label
-      textWrap="true"
-      text="- Powered by NativeScript and Angular. Leveraging Wanakana.js for seamless Kanji conversions."
-    ></Label>
-  </StackLayout>
-</GridLayout>
+    <!-- Features Section -->
+    <StackLayout row="1" class="m-15">
+      <Label text="Features" class="h3"></Label>
+      <Label
+        textWrap="true"
+        text="- Grocery List Feature: Create a list of groceries that defaults to Japanese. Tap an item to get hints, allowing you to study while shopping."
+      ></Label>
+      <Label
+        textWrap="true"
+        text="- Study Japanese: Use the built-in flashcards to improve your Japanese, whether you're at home or abroad."
+      ></Label>
+      <Label
+        textWrap="true"
+        text="- Android TTS Features: The app utilizes Android's Text-to-Speech capabilities to read Japanese texts aloud, enhancing your learning experience."
+      ></Label>
+      <Label
+        textWrap="true"
+        text="- Powered by Modern Technologies: Built with NativeScript and Angular, KonbiniKart is designed for performance and flexibility."
+      ></Label>
+    </StackLayout>
+
+    <!-- Development Status Section -->
+    <StackLayout row="2" class="m-15">
+      <Label text="Development Status" class="h3"></Label>
+      <Label
+        textWrap="true"
+        text="- Early Development: KonbiniKart is still in its early stages of development. We’re continuously working to improve the app, and we’d love to hear from users."
+      ></Label>
+    </StackLayout>
+
+    <!-- Open Source and GitHub Link Section -->
+    <StackLayout row="3" class="m-15">
+      <Label text="Open Source" class="h3"></Label>
+      <Label
+        textWrap="true"
+        text="KonbiniKart is open source! Check out the code and contribute on GitHub."
+      ></Label>
+      <!-- <Button text="Visit GitHub" tap="{{ onGitHubTap }}"></Button> -->
+    </StackLayout>
+  </GridLayout>
+</ScrollView>
