@@ -20,8 +20,9 @@
 
 .button-list.ns-dark {
     border-width: 1;
-    background-color: transparent;
-    border-color: var(--color-grey);
+    background-color: var(--dark-complementary-dark);
+    color: var(--dark-item-active-color);
+    border-color: var(--dark-item-active-color);
     border-style: solid;
 }
 
@@ -32,12 +33,12 @@
 
 .button-study.ns-dark {
     border-width: 1;
-    background-color: transparent;
-    border-color: var(--color-grey);
+    background-color: var(--dark-complementary-dark);
+    color: var(--dark-item-active-color);
+    border-color: var(--dark-item-active-color);
     border-style: solid;
 }
 
 .button-text {
     color: black;
 }
-

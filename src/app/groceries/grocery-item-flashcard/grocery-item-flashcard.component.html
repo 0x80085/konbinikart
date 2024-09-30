@@ -4,21 +4,21 @@
 >
 </ns-action-bar>
 
-<Button
-  row="1"
-  col="0"
-  *ngIf="!selectedItem || !items || items.length === 0"
-  text="Add some groceries!"
-  class="edit-groceries-cta bounce"
-  [nsRouterLink]="['/edit-groceries']"
-></Button>
-
 <GridLayout
   rows="auto, *, auto"
   columns="*"
-  *ngIf="selectedItem && items?.length > 0"
+  class="page"
 >
-  <Label class="cards-remaining" row="0" col="0" *ngIf="items.length > 0"
+  <Button
+    row="1"
+    col="0"
+    *ngIf="!selectedItem || !items || items.length === 0"
+    text="Add some groceries!"
+    class="edit-groceries-cta bounce"
+    [nsRouterLink]="['/edit-groceries']"
+  ></Button>
+
+  <Label class="cards-remaining" row="0" col="0" *ngIf="items?.length > 0"
     >{{ currentItemIndex + 1 }} / {{ items.length }}</Label
   >
   <StackLayout
@@ -27,6 +27,7 @@
     class="container"
     verticalAlignment="center"
     horizontalAlignment="center"
+    *ngIf="selectedItem && items?.length > 0"
   >
     <FlexboxLayout flexDirection="column" class="card" *ngIf="selectedItem">
       <FlexboxLayout

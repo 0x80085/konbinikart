@@ -22,7 +22,7 @@
   </GridLayout>
 </ns-action-bar>
 
-<StackLayout orientation="vertical">
+<StackLayout orientation="vertical" class="page">
   <GridLayout>
     <ListView *ngIf="items?.length ?? 0 > 0" [items]="items" row="1" col="0">
       <ng-template let-item="item">
