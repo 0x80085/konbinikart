@@ -12,12 +12,11 @@ export class DarkModeShimService {
 
     constructor() {
         this.context = Utils.android.getApplicationContext();
-        console.log('DarkModeShim ctor');
     }
 
     getMode(): string {
-        console.log(com.konbinikart.DarkModeShim.getMode(this.context));
         
-        return com.konbinikart.DarkModeShim.getMode(this.context);
+        const mode = com.konbinikart.DarkModeShim.getMode(this.context);
+        return mode;
     }
 }

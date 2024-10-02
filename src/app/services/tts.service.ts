@@ -13,10 +13,6 @@ export class TTSService {
     constructor() {
         const context = Utils.android.getApplicationContext();
         this.tts = new com.konbinikart.TTS(context);
-        
-        console.log('TTS ctor');
-        console.log(this.tts);
-        
     }
 
     speakEnglish() {

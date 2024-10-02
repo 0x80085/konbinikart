@@ -2,7 +2,6 @@ import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { Page, Utils } from "@nativescript/core";
 import { GroceryItem } from "../models/grocery-item.model";
 import { ItemService } from "../services/item.service";
-import Theme from "@nativescript/theme";
 import { DarkModeShimService } from "../services/dark-mode-shim.service";
 
 @Component({
@@ -22,7 +21,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
     private page: Page,
     private itemService: ItemService,
     private darkModeShimService: DarkModeShimService) {
-    // Hide the action bar on this page
     this.page.actionBarHidden = true;
   }
 
