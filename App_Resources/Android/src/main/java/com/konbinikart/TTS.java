@@ -1,24 +1,17 @@
 
-package com.example;
+package com.konbinikart;
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.content.Context; 
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
-
 import java.util.Locale;
 
-public class HelloJava {
-  public String getString() {
-    return "Hello from Java!";
-  }
-  
+public class TTS {  
   private TextToSpeech tts;
   private Context context;
   private boolean isInitialized = false;
 
-  public HelloJava(Context context) {
+  public TTS(Context context) {
 
     this.context = context;
 
@@ -63,13 +56,6 @@ public class HelloJava {
           Log.e("TTSManager", "TTS not initialized");
       }
   }
-
-     public String getMode() {
-        int nightModeFlags = this.context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        boolean isDarkModeOn = nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
-        return isDarkModeOn ? "Dark Mode" : "Light Mode";
-    }
-
 
   // Method to shut down the TTS engine
   public void shutdown() {

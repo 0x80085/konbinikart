@@ -3,35 +3,27 @@ import { Utils } from '@nativescript/core'
 
 declare const com: any
 
-
 @Injectable({
     providedIn: 'root',
 })
 export class TTSService {
 
-
-    helloJava: any;
+    tts: any;
 
     constructor() {
         const context = Utils.android.getApplicationContext();
-        this.helloJava = new com.example.HelloJava(context);
-
-        console.log(
-            this.helloJava.getString()
-        );
+        this.tts = new com.konbinikart.TTS(context);
+        
+        console.log('TTS ctor');
+        console.log(this.tts);
+        
     }
 
     speakEnglish() {
-
-        this.helloJava.speakEnglish("text me maybe");
+        this.tts.speakEnglish("text me maybe");
     }
 
     speakJapanese(text: string) {
-
-        this.helloJava.speakJapanese(text);
-    }
-    getMode(): string {
-
-        return this.helloJava.getMode();
+        this.tts.speakJapanese(text);
     }
 }

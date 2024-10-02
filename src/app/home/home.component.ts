@@ -3,7 +3,7 @@ import { Page, Utils } from "@nativescript/core";
 import { GroceryItem } from "../models/grocery-item.model";
 import { ItemService } from "../services/item.service";
 import Theme from "@nativescript/theme";
-import { TTSService } from "../services/tts.service";
+import { DarkModeShimService } from "../services/dark-mode-shim.service";
 
 @Component({
   selector: "ns-home",
@@ -14,22 +14,22 @@ export class HomeComponent implements AfterViewInit, OnInit {
   darkMode: string;
   items: GroceryItem[];
 
-
   public get isDarkMode(): boolean {
     return this.darkMode && this.darkMode.toLowerCase() === 'dark mode'
   }
 
-
-
-  constructor(private page: Page, private itemService: ItemService, private ttsService: TTSService) {
+  constructor(
+    private page: Page,
+    private itemService: ItemService,
+    private darkModeShimService: DarkModeShimService) {
     // Hide the action bar on this page
     this.page.actionBarHidden = true;
-
   }
+
   ngOnInit(): void {
     this.loadItems();
 
-    this.darkMode = this.ttsService.getMode()
+    this.darkMode = this.darkModeShimService.getMode()
   }
 
   private loadItems() {
