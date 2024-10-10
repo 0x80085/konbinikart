@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 
 import { EditableGroceryItem, GroceryItem } from '../models/grocery-item.model'
-import { DATA } from './data'
+import { DATA } from './items/data/data'
 
 import { ApplicationSettings } from "@nativescript/core";
 

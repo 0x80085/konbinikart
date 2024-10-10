@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit } from "@angular/core";
-import { Page, Utils } from "@nativescript/core";
+import { Page } from "@nativescript/core";
 import { GroceryItem } from "../models/grocery-item.model";
 import { ItemService } from "../services/item.service";
-import { DarkModeShimService } from "../services/dark-mode-shim.service";
+import { DarkModeShimService } from "../services/device/dark-mode-shim.service";
 
 @Component({
   selector: "ns-home",
@@ -25,9 +25,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    this.loadItems();
-
     this.darkMode = this.darkModeShimService.getMode()
+    
+    this.loadItems();
   }
 
   private loadItems() {
