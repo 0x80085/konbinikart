@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { ItemService } from "~/app/services/item.service";
 import { DisplayGroceryItem } from "../grocery-item-translated/grocery-item-translated.component";
 import { ObservableArray, Page } from "@nativescript/core";
+import { GroceryListService } from "~/app/services/items/grocery-list.service";
 
 @Component({
   selector: "ns-grocery-list-translated",
@@ -13,7 +13,7 @@ export class GroceryListTranslatedComponent {
   translateMode: "hiragana" | "katakana" = "hiragana";
 
   constructor(
-    private itemService: ItemService,
+    private groceryListService: GroceryListService,
     private page: Page,
   ) { }
 
@@ -40,9 +40,8 @@ export class GroceryListTranslatedComponent {
 
   private loadGroceries() {
     this.items = new ObservableArray(
-      this.itemService
-        .getGroceryItemsFromStorage()
-        .sort((a, b) => a.dateLastInteraction.getTime() - b.dateLastInteraction.getTime())
+      this.groceryListService
+        .getAll()
         .map((it) => ({ ...it, checked: false, hintLevel: 0 }))
     );
   }

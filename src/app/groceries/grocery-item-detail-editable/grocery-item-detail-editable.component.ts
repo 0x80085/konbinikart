@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { GroceryItem } from "~/app/models/grocery-item.model";
-import { ItemService } from "~/app/services/item.service";
+import { DefaultItemsService } from "~/app/services/items/default-items.service";
 
 @Component({
   selector: "ns-grocery-item-detail-editable",
@@ -11,12 +11,12 @@ export class GroceryItemDetailEditableComponent {
   item: GroceryItem;
 
   constructor(
-    private itemService: ItemService,
+    private service: DefaultItemsService,
     private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.params.id;
-    this.item = this.itemService.getItemFromDefaultList(id);
+    const id = this.route.snapshot.params.id;
+    this.item = this.service.getById(id);
   }
 }

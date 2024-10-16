@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { Page } from "@nativescript/core";
 import { GroceryItem } from "../models/grocery-item.model";
-import { ItemService } from "../services/item.service";
+import { GroceryListService } from "../services/items/grocery-list.service";
 import { DarkModeShimService } from "../services/device/dark-mode-shim.service";
 
 @Component({
@@ -19,7 +19,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   constructor(
     private page: Page,
-    private itemService: ItemService,
+    private groceryListService: GroceryListService,
     private darkModeShimService: DarkModeShimService) {
     this.page.actionBarHidden = true;
   }
@@ -31,7 +31,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   }
 
   private loadItems() {
-    this.items = this.itemService.getGroceryItemsFromStorage();
+    this.items = this.groceryListService.getAll();
   }
 
   ngAfterViewInit(): void {

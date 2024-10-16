@@ -2,8 +2,8 @@ import { AfterViewInit, Component, OnInit, ViewContainerRef } from "@angular/cor
 import { ModalDialogOptions, ModalDialogService, RouterExtensions } from "@nativescript/angular";
 import { Page } from "@nativescript/core";
 import { GroceryItem } from "~/app/models/grocery-item.model";
-import { ItemService } from "~/app/services/item.service";
-import { TTSService } from "~/app/services/tts.service";
+import { GroceryListService } from "~/app/services/items/grocery-list.service";
+import { TTSService } from "~/app/services/device/tts.service";
 import { FlashcardAnswerModalComponent } from "./flashcard-answer-modal/flashcard-answer-modal.component";
 
 enum Points {
@@ -29,7 +29,7 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
   maxScore: number = 0;
 
   constructor(
-    private itemService: ItemService,
+    private groceryListService: GroceryListService,
     private ttsService: TTSService,
     private routerExtensions: RouterExtensions,
     private page: Page,
@@ -55,7 +55,7 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     this.totalScore = 0;
     this.earnablePointsForCurrentCard = Points.OneCardMaxScore;
 
-    const itemsInStorage = this.itemService.getGroceryItemsFromStorage();
+    const itemsInStorage = this.groceryListService.getAll();
     const shuffledItems = this.shuffle(itemsInStorage);
     this.items = shuffledItems;
 

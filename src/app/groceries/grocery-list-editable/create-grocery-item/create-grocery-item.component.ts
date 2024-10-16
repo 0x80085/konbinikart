@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
 import { action, alert } from '@nativescript/core';
 import { EditableGroceryItem, GroceryItem } from '~/app/models/grocery-item.model';
-import { ItemService } from '~/app/services/item.service';
+import { CustomItemsService } from '~/app/services/items/custom-items.service';
+import { GroceryListService } from '~/app/services/items/grocery-list.service';
 import { toRomaji, toHiragana, toKatakana, isHiragana, isKatakana } from 'wanakana';
 
 @Component({
@@ -12,7 +13,7 @@ import { toRomaji, toHiragana, toKatakana, isHiragana, isKatakana } from 'wanaka
 })
 export class CreateGroceryItemComponent {
   groceryItem: EditableGroceryItem = {
-    id: 0,
+    id: '0',
     emoji: '',
     nameEnglish: '',
     nameKatakana: '',
@@ -23,7 +24,8 @@ export class CreateGroceryItemComponent {
   };
 
   constructor(
-    private itemService: ItemService,
+    private customItemsService: CustomItemsService,
+    private groceryListService: GroceryListService,
     private routerExtensions: RouterExtensions
   ) { }
 
@@ -34,6 +36,7 @@ export class CreateGroceryItemComponent {
       this.groceryItem.nameKatakana = toKatakana(nameHiragana);
     }
   }
+
   onChangeKatakana() {
     const nameKatakana = this.groceryItem.nameKatakana;
     if (isKatakana(nameKatakana)) {
@@ -54,10 +57,10 @@ export class CreateGroceryItemComponent {
       return;
     }
 
-    const id = this.itemService.getAllGroceryItems().length - 1;
+    // const id = this.itemService.getAllGroceryItems().length - 1; // todo use guid
 
     const newItem: GroceryItem = {
-      id: id,
+      id: 'replace me',
       emoji: this.groceryItem.emoji.trim(),
       nameEnglish: this.groceryItem.nameEnglish.trim(),
       nameHiragana: this.groceryItem.nameHiragana.trim(),
@@ -76,7 +79,8 @@ export class CreateGroceryItemComponent {
       return;
     }
 
-    this.itemService.addGroceryItemToStorage(newItem);
+    this.customItemsService.add(newItem);
+    this.groceryListService.add(newItem);
 
     const actionsMap = {
       "Back to list": () => this.routerExtensions.backToPreviousPage(),
@@ -98,7 +102,7 @@ export class CreateGroceryItemComponent {
 
   private resetForm() {
     this.groceryItem = {
-      id: 0,
+      id: '0',
       emoji: '',
       nameEnglish: '',
       nameKatakana: '',

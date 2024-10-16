@@ -1,7 +1,9 @@
 import { Component, ViewChild, OnInit, ElementRef, ViewContainerRef } from "@angular/core";
 
 import { EditableGroceryItem, GroceryItem } from "../../models/grocery-item.model";
-import { ItemService } from "../../services/item.service";
+import { CustomItemsService } from "../../services/items/custom-items.service";
+import { GroceryListService } from "../../services/items/grocery-list.service";
+import { DefaultItemsService } from "../../services/items/default-items.service";
 import { Dialogs, Page, TextField } from "@nativescript/core";
 import { ModalDialogOptions, ModalDialogService } from "@nativescript/angular";
 import { ViewAddedGroceriesModalComponent } from "./view-added-groceries-modal/view-added-groceries-modal.component";
@@ -13,12 +15,17 @@ import { ViewAddedGroceriesModalComponent } from "./view-added-groceries-modal/v
 })
 export class GroceryListEditableComponent implements OnInit {
   defaultItems: Array<GroceryItem>;
-  storedItems: Array<EditableGroceryItem>;
+  itemsOnGroceryList: Array<EditableGroceryItem>;
+  customItems: Array<GroceryItem>;
+
   displayList: EditableGroceryItem[];
+
   searchQuery: string = "";
 
   constructor(
-    private itemService: ItemService, 
+    private customItemsService: CustomItemsService,
+    private groceryListService: GroceryListService,
+    private defaultItemsService: DefaultItemsService,
     private page: Page,
     private vcRef: ViewContainerRef,
     private modalService: ModalDialogService,
@@ -37,12 +44,12 @@ export class GroceryListEditableComponent implements OnInit {
   }
 
   onAddItem(item: GroceryItem) {
-    this.itemService.addGroceryItemToStorage(item);
+    this.groceryListService.add(item);
     this.refreshList();
   }
 
   onDelete(item: GroceryItem) {
-    this.itemService.removeGroceryItem(item.id);
+    this.groceryListService.remove(item.id);
     this.refreshList();
   }
 
@@ -56,7 +63,7 @@ export class GroceryListEditableComponent implements OnInit {
   onClearList() {
     Dialogs.confirm("Are you sure you want to clear the grocery list?").then((result) => {
       if (result) {
-        this.itemService.clearGroceryItemsStorage();
+        this.groceryListService.clear();
         this.refreshList();
       }
     })
@@ -70,15 +77,15 @@ export class GroceryListEditableComponent implements OnInit {
     };
 
     this.modalService.showModal(ViewAddedGroceriesModalComponent, options)
-    .then(result => {
-      setTimeout(() =>
-        this.refreshList(), 10);
-    });
+      .then(result => {
+        setTimeout(() =>
+          this.refreshList(), 10);
+      });
   }
 
   onSearchInputChange() {
     this.searchQuery = this.searchQuery;
-    this.displayList = this.markItemsInStorage(this.searchQuery);
+    this.refreshList();
   }
 
   private matchesSearchQuery(searchValue: any): (value: EditableGroceryItem, index: number, array: EditableGroceryItem[]) => unknown {
@@ -86,24 +93,32 @@ export class GroceryListEditableComponent implements OnInit {
   }
 
   private refreshList() {
-    this.defaultItems = this.itemService.getAllDefaultItems();
-    this.storedItems = this.itemService.getGroceryItemsFromStorage();
+    this.itemsOnGroceryList = this.groceryListService.getAll().map(it => ({ ...it, isInStorage: true }) as EditableGroceryItem);
 
-    this.displayList = this.markItemsInStorage(this.searchQuery);
-  }
+    this.defaultItems = this.defaultItemsService.getAll();
+    this.customItems = this.customItemsService.getAll();
+    const idsOfItemsOnGroceryList = this.itemsOnGroceryList.map(it => it.id);
 
-  private markItemsInStorage(searchQuery: string): EditableGroceryItem[] {
+    const allAvailableItems = [...this.defaultItems, ...this.customItems]
+    const allAvailableItemsAndMarkedForGroceryList =
+      allAvailableItems.map(availableItem => {
+        if (idsOfItemsOnGroceryList.some(id => availableItem.id === id)) {
+          return ({ ...availableItem, isInStorage: true } as EditableGroceryItem)
+        }
+        return { ...availableItem, isInStorage: false } as EditableGroceryItem
+      })
+
     const allGroceryItems: Array<EditableGroceryItem> =
-      this.itemService.getAllGroceryItems()
+      allAvailableItemsAndMarkedForGroceryList
         .sort((a, b) => a.nameEnglish.localeCompare(b.nameEnglish));
 
-    const searchValue = searchQuery?.trim() || "";
+    const searchValue = this.searchQuery?.trim() || "";
 
     if (searchValue !== "") {
-      return allGroceryItems.filter(this.matchesSearchQuery(searchValue));
+      this.displayList = allGroceryItems.filter(this.matchesSearchQuery(searchValue));
     }
 
-    return allGroceryItems;
+    this.displayList = allGroceryItems;
   }
 
 }

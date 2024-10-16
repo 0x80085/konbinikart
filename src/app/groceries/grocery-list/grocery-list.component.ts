@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { Page } from "@nativescript/core";
 import { GroceryItem } from "~/app/models/grocery-item.model";
-import { ItemService } from "~/app/services/item.service";
+import { GroceryListService } from "~/app/services/items/grocery-list.service";
 
 @Component({
   selector: "ns-grocery-list",
@@ -11,15 +11,15 @@ import { ItemService } from "~/app/services/item.service";
 export class GroceryListComponent implements OnInit, AfterViewInit {
   items: Array<GroceryItem>;
 
-  constructor(private itemService: ItemService, private page: Page) { }
+  constructor(private groceryItemService: GroceryListService, private page: Page) { }
 
   ngOnInit(): void {
-    this.items = this.itemService.getGroceryItemsFromStorage();
+    this.items = this.groceryItemService.getAll();
   }
 
   ngAfterViewInit(): void {
     this.page.on(Page.navigatedToEvent, (data) => {
-      this.items = this.itemService.getGroceryItemsFromStorage();
+      this.items = this.groceryItemService.getAll();
     });
   }
 }

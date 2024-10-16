@@ -1,5 +1,5 @@
 export interface GroceryItem {
-  id: number;
+  id: string;
   emoji: string;
   nameEnglish: string;
   nameKatakana: string;

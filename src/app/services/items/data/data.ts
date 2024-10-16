@@ -1,6 +1,6 @@
 export const DATA = [
   {
-    id: 1,
+    id: "1",
     emoji: "🍎",
     nameEnglish: "apple",
     nameKatakana: "リンゴ",
@@ -8,7 +8,7 @@ export const DATA = [
     nameRomaji: "ringo"
   },
   {
-    id: 2,
+    id: "2",
     emoji: "🍊",
     nameEnglish: "orange",
     nameKatakana: "ダイダイ",
@@ -16,7 +16,7 @@ export const DATA = [
     nameRomaji: "daidai"
   },
   {
-    id: 3,
+    id: "3",
     emoji: "🍋",
     nameEnglish: "lemon",
     nameKatakana: "レモン",
@@ -24,7 +24,7 @@ export const DATA = [
     nameRomaji: "remon"
   },
   {
-    id: 4,
+    id: "4",
     emoji: "🍇",
     nameEnglish: "grapes",
     nameKatakana: "ブドウ",
@@ -32,7 +32,7 @@ export const DATA = [
     nameRomaji: "budou"
   },
   {
-    id: 5,
+    id: "5",
     emoji: "🍓",
     nameEnglish: "strawberry",
     nameKatakana: "イチゴ",
@@ -40,7 +40,7 @@ export const DATA = [
     nameRomaji: "ichigo"
   },
   {
-    id: 6,
+    id: "6",
     emoji: "🥝",
     nameEnglish: "kiwi fruit",
     nameKatakana: "サルナシ",
@@ -48,7 +48,7 @@ export const DATA = [
     nameRomaji: "sarunashi"
   },
   {
-    id: 7,
+    id: "7",
     emoji: "🍍",
     nameEnglish: "pineapple",
     nameKatakana: "ホウライシ",
@@ -56,7 +56,7 @@ export const DATA = [
     nameRomaji: "houraishi"
   },
   {
-    id: 8,
+    id: "8",
     emoji: "🥭",
     nameEnglish: "mango",
     nameKatakana: "マンゴー",
@@ -64,7 +64,7 @@ export const DATA = [
     nameRomaji: "mangoo"
   },
   {
-    id: 9,
+    id: "9",
     emoji: "🍑",
     nameEnglish: "peach",
     nameKatakana: "モモ",
@@ -72,7 +72,7 @@ export const DATA = [
     nameRomaji: "momo"
   },
   {
-    id: 10,
+    id: "10",
     emoji: "🍒",
     nameEnglish: "cherries",
     nameKatakana: "サクランボ",
@@ -80,7 +80,7 @@ export const DATA = [
     nameRomaji: "Sakuranbo"
   },
   {
-    id: 11,
+    id: "11",
     emoji: "🍅",
     nameEnglish: "tomato",
     nameKatakana: "カキ",
@@ -88,7 +88,7 @@ export const DATA = [
     nameRomaji: "kaki"
   },
   {
-    id: 12,
+    id: "12",
     emoji: "🍆",
     nameEnglish: "eggplant",
     nameKatakana: "ナス",
@@ -96,7 +96,7 @@ export const DATA = [
     nameRomaji: "nasu"
   },
   {
-    id: 13,
+    id: "13",
     emoji: "🥑",
     nameEnglish: "avocado",
     nameKatakana: "ワニナシ",
@@ -104,7 +104,7 @@ export const DATA = [
     nameRomaji: "waninashi"
   },
   {
-    id: 14,
+    id: "14",
     emoji: "🥦",
     nameEnglish: "broccoli",
     nameKatakana: "メキャベツ",
@@ -112,7 +112,7 @@ export const DATA = [
     nameRomaji: "mekyabetsu"
   },
   {
-    id: 15,
+    id: "15",
     emoji: "🥒",
     nameEnglish: "cucumber",
     nameKatakana: "キュウリ",
@@ -120,7 +120,7 @@ export const DATA = [
     nameRomaji: "kyuuri"
   },
   {
-    id: 16,
+    id: "16",
     emoji: "🌶️",
     nameEnglish: "hot pepper",
     nameKatakana: "トウガラシ",
@@ -128,7 +128,7 @@ export const DATA = [
     nameRomaji: "tougarashi"
   },
   {
-    id: 17,
+    id: "17",
     emoji: "🌽",
     nameEnglish: "ear of corn",
     nameKatakana: "トウモロコシ",
@@ -136,7 +136,7 @@ export const DATA = [
     nameRomaji: "toumorokoshi"
   },
   {
-    id: 18,
+    id: "18",
     emoji: "🥕",
     nameEnglish: "carrot",
     nameKatakana: "ニンジン",
@@ -144,7 +144,7 @@ export const DATA = [
     nameRomaji: "ninjin"
   },
   {
-    id: 19,
+    id: "19",
     emoji: "🥔",
     nameEnglish: "potato",
     nameKatakana: "ジャガイモ",
@@ -152,7 +152,7 @@ export const DATA = [
     nameRomaji: "jagaimo"
   },
   {
-    id: 20,
+    id: "20",
     emoji: "🍠",
     nameEnglish: "sweet potato",
     nameKatakana: "サツマイモ",
@@ -160,7 +160,7 @@ export const DATA = [
     nameRomaji: "satsumaimo"
   },
   {
-    id: 21,
+    id: "21",
     emoji: "🧅",
     nameEnglish: "onion",
     nameKatakana: "タマネギ",
@@ -168,7 +168,7 @@ export const DATA = [
     nameRomaji: "tamanegi"
   },
   {
-    id: 22,
+    id: "22",
     emoji: "🧄",
     nameEnglish: "garlic",
     nameKatakana: "ニンニク",
@@ -176,7 +176,7 @@ export const DATA = [
     nameRomaji: "ninniku"
   },
   {
-    id: 23,
+    id: "23",
     emoji: "🥬",
     nameEnglish: "bok choy",
     nameKatakana: "チンゲンサイ",
@@ -184,7 +184,7 @@ export const DATA = [
     nameRomaji: "chin gensai"
   },
   {
-    id: 24,
+    id: "24",
     emoji: "🥗",
     nameEnglish: "green salad",
     nameKatakana: "サラダ",
@@ -192,7 +192,7 @@ export const DATA = [
     nameRomaji: "sarada"
   },
   {
-    id: 25,
+    id: "25",
     emoji: "🍕",
     nameEnglish: "pizza",
     nameKatakana: "ピザ",
@@ -200,7 +200,7 @@ export const DATA = [
     nameRomaji: "piza"
   },
   {
-    id: 26,
+    id: "26",
     emoji: "🍔",
     nameEnglish: "hamburger",
     nameKatakana: "ハンバーガー",
@@ -208,7 +208,7 @@ export const DATA = [
     nameRomaji: "hanbaagaa"
   },
   {
-    id: 27,
+    id: "27",
     emoji: "🌭",
     nameEnglish: "hot dog",
     nameKatakana: "ホットドッグ",
@@ -216,7 +216,7 @@ export const DATA = [
     nameRomaji: "hottodoggu"
   },
   {
-    id: 28,
+    id: "28",
     emoji: "🥪",
     nameEnglish: "sandwich",
     nameKatakana: "サンドイッチ",
@@ -224,7 +224,7 @@ export const DATA = [
     nameRomaji: "sandoitchi"
   },
   {
-    id: 29,
+    id: "29",
     emoji: "🌮",
     nameEnglish: "taco",
     nameKatakana: "タコス",
@@ -232,7 +232,7 @@ export const DATA = [
     nameRomaji: "takosu"
   },
   {
-    id: 30,
+    id: "30",
     emoji: "🌯",
     nameEnglish: "burrito",
     nameKatakana: "ブリトー",
@@ -240,7 +240,7 @@ export const DATA = [
     nameRomaji: "buritoo"
   },
   {
-    id: 31,
+    id: "31",
     emoji: "🫔",
     nameEnglish: "tamale",
     nameKatakana: "タマレ",
@@ -248,7 +248,7 @@ export const DATA = [
     nameRomaji: "tamare"
   },
   {
-    id: 34,
+    id: "34",
     emoji: "🥚",
     nameEnglish: "egg",
     nameKatakana: "タマゴ",
@@ -256,7 +256,7 @@ export const DATA = [
     nameRomaji: "tamago"
   },
   {
-    id: 35,
+    id: "35",
     emoji: "🥞",
     nameEnglish: "pancakes",
     nameKatakana: "ホットケーキ",
@@ -264,7 +264,7 @@ export const DATA = [
     nameRomaji: "hottokeeki"
   },
   {
-    id: 37,
+    id: "37",
     emoji: "🥓",
     nameEnglish: "bacon",
     nameKatakana: "ベーコン",
@@ -272,7 +272,7 @@ export const DATA = [
     nameRomaji: "beekon"
   },
   {
-    id: 38,
+    id: "38",
     emoji: "🥩",
     nameEnglish: "steak",
     nameKatakana: "ビーフステーキ",
@@ -280,7 +280,7 @@ export const DATA = [
     nameRomaji: "biifusuteeki"
   },
   {
-    id: 39,
+    id: "39",
     emoji: "🍗",
     nameEnglish: "chicken",
     nameKatakana: "ニワトリ",
@@ -288,7 +288,7 @@ export const DATA = [
     nameRomaji: "niwatori"
   },
   {
-    id: 40,
+    id: "40",
     emoji: "🍣",
     nameEnglish: "sushi",
     nameKatakana: "スシ",
@@ -296,7 +296,7 @@ export const DATA = [
     nameRomaji: "sushi"
   },
   {
-    id: 41,
+    id: "41",
     emoji: "🍱",
     nameEnglish: "bento box",
     nameKatakana: "ベントウ",
@@ -304,7 +304,7 @@ export const DATA = [
     nameRomaji: "bentou"
   },
   {
-    id: 42,
+    id: "42",
     emoji: "🍥",
     nameEnglish: "fish cake with swirl",
     nameKatakana: "ナルト",
@@ -312,7 +312,7 @@ export const DATA = [
     nameRomaji: "naruto"
   },
   {
-    id: 43,
+    id: "43",
     emoji: "🍙",
     nameEnglish: "rice ball",
     nameKatakana: "オニギリ",
@@ -320,7 +320,7 @@ export const DATA = [
     nameRomaji: "onigiri"
   },
   {
-    id: 44,
+    id: "44",
     emoji: "🍘",
     nameEnglish: "rice cracker",
     nameKatakana: "センベイ",
@@ -328,7 +328,7 @@ export const DATA = [
     nameRomaji: "senbei"
   },
   {
-    id: 45,
+    id: "45",
     emoji: "🍚",
     nameEnglish: "cooked rice",
     nameKatakana: "ゴハン",
@@ -336,7 +336,7 @@ export const DATA = [
     nameRomaji: "gohan"
   },
   {
-    id: 46,
+    id: "46",
     emoji: "🍛",
     nameEnglish: "curry rice",
     nameKatakana: "カレーライス",
@@ -344,7 +344,7 @@ export const DATA = [
     nameRomaji: "kareeraisu"
   },
   {
-    id: 47,
+    id: "47",
     emoji: "🍜",
     nameEnglish: "ramen",
     nameKatakana: "ラーメン",
@@ -352,7 +352,7 @@ export const DATA = [
     nameRomaji: "raamen"
   },
   {
-    id: 48,
+    id: "48",
     emoji: "🍝",
     nameEnglish: "spaghetti",
     nameKatakana: "パスタ",
@@ -360,7 +360,7 @@ export const DATA = [
     nameRomaji: "pasuta"
   },
   {
-    id: 49,
+    id: "49",
     emoji: "🍢",
     nameEnglish: "oden",
     nameKatakana: "オデン",
@@ -368,7 +368,7 @@ export const DATA = [
     nameRomaji: "oden"
   },
   {
-    id: 50,
+    id: "50",
     emoji: "🍡",
     nameEnglish: "dango",
     nameKatakana: "ダンゴ",
@@ -376,7 +376,7 @@ export const DATA = [
     nameRomaji: "dango"
   },
   {
-    id: 51,
+    id: "51",
     emoji: "🥟",
     nameEnglish: "dumpling",
     nameKatakana: "ギョーザ",
@@ -384,7 +384,7 @@ export const DATA = [
     nameRomaji: "gyoza"
   },
   {
-    id: 54,
+    id: "54",
     emoji: "🦀",
     nameEnglish: "crab",
     nameKatakana: "カニ",
@@ -392,7 +392,7 @@ export const DATA = [
     nameRomaji: "kani"
   },
   {
-    id: 55,
+    id: "55",
     emoji: "🦞",
     nameEnglish: "lobster",
     nameKatakana: "イセエビ",
@@ -400,7 +400,7 @@ export const DATA = [
     nameRomaji: "iseebi"
   },
   {
-    id: 56,
+    id: "56",
     emoji: "🍞",
     nameEnglish: "bread",
     nameKatakana: "パン",
@@ -408,7 +408,7 @@ export const DATA = [
     nameRomaji: "pan"
   },
   {
-    id: 57,
+    id: "57",
     emoji: "🧈",
     nameEnglish: "butter",
     nameKatakana: "バター",
@@ -416,7 +416,7 @@ export const DATA = [
     nameRomaji: "bataa"
   },
   {
-    id: 58,
+    id: "58",
     emoji: "🥛",
     nameEnglish: "milk",
     nameKatakana: "ギュウニュウ",
@@ -424,7 +424,7 @@ export const DATA = [
     nameRomaji: "gyuunyuu"
   },
   {
-    id: 59,
+    id: "59",
     emoji: "🧀",
     nameEnglish: "cheese",
     nameKatakana: "ニュウラク",
@@ -432,7 +432,7 @@ export const DATA = [
     nameRomaji: "nyuuraku"
   },
   {
-    id: 60,
+    id: "60",
     emoji: "🥩",
     nameEnglish: "beef",
     nameKatakana: "ギュウニク",
@@ -440,7 +440,7 @@ export const DATA = [
     nameRomaji: "gyuuniku"
   },
   {
-    id: 61,
+    id: "61",
     emoji: "🐟",
     nameEnglish: "salmon",
     nameKatakana: "サケ",
@@ -448,7 +448,7 @@ export const DATA = [
     nameRomaji: "sake"
   },
   {
-    id: 62,
+    id: "62",
     emoji: "🐱🍽️",
     nameEnglish: "cat food",
     nameKatakana: "ネコノエサ",
@@ -456,7 +456,7 @@ export const DATA = [
     nameRomaji: "neko no esa"
   },
   {
-    id: 63,
+    id: "63",
     emoji: "🧻",
     nameEnglish: "toilet paper",
     nameKatakana: "トイレットペーパー",
@@ -464,7 +464,7 @@ export const DATA = [
     nameRomaji: "toirettopeepaa"
   },
   {
-    id: 64,
+    id: "64",
     emoji: "🥤",
     nameEnglish: "soda",
     nameKatakana: "ソーダ",
@@ -472,7 +472,7 @@ export const DATA = [
     nameRomaji: "sooda"
   },
   {
-    id: 65,
+    id: "65",
     emoji: "🍺",
     nameEnglish: "beer",
     nameKatakana: "ビール",
@@ -480,7 +480,7 @@ export const DATA = [
     nameRomaji: "biiru"
   },
   {
-    id: 66,
+    id: "66",
     emoji: "🐟",
     nameEnglish: "mackerel",
     nameKatakana: "サバ",
@@ -488,7 +488,7 @@ export const DATA = [
     nameRomaji: "saba"
   },
   {
-    id: 67,
+    id: "67",
     emoji: "🐟",
     nameEnglish: "tuna",
     nameKatakana: "マグロ",
@@ -496,7 +496,7 @@ export const DATA = [
     nameRomaji: "maguro"
   },
   {
-    id: 68,
+    id: "68",
     emoji: "🥜",
     nameEnglish: "cashew nuts",
     nameKatakana: "カシューナッツ",
@@ -504,7 +504,7 @@ export const DATA = [
     nameRomaji: "kashuunattsu"
   },
   {
-    id: 69,
+    id: "69",
     emoji: "🌱",
     nameEnglish: "ginger root",
     nameKatakana: "ショウガ",
@@ -512,7 +512,7 @@ export const DATA = [
     nameRomaji: "shouga"
   },
   {
-    id: 70,
+    id: "70",
     emoji: "🚬",
     nameEnglish: "cigarettes",
     nameKatakana: "タバコ",
@@ -520,7 +520,7 @@ export const DATA = [
     nameRomaji: "tabako"
   },
   {
-    id: 71,
+    id: "71",
     emoji: "🍵",
     nameEnglish: "tea",
     nameKatakana: "オチャ",
@@ -528,11 +528,27 @@ export const DATA = [
     nameRomaji: "ocha"
   },
   {
-    id: 72,
+    id: "72",
     emoji: "🍌",
     nameEnglish: "banana",
     nameKatakana: "バナナ",
     nameHiragana: "ばなな",
     nameRomaji: "banana"
+  },
+  {
+    id: "74",
+    emoji: "🫑",
+    nameEnglish: "bell pepper",
+    nameKatakana: "ピーマン",
+    nameHiragana: "ぴーまん",
+    nameRomaji: "pīman"
+  },
+  {
+    id: "75",
+    emoji: "🐖",
+    nameEnglish: "pork",
+    nameKatakana: "ブタニク",
+    nameHiragana: "ぶたにく",
+    nameRomaji: "butaniku"
   }
 ]

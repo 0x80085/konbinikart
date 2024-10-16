@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { GroceryItem } from '../../models/grocery-item.model';
+import { EditableGroceryItem, GroceryItem } from '../../models/grocery-item.model';
 import { StorageKey, StorageService } from './storage.service';
 
 @Injectable({
@@ -12,12 +12,12 @@ export class GroceryListService {
     constructor(private storageService: StorageService) {
     }
 
-    getAll(): GroceryItem[] {
-        return this.storageService.getAll(this.storageKey);
+    getAll(): EditableGroceryItem[] {
+        return this.storageService.getAll(this.storageKey).map(it => ({ ...it, isInStorage: true, dateLastInteraction: null }));
     }
 
-    getById(id: string): GroceryItem | null {
-        return this.storageService.getById(this.storageKey, id);
+    getById(id: string): EditableGroceryItem | null {
+        return { ...this.storageService.getById(this.storageKey, id), isInStorage: true, dateLastInteraction: null };
     }
 
     add(item: GroceryItem): void {
