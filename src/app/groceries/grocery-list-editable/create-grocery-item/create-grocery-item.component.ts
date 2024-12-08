@@ -47,6 +47,7 @@ export class CreateGroceryItemComponent {
   }
 
   addItem() {
+
     if (
       this.groceryItem.emoji.trim() === "" ||
       this.groceryItem.nameEnglish.trim() === "" ||
@@ -56,8 +57,6 @@ export class CreateGroceryItemComponent {
       alert("⚠️ Some fields are missing input.");
       return;
     }
-
-    // const id = this.itemService.getAllGroceryItems().length - 1; // todo use guid
 
     const newItem: GroceryItem = {
       id: 'replace me',

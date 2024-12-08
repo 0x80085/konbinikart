@@ -29,7 +29,6 @@ export class StorageService {
 
     add(storageKey: StorageKey, item: GroceryItem): void {
         const items: GroceryItem[] = this.getAll(storageKey);
-        // todo use GUIDs for IDs
         items.push(item);
         this.save(storageKey, items);
     }
