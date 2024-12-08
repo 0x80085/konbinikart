@@ -2,13 +2,14 @@ import { Component } from "@angular/core";
 import { DisplayGroceryItem } from "../grocery-item-translated/grocery-item-translated.component";
 import { ObservableArray, Page } from "@nativescript/core";
 import { GroceryListService } from "~/app/services/items/grocery-list.service";
+import { CanDeactivateComponent } from "~/app/app.component";
 
 @Component({
   selector: "ns-grocery-list-translated",
   templateUrl: "./grocery-list-translated.component.html",
   styleUrls: ["./grocery-list-translated.component.css"],
 })
-export class GroceryListTranslatedComponent {
+export class GroceryListTranslatedComponent implements CanDeactivateComponent {
   items: ObservableArray<DisplayGroceryItem>;
   translateMode: "hiragana" | "katakana" = "hiragana";
 
@@ -26,11 +27,19 @@ export class GroceryListTranslatedComponent {
     });
   }
 
+  private _shouldConfirmBack: boolean;
+
+  shouldConfirmBack(){
+    return this._shouldConfirmBack
+  }
+
   changeTranslateMode = () =>
-  (this.translateMode =
-    this.translateMode == "hiragana" ? "katakana" : "hiragana");
+    (this.translateMode =
+      this.translateMode == "hiragana" ? "katakana" : "hiragana");
 
   onItemChecked(item: DisplayGroceryItem): void {
+    this._shouldConfirmBack = true;
+
     const inList = this.items.find((it) => it.id === item.id);
 
     inList.checked = !inList.checked;

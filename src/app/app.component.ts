@@ -5,6 +5,10 @@ import { AndroidActivityBackPressedEventData, Application } from '@nativescript/
 import { confirm } from '@nativescript/core';
 import { filter } from 'rxjs';
 
+export interface CanDeactivateComponent {
+  shouldConfirmBack(): boolean;
+}
+
 @Component({
   selector: 'ns-app',
   templateUrl: './app.component.html',
@@ -30,13 +34,14 @@ export class AppComponent implements OnInit {
       Application.android.on(
         Application.AndroidApplication.activityBackPressedEvent,
         (data: AndroidActivityBackPressedEventData) => {
+          const outlet = this.router.routerState.root.firstChild;
+          const activeComponent = outlet?.component;
 
-          console.log(this.currentRoute);
-
-          // Check if we are on the specific page you want to guard
-          if (this.currentRoute === '/study'
-            || this.currentRoute === "/groceries-translated"
-          ) {  // <-- Change '/your-page' to the actual route
+          if (
+            activeComponent &&
+            'shouldConfirmBack' in activeComponent &&
+            (activeComponent as CanDeactivateComponent).shouldConfirmBack()
+          ) {
             // Prevent back navigation and show the confirmation dialog
             data.cancel = true;
             this.confirmExit();

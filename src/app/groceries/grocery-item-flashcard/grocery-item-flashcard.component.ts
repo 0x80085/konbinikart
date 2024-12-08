@@ -5,6 +5,7 @@ import { GroceryItem } from "~/app/models/grocery-item.model";
 import { GroceryListService } from "~/app/services/items/grocery-list.service";
 import { TTSService } from "~/app/services/device/tts.service";
 import { FlashcardAnswerModalComponent } from "./flashcard-answer-modal/flashcard-answer-modal.component";
+import { CanDeactivateComponent } from "~/app/app.component";
 
 enum Points {
   OneCardMaxScore = 30
@@ -15,7 +16,7 @@ enum Points {
   templateUrl: "./grocery-item-flashcard.component.html",
   styleUrls: ["./grocery-item-flashcard.component.css"],
 })
-export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
+export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit, CanDeactivateComponent {
   selectedItem: GroceryItem;
   items: GroceryItem[];
   currentItemIndex: number = 0;
@@ -36,6 +37,11 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     private modalService: ModalDialogService,
     private vcRef: ViewContainerRef
   ) { }
+
+  private _shouldConfirmBack = false
+  shouldConfirmBack(): boolean {
+    return this._shouldConfirmBack
+  }
 
   ngOnInit(): void {
     this.resetSession();
@@ -74,6 +80,7 @@ export class GroceryItemFlashcardComponent implements OnInit, AfterViewInit {
     if (this.items.length === 0) {
       return
     }
+    this._shouldConfirmBack = true
 
     this.totalScore += this.earnablePointsForCurrentCard;
 

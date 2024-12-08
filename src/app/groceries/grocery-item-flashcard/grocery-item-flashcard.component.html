@@ -1,6 +1,6 @@
 <ns-action-bar
   [title]="items.length > 0 ? 'Score ' + totalScore + '/' + maxScore : ''"
-  [askToConfirmOnBackPress]="true"
+  [askToConfirmOnBackPress]="shouldConfirmBack()"
 >
 </ns-action-bar>
 
