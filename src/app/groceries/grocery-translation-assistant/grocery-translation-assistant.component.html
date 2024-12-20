@@ -1,0 +1,29 @@
+<p>grocery-translation-assistant-component works!</p>
+<ns-action-bar title="Assisted Translation (Beta)"></ns-action-bar>
+<StackLayout padding="20" spacing="20" class="page">
+  <!-- Emoji -->
+  <TextField
+    [(ngModel)]="groceryItem.emoji"
+    hint="Emoji"
+    autocorrect="false"
+    autocapitalizationType="none"
+  ></TextField>
+
+  <!-- Name in English -->
+  <TextField
+    [(ngModel)]="groceryItem.nameEnglish"
+    hint="Name (English)"
+    autocorrect="false"
+    autocapitalizationType="none"
+  ></TextField>
+
+  <Label [text]="groceryItem.nameHiragana" marginLeft="15"></Label>
+  <Label [text]="groceryItem.nameHiragana" marginLeft="15"></Label>
+  <Label [text]="groceryItem.nameKatakana" marginLeft="15"></Label>
+  <Label [text]="groceryItem.explanation" marginLeft="15"></Label>
+  <Label [text]="groceryItem.originalAiTranslation" marginLeft="15"></Label>
+
+  <Button text="Translate" (tap)="translate()" class="translate-btn"></Button>
+  <Button text="Save Item" (tap)="addItem()" class="save-btn"></Button>
+
+</StackLayout>

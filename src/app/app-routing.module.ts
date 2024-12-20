@@ -12,21 +12,23 @@ import { AboutComponent } from './about/about.component'
 import { GroceryItemFlashcardComponent } from './groceries/grocery-item-flashcard/grocery-item-flashcard.component'
 import { StudyCompleteComponent } from './groceries/grocery-item-flashcard/study-complete/study-complete.component'
 import { CreateGroceryItemComponent } from './groceries/grocery-list-editable/create-grocery-item/create-grocery-item.component'
+import { GroceryTranslationAssistantComponent } from './groceries/grocery-translation-assistant/grocery-translation-assistant.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  
+
   { path: 'home', component: HomeComponent  },
   { path: 'about', component: AboutComponent  },
 
   { path: 'groceries', component: GroceryListComponent },
   { path: 'edit-groceries', component: GroceryListEditableComponent },
   { path: 'create-grocery-item', component: CreateGroceryItemComponent },
+  { path: 'translation-assistant', component: GroceryTranslationAssistantComponent },
   { path: 'groceries-translated', component: GroceryListTranslatedComponent },
 
   { path: 'study', component: GroceryItemFlashcardComponent },
   { path: 'study-completed/:totalScore/:maxScore', component: StudyCompleteComponent },
-  
+
   { path: 'grocery-item/:id', component: GroceryItemDetailComponent },
   { path: 'edit-grocery-item/:id', component: GroceryItemDetailEditableComponent },
 ]

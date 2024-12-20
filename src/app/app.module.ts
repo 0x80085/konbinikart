@@ -21,6 +21,8 @@ import { GroceryItemDetailEditableComponent } from "./groceries/grocery-item-det
 import { GroceryListComponent } from "./groceries/grocery-list/grocery-list.component";
 import { FontIconModule, FontIconService } from 'nativescript-fonticon/angular';
 import { knownFolders } from "@nativescript/core";
+import { HttpClientModule } from "@angular/common/http";
+import { GroceryTranslationAssistantComponent } from './groceries/grocery-translation-assistant/grocery-translation-assistant.component';
 
 // FontIconService.debug = true; // --> enable to debug the icon stuff
 
@@ -31,7 +33,8 @@ import { knownFolders } from "@nativescript/core";
     NativeScriptFormsModule,
     FontIconModule.forRoot({
       'ion':  knownFolders.currentApp().getFile("./assets/ionicons.css").readTextSync()
-    })
+    }),
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -51,6 +54,7 @@ import { knownFolders } from "@nativescript/core";
     GroceryListTranslatedComponent,
     GroceryItemTranslatedComponent,
     StudyCompleteComponent,
+    GroceryTranslationAssistantComponent,
   ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
