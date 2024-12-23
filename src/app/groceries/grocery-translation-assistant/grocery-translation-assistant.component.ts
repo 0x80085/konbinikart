@@ -51,7 +51,12 @@ export class GroceryTranslationAssistantComponent {
     this.translateService.getTranslation(word).pipe(
       take(1)
     ).subscribe(it => {
-      this.groceryItem = { ...it, dateLastInteraction: new Date, isInStorage: false };
+      this.groceryItem = {
+        ...it,
+        id: 'replace me',
+        emoji: this.groceryItem.emoji.trim(),
+        dateLastInteraction: new Date, isInStorage: false
+      };
     })
 
   }

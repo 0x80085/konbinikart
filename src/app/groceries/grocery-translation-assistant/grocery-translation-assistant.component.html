@@ -16,12 +16,11 @@
     autocorrect="false"
     autocapitalizationType="none"
   ></TextField>
-
-  <Label [text]="groceryItem.nameHiragana" marginLeft="15"></Label>
-  <Label [text]="groceryItem.nameHiragana" marginLeft="15"></Label>
-  <Label [text]="groceryItem.nameKatakana" marginLeft="15"></Label>
-  <Label [text]="groceryItem.explanation" marginLeft="15"></Label>
-  <Label [text]="groceryItem.originalAiTranslation" marginLeft="15"></Label>
+ textWrap="true"
+  <Label textWrap="true" color="black" [text]="groceryItem.nameHiragana" marginLeft="15"></Label>
+  <Label textWrap="true" color="black" [text]="groceryItem.nameKatakana" marginLeft="15"></Label>
+  <Label textWrap="true" color="black" [text]="groceryItem.explanation" marginLeft="20"></Label>
+  <Label textWrap="true" color="black" [text]="groceryItem.originalAiTranslation" marginLeft="15"></Label>
 
   <Button text="Translate" (tap)="translate()" class="translate-btn"></Button>
   <Button text="Save Item" (tap)="addItem()" class="save-btn"></Button>
