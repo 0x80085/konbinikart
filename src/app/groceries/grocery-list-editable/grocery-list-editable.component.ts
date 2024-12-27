@@ -116,6 +116,7 @@ export class GroceryListEditableComponent implements OnInit {
 
     if (searchValue !== "") {
       this.displayList = allGroceryItems.filter(this.matchesSearchQuery(searchValue));
+      return;
     }
 
     this.displayList = allGroceryItems;
