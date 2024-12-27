@@ -1,6 +1,17 @@
-<p>grocery-translation-assistant-component works!</p>
 <ns-action-bar title="Assisted Translation (Beta)"></ns-action-bar>
 <StackLayout padding="20" spacing="20" class="page">
+  <!-- Name in English -->
+  <TextField
+    [(ngModel)]="groceryItem.nameEnglish"
+    hint="Name (English)"
+    autocorrect="false"
+    autocapitalizationType="none"
+  ></TextField>
+
+  <Button [text]="!isLoading ? 'Translate' : 'Translating...'" (tap)="translate()" class="translate-btn"  [isEnabled]="!isLoading"></Button>
+
+  <Label *ngIf="isLoading === true" textWrap="true" text="Loading..." marginLeft="15"></Label>
+
   <!-- Emoji -->
   <TextField
     [(ngModel)]="groceryItem.emoji"
@@ -9,20 +20,28 @@
     autocapitalizationType="none"
   ></TextField>
 
-  <!-- Name in English -->
+  <!-- Name in Katakana -->
   <TextField
-    [(ngModel)]="groceryItem.nameEnglish"
-    hint="Name (English)"
+    [(ngModel)]="groceryItem.nameKatakana"
+    hint="Name (Katakana)"
     autocorrect="false"
     autocapitalizationType="none"
   ></TextField>
- textWrap="true"
-  <Label textWrap="true" color="black" [text]="groceryItem.nameHiragana" marginLeft="15"></Label>
-  <Label textWrap="true" color="black" [text]="groceryItem.nameKatakana" marginLeft="15"></Label>
-  <Label textWrap="true" color="black" [text]="groceryItem.explanation" marginLeft="20"></Label>
-  <Label textWrap="true" color="black" [text]="groceryItem.originalAiTranslation" marginLeft="15"></Label>
 
-  <Button text="Translate" (tap)="translate()" class="translate-btn"></Button>
-  <Button text="Save Item" (tap)="addItem()" class="save-btn"></Button>
+  <!-- Name in Hiragana -->
+  <TextField
+    [(ngModel)]="groceryItem.nameHiragana"
+    hint="Name (Hiragana)"
+    autocorrect="false"
+    autocapitalizationType="none"
+  ></TextField>
+
+  <!-- Name in Romaji -->
+  <Label [text]="groceryItem.nameRomaji" marginLeft="15"></Label>
+
+  <Label textWrap="true" [text]="groceryItem.explanation" marginLeft="20"></Label>
+  <Label textWrap="true" [text]="groceryItem.originalAiTranslation" marginLeft="15"></Label>
+
+  <Button text="Save Item" (tap)="addItem()" class="save-btn" [isEnabled]="!isLoading"></Button>
 
 </StackLayout>
