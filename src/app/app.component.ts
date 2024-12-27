@@ -4,6 +4,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AndroidActivityBackPressedEventData, Application } from '@nativescript/core';
 import { confirm } from '@nativescript/core';
 import { filter } from 'rxjs';
+import { DarkModeShimService } from './services/device/dark-mode-shim.service';
 
 export interface CanDeactivateComponent {
   shouldConfirmBack(): boolean;
@@ -17,10 +18,15 @@ export class AppComponent implements OnInit {
 
   currentRoute: string = ''; // Store the current route
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  private darkMode: string;
+  get isDarkMode(): boolean {
+    return this.darkMode && this.darkMode.toLowerCase() === 'dark mode'
+  }
 
+  constructor(private router: Router, private darkModeShimService: DarkModeShimService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.darkMode = this.darkModeShimService.getMode()
     // Subscribe to route changes
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -31,6 +37,8 @@ export class AppComponent implements OnInit {
 
     // Android back button listener
     if (Application.android) {
+      this.changeStatusBarColor(this.darkMode ? '#000000' : "#FFFFFF");
+
       Application.android.on(
         Application.AndroidApplication.activityBackPressedEvent,
         (data: AndroidActivityBackPressedEventData) => {
@@ -49,6 +57,12 @@ export class AppComponent implements OnInit {
         }
       );
     }
+  }
+
+  private changeStatusBarColor(color: string) {
+    const activity = Application.android.startActivity || Application.android.foregroundActivity;
+    const colorAsNumber = android.graphics.Color.parseColor(color);
+    activity.getWindow().setStatusBarColor(colorAsNumber);
   }
 
   confirmExit(): void {
