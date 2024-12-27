@@ -78,8 +78,9 @@ export class CreateGroceryItemComponent {
       return;
     }
 
-    this.customItemsService.add(newItem);
-    this.groceryListService.add(newItem);
+    const storedItemRef = this.customItemsService.add(newItem);
+
+    this.groceryListService.add(storedItemRef);
 
     const actionsMap = {
       "Back to list": () => this.routerExtensions.backToPreviousPage(),

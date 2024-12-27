@@ -21,9 +21,10 @@ export class CustomItemsService {
         return this.storageService.getById(this.storageKey, id);
     }
 
-    add(item: GroceryItem): void {
+    add(item: GroceryItem): GroceryItem {
         item.id = generateGuid();
         this.storageService.add(this.storageKey, item);
+        return item;
     }
 
     remove(id: string): void {
