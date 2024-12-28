@@ -14,7 +14,7 @@ export class CustomItemsService {
     }
 
     getAll(): GroceryItem[] {
-        return this.storageService.getAll(this.storageKey);
+        return this.storageService.getAll(this.storageKey).map(it => ({...it, isCustom:true}) );
     }
 
     getById(id: string): GroceryItem | null {

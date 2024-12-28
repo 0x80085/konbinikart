@@ -7,14 +7,17 @@ import { EditableGroceryItem } from '~/app/models/grocery-item.model';
   styleUrls: ['./editable-grocery-item.component.css']
 })
 export class EditableGroceryItemComponent {
-  
+
   @Input()
   item: EditableGroceryItem;
-  
+
   @Output()
   delete = new EventEmitter<EditableGroceryItem>();
-  
+
   @Output()
   add = new EventEmitter<EditableGroceryItem>();
+
+  @Output()
+  edit = new EventEmitter<EditableGroceryItem>();
 
 }

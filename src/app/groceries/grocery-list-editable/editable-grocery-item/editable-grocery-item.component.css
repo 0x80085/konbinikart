@@ -23,3 +23,14 @@
     android-elevation: 0;
     font-weight: 600;
 }
+
+.item-btn.edit {
+    border-color: var(--light-primary);
+    border-width:1;
+    border-style: solid;
+    padding: 0 0;
+    width: 30;
+    border-radius: 20;
+    font-weight: 800;
+    font-size: 10;
+}

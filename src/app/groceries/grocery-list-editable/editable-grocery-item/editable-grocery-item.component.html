@@ -1,17 +1,28 @@
-<GridLayout class="item" columns="auto, *, *" rows="auto, auto, auto">
+<GridLayout class="item" columns="auto, *, *, auto" rows="auto, auto, auto">
     <!-- 1st Column: Emoji -->
     <Label class="h1" [text]="item.emoji" textAlignment="center" col="0" rowSpan="2"></Label>
-    
+
     <!-- 2nd Column: Japanese (Hiragana and Katakana) -->
     <Label class="h2" [text]="item.nameHiragana" textAlignment="center" col="1" row="0"></Label>
     <Label class="h2" [text]="item.nameKatakana" textAlignment="center" col="1" row="1"></Label>
-  
+
     <!-- 3rd Column: Romaji and English -->
     <Label [text]="item.nameRomaji" textAlignment="center" col="2" row="0"></Label>
     <Label class="h3" [text]="item.nameEnglish" textAlignment="center" col="2" row="1"></Label>
-  
+
+    <!-- 4th Column: Edit Button -->
+    <Button
+        *ngIf="item.isCustom === true"
+        class="item-btn edit ion"
+        [text]="'ion-pencil-outline' | fonticon"
+        col="3"
+        row="0"
+        rowSpan="1"
+        [nsRouterLink]="['/edit-grocery-item', item.id]"
+    ></Button>
+
     <!-- Buttons below the 3 columns -->
-    <StackLayout colSpan="3" row="2" orientation="horizontal" horizontalAlignment="center">
+    <StackLayout colSpan="4" row="2" orientation="horizontal" horizontalAlignment="center">
       <Button
         class="item-btn add"
         *ngIf="!item.isInStorage"
@@ -25,5 +36,4 @@
         (tap)="delete.emit(item)"
       ></Button>
     </StackLayout>
-  </GridLayout>
-  
+</GridLayout>

@@ -1,21 +1,39 @@
-<ns-action-bar></ns-action-bar>
+<ns-action-bar title="Edit Grocery Item">
+  <ActionItem (tap)="deleteItem()" android.position="actionBar">
+    <Label text="Delete" class="btn btn-danger"></Label>
+  </ActionItem>
+</ns-action-bar>
 
-<FlexboxLayout flexDirection="column">
+<FlexboxLayout flexDirection="column" *ngIf="item">
+
+  <!-- English Field -->
   <FlexboxLayout class="m-15">
-    <!-- <Label class="h2" [text]="item.id + '. '"></Label> -->
-    <Label class="h2" [text]="item.emoji"></Label>
+    <TextField class="h2" [(ngModel)]="item.nameEnglish" hint="English" width="100%"></TextField>
   </FlexboxLayout>
 
+  <!-- Emoji Field -->
   <FlexboxLayout class="m-15">
-    <Label class="h2" [text]="item.nameKatakana"></Label>
+    <TextField class="h2" [(ngModel)]="item.emoji" hint="Emoji" width="100%"></TextField>
   </FlexboxLayout>
+
+  <!-- Katakana Field -->
   <FlexboxLayout class="m-15">
-    <Label class="h2" [text]="item.nameHiragana"></Label>
+    <TextField class="h2" [(ngModel)]="item.nameKatakana" hint="Katakana" width="100%"></TextField>
   </FlexboxLayout>
+
+  <!-- Hiragana Field -->
   <FlexboxLayout class="m-15">
-    <Label class="h2" [text]="item.nameRomaji"></Label>
+    <TextField class="h2" [(ngModel)]="item.nameHiragana" hint="Hiragana" width="100%"></TextField>
   </FlexboxLayout>
+
+  <!-- Romaji Field -->
   <FlexboxLayout class="m-15">
-    <Label class="h4" [text]="item.nameEnglish"></Label>
+    <TextField class="h2" [(ngModel)]="item.nameRomaji" hint="Romaji" width="100%"></TextField>
+  </FlexboxLayout>
+
+
+  <!-- Save Button -->
+  <FlexboxLayout class="m-15">
+    <Button class="btn btn-primary" text="Save" (tap)="saveChanges()" width="100%"></Button>
   </FlexboxLayout>
 </FlexboxLayout>
