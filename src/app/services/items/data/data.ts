@@ -5,7 +5,8 @@ export const DATA = [
     nameEnglish: "apple",
     nameKatakana: "リンゴ",
     nameHiragana: "りんご",
-    nameRomaji: "ringo"
+    nameRomaji: "ringo",
+    isCustom: false
   },
   {
     id: "2",
@@ -13,7 +14,8 @@ export const DATA = [
     nameEnglish: "orange",
     nameKatakana: "ダイダイ",
     nameHiragana: "だいだい",
-    nameRomaji: "daidai"
+    nameRomaji: "daidai",
+    isCustom: false
   },
   {
     id: "3",
@@ -21,7 +23,8 @@ export const DATA = [
     nameEnglish: "lemon",
     nameKatakana: "レモン",
     nameHiragana: "れもん",
-    nameRomaji: "remon"
+    nameRomaji: "remon",
+    isCustom: false
   },
   {
     id: "4",
@@ -29,7 +32,8 @@ export const DATA = [
     nameEnglish: "grapes",
     nameKatakana: "ブドウ",
     nameHiragana: "ぶどう",
-    nameRomaji: "budou"
+    nameRomaji: "budou",
+    isCustom: false
   },
   {
     id: "5",
@@ -37,7 +41,8 @@ export const DATA = [
     nameEnglish: "strawberry",
     nameKatakana: "イチゴ",
     nameHiragana: "いちご",
-    nameRomaji: "ichigo"
+    nameRomaji: "ichigo",
+    isCustom: false
   },
   {
     id: "6",
@@ -45,7 +50,8 @@ export const DATA = [
     nameEnglish: "kiwi fruit",
     nameKatakana: "サルナシ",
     nameHiragana: "さるなし",
-    nameRomaji: "sarunashi"
+    nameRomaji: "sarunashi",
+    isCustom: false
   },
   {
     id: "7",
@@ -53,7 +59,8 @@ export const DATA = [
     nameEnglish: "pineapple",
     nameKatakana: "ホウライシ",
     nameHiragana: "ほうらいし",
-    nameRomaji: "houraishi"
+    nameRomaji: "houraishi",
+    isCustom: false
   },
   {
     id: "8",
@@ -61,7 +68,8 @@ export const DATA = [
     nameEnglish: "mango",
     nameKatakana: "マンゴー",
     nameHiragana: "まんごー",
-    nameRomaji: "mangoo"
+    nameRomaji: "mangoo",
+    isCustom: false
   },
   {
     id: "9",
@@ -69,7 +77,8 @@ export const DATA = [
     nameEnglish: "peach",
     nameKatakana: "モモ",
     nameHiragana: "もも",
-    nameRomaji: "momo"
+    nameRomaji: "momo",
+    isCustom: false
   },
   {
     id: "10",
@@ -77,7 +86,8 @@ export const DATA = [
     nameEnglish: "cherries",
     nameKatakana: "サクランボ",
     nameHiragana: "さくらんぼ",
-    nameRomaji: "Sakuranbo"
+    nameRomaji: "Sakuranbo",
+    isCustom: false
   },
   {
     id: "11",
@@ -85,7 +95,8 @@ export const DATA = [
     nameEnglish: "tomato",
     nameKatakana: "カキ",
     nameHiragana: "かき",
-    nameRomaji: "kaki"
+    nameRomaji: "kaki",
+    isCustom: false
   },
   {
     id: "12",
@@ -93,7 +104,8 @@ export const DATA = [
     nameEnglish: "eggplant",
     nameKatakana: "ナス",
     nameHiragana: "なす",
-    nameRomaji: "nasu"
+    nameRomaji: "nasu",
+    isCustom: false
   },
   {
     id: "13",
@@ -101,7 +113,8 @@ export const DATA = [
     nameEnglish: "avocado",
     nameKatakana: "ワニナシ",
     nameHiragana: "わになし",
-    nameRomaji: "waninashi"
+    nameRomaji: "waninashi",
+    isCustom: false
   },
   {
     id: "14",
@@ -109,7 +122,8 @@ export const DATA = [
     nameEnglish: "broccoli",
     nameKatakana: "メキャベツ",
     nameHiragana: "めきゃべつ",
-    nameRomaji: "mekyabetsu"
+    nameRomaji: "mekyabetsu",
+    isCustom: false
   },
   {
     id: "15",
@@ -117,7 +131,8 @@ export const DATA = [
     nameEnglish: "cucumber",
     nameKatakana: "キュウリ",
     nameHiragana: "きゅうり",
-    nameRomaji: "kyuuri"
+    nameRomaji: "kyuuri",
+    isCustom: false
   },
   {
     id: "16",
@@ -125,7 +140,8 @@ export const DATA = [
     nameEnglish: "hot pepper",
     nameKatakana: "トウガラシ",
     nameHiragana: "とうがらし",
-    nameRomaji: "tougarashi"
+    nameRomaji: "tougarashi",
+    isCustom: false
   },
   {
     id: "17",
@@ -133,7 +149,8 @@ export const DATA = [
     nameEnglish: "ear of corn",
     nameKatakana: "トウモロコシ",
     nameHiragana: "とうもろこし",
-    nameRomaji: "toumorokoshi"
+    nameRomaji: "toumorokoshi",
+    isCustom: false
   },
   {
     id: "18",
@@ -141,7 +158,8 @@ export const DATA = [
     nameEnglish: "carrot",
     nameKatakana: "ニンジン",
     nameHiragana: "にんじん",
-    nameRomaji: "ninjin"
+    nameRomaji: "ninjin",
+    isCustom: false
   },
   {
     id: "19",
@@ -149,7 +167,8 @@ export const DATA = [
     nameEnglish: "potato",
     nameKatakana: "ジャガイモ",
     nameHiragana: "じゃがいも",
-    nameRomaji: "jagaimo"
+    nameRomaji: "jagaimo",
+    isCustom: false
   },
   {
     id: "20",
@@ -157,7 +176,8 @@ export const DATA = [
     nameEnglish: "sweet potato",
     nameKatakana: "サツマイモ",
     nameHiragana: "さつまいも",
-    nameRomaji: "satsumaimo"
+    nameRomaji: "satsumaimo",
+    isCustom: false
   },
   {
     id: "21",
@@ -165,7 +185,8 @@ export const DATA = [
     nameEnglish: "onion",
     nameKatakana: "タマネギ",
     nameHiragana: "たまねぎ",
-    nameRomaji: "tamanegi"
+    nameRomaji: "tamanegi",
+    isCustom: false
   },
   {
     id: "22",
@@ -173,7 +194,8 @@ export const DATA = [
     nameEnglish: "garlic",
     nameKatakana: "ニンニク",
     nameHiragana: "にんにく",
-    nameRomaji: "ninniku"
+    nameRomaji: "ninniku",
+    isCustom: false
   },
   {
     id: "23",
@@ -181,7 +203,8 @@ export const DATA = [
     nameEnglish: "bok choy",
     nameKatakana: "チンゲンサイ",
     nameHiragana: "ちんげんさい",
-    nameRomaji: "chin gensai"
+    nameRomaji: "chin gensai",
+    isCustom: false
   },
   {
     id: "24",
@@ -189,7 +212,8 @@ export const DATA = [
     nameEnglish: "green salad",
     nameKatakana: "サラダ",
     nameHiragana: "さらだ",
-    nameRomaji: "sarada"
+    nameRomaji: "sarada",
+    isCustom: false
   },
   {
     id: "25",
@@ -197,7 +221,8 @@ export const DATA = [
     nameEnglish: "pizza",
     nameKatakana: "ピザ",
     nameHiragana: "ぴざ",
-    nameRomaji: "piza"
+    nameRomaji: "piza",
+    isCustom: false
   },
   {
     id: "26",
@@ -205,7 +230,8 @@ export const DATA = [
     nameEnglish: "hamburger",
     nameKatakana: "ハンバーガー",
     nameHiragana: "はんばーがー",
-    nameRomaji: "hanbaagaa"
+    nameRomaji: "hanbaagaa",
+    isCustom: false
   },
   {
     id: "27",
@@ -213,7 +239,8 @@ export const DATA = [
     nameEnglish: "hot dog",
     nameKatakana: "ホットドッグ",
     nameHiragana: "ほっとどっぐ",
-    nameRomaji: "hottodoggu"
+    nameRomaji: "hottodoggu",
+    isCustom: false
   },
   {
     id: "28",
@@ -221,7 +248,8 @@ export const DATA = [
     nameEnglish: "sandwich",
     nameKatakana: "サンドイッチ",
     nameHiragana: "さんどいっち",
-    nameRomaji: "sandoitchi"
+    nameRomaji: "sandoitchi",
+    isCustom: false
   },
   {
     id: "29",
@@ -229,7 +257,8 @@ export const DATA = [
     nameEnglish: "taco",
     nameKatakana: "タコス",
     nameHiragana: "たこす",
-    nameRomaji: "takosu"
+    nameRomaji: "takosu",
+    isCustom: false
   },
   {
     id: "30",
@@ -237,7 +266,8 @@ export const DATA = [
     nameEnglish: "burrito",
     nameKatakana: "ブリトー",
     nameHiragana: "ぶりとー",
-    nameRomaji: "buritoo"
+    nameRomaji: "buritoo",
+    isCustom: false
   },
   {
     id: "31",
@@ -245,7 +275,8 @@ export const DATA = [
     nameEnglish: "tamale",
     nameKatakana: "タマレ",
     nameHiragana: "たまれ",
-    nameRomaji: "tamare"
+    nameRomaji: "tamare",
+    isCustom: false
   },
   {
     id: "34",
@@ -253,7 +284,8 @@ export const DATA = [
     nameEnglish: "egg",
     nameKatakana: "タマゴ",
     nameHiragana: "たまご",
-    nameRomaji: "tamago"
+    nameRomaji: "tamago",
+    isCustom: false
   },
   {
     id: "35",
@@ -261,7 +293,8 @@ export const DATA = [
     nameEnglish: "pancakes",
     nameKatakana: "ホットケーキ",
     nameHiragana: "ほっとけーき",
-    nameRomaji: "hottokeeki"
+    nameRomaji: "hottokeeki",
+    isCustom: false
   },
   {
     id: "37",
@@ -269,7 +302,8 @@ export const DATA = [
     nameEnglish: "bacon",
     nameKatakana: "ベーコン",
     nameHiragana: "べーこん",
-    nameRomaji: "beekon"
+    nameRomaji: "beekon",
+    isCustom: false
   },
   {
     id: "38",
@@ -277,7 +311,8 @@ export const DATA = [
     nameEnglish: "steak",
     nameKatakana: "ビーフステーキ",
     nameHiragana: "びーふすてーき",
-    nameRomaji: "biifusuteeki"
+    nameRomaji: "biifusuteeki",
+    isCustom: false
   },
   {
     id: "39",
@@ -285,7 +320,8 @@ export const DATA = [
     nameEnglish: "chicken",
     nameKatakana: "ニワトリ",
     nameHiragana: "にわとり",
-    nameRomaji: "niwatori"
+    nameRomaji: "niwatori",
+    isCustom: false
   },
   {
     id: "40",
@@ -293,7 +329,8 @@ export const DATA = [
     nameEnglish: "sushi",
     nameKatakana: "スシ",
     nameHiragana: "すし",
-    nameRomaji: "sushi"
+    nameRomaji: "sushi",
+    isCustom: false
   },
   {
     id: "41",
@@ -301,7 +338,8 @@ export const DATA = [
     nameEnglish: "bento box",
     nameKatakana: "ベントウ",
     nameHiragana: "べんとう",
-    nameRomaji: "bentou"
+    nameRomaji: "bentou",
+    isCustom: false
   },
   {
     id: "42",
@@ -309,7 +347,8 @@ export const DATA = [
     nameEnglish: "fish cake with swirl",
     nameKatakana: "ナルト",
     nameHiragana: "なると",
-    nameRomaji: "naruto"
+    nameRomaji: "naruto",
+    isCustom: false
   },
   {
     id: "43",
@@ -317,7 +356,8 @@ export const DATA = [
     nameEnglish: "rice ball",
     nameKatakana: "オニギリ",
     nameHiragana: "おにぎり",
-    nameRomaji: "onigiri"
+    nameRomaji: "onigiri",
+    isCustom: false
   },
   {
     id: "44",
@@ -325,7 +365,8 @@ export const DATA = [
     nameEnglish: "rice cracker",
     nameKatakana: "センベイ",
     nameHiragana: "せんべい",
-    nameRomaji: "senbei"
+    nameRomaji: "senbei",
+    isCustom: false
   },
   {
     id: "45",
@@ -333,7 +374,8 @@ export const DATA = [
     nameEnglish: "cooked rice",
     nameKatakana: "ゴハン",
     nameHiragana: "ごはん",
-    nameRomaji: "gohan"
+    nameRomaji: "gohan",
+    isCustom: false
   },
   {
     id: "46",
@@ -341,7 +383,8 @@ export const DATA = [
     nameEnglish: "curry rice",
     nameKatakana: "カレーライス",
     nameHiragana: "かれーらいす",
-    nameRomaji: "kareeraisu"
+    nameRomaji: "kareeraisu",
+    isCustom: false
   },
   {
     id: "47",
@@ -349,7 +392,8 @@ export const DATA = [
     nameEnglish: "ramen",
     nameKatakana: "ラーメン",
     nameHiragana: "らーめん",
-    nameRomaji: "raamen"
+    nameRomaji: "raamen",
+    isCustom: false
   },
   {
     id: "48",
@@ -357,7 +401,8 @@ export const DATA = [
     nameEnglish: "spaghetti",
     nameKatakana: "パスタ",
     nameHiragana: "ぱすた",
-    nameRomaji: "pasuta"
+    nameRomaji: "pasuta",
+    isCustom: false
   },
   {
     id: "49",
@@ -365,7 +410,8 @@ export const DATA = [
     nameEnglish: "oden",
     nameKatakana: "オデン",
     nameHiragana: "おでん",
-    nameRomaji: "oden"
+    nameRomaji: "oden",
+    isCustom: false
   },
   {
     id: "50",
@@ -373,7 +419,8 @@ export const DATA = [
     nameEnglish: "dango",
     nameKatakana: "ダンゴ",
     nameHiragana: "だんご",
-    nameRomaji: "dango"
+    nameRomaji: "dango",
+    isCustom: false
   },
   {
     id: "51",
@@ -381,7 +428,8 @@ export const DATA = [
     nameEnglish: "dumpling",
     nameKatakana: "ギョーザ",
     nameHiragana: "ぎょーざ",
-    nameRomaji: "gyoza"
+    nameRomaji: "gyoza",
+    isCustom: false
   },
   {
     id: "54",
@@ -389,7 +437,8 @@ export const DATA = [
     nameEnglish: "crab",
     nameKatakana: "カニ",
     nameHiragana: "かに",
-    nameRomaji: "kani"
+    nameRomaji: "kani",
+    isCustom: false
   },
   {
     id: "55",
@@ -397,7 +446,8 @@ export const DATA = [
     nameEnglish: "lobster",
     nameKatakana: "イセエビ",
     nameHiragana: "いせえび",
-    nameRomaji: "iseebi"
+    nameRomaji: "iseebi",
+    isCustom: false
   },
   {
     id: "56",
@@ -405,7 +455,8 @@ export const DATA = [
     nameEnglish: "bread",
     nameKatakana: "パン",
     nameHiragana: "ぱん",
-    nameRomaji: "pan"
+    nameRomaji: "pan",
+    isCustom: false
   },
   {
     id: "57",
@@ -413,7 +464,8 @@ export const DATA = [
     nameEnglish: "butter",
     nameKatakana: "バター",
     nameHiragana: "ばたー",
-    nameRomaji: "bataa"
+    nameRomaji: "bataa",
+    isCustom: false
   },
   {
     id: "58",
@@ -421,7 +473,8 @@ export const DATA = [
     nameEnglish: "milk",
     nameKatakana: "ギュウニュウ",
     nameHiragana: "ぎゅうにゅう",
-    nameRomaji: "gyuunyuu"
+    nameRomaji: "gyuunyuu",
+    isCustom: false
   },
   {
     id: "59",
@@ -429,7 +482,8 @@ export const DATA = [
     nameEnglish: "cheese",
     nameKatakana: "ニュウラク",
     nameHiragana: "にゅうらく",
-    nameRomaji: "nyuuraku"
+    nameRomaji: "nyuuraku",
+    isCustom: false
   },
   {
     id: "60",
@@ -437,7 +491,8 @@ export const DATA = [
     nameEnglish: "beef",
     nameKatakana: "ギュウニク",
     nameHiragana: "ぎゅうにく",
-    nameRomaji: "gyuuniku"
+    nameRomaji: "gyuuniku",
+    isCustom: false
   },
   {
     id: "61",
@@ -445,7 +500,8 @@ export const DATA = [
     nameEnglish: "salmon",
     nameKatakana: "サケ",
     nameHiragana: "さけ",
-    nameRomaji: "sake"
+    nameRomaji: "sake",
+    isCustom: false
   },
   {
     id: "62",
@@ -453,7 +509,8 @@ export const DATA = [
     nameEnglish: "cat food",
     nameKatakana: "ネコノエサ",
     nameHiragana: "ねこのえさ",
-    nameRomaji: "neko no esa"
+    nameRomaji: "neko no esa",
+    isCustom: false
   },
   {
     id: "63",
@@ -461,7 +518,8 @@ export const DATA = [
     nameEnglish: "toilet paper",
     nameKatakana: "トイレットペーパー",
     nameHiragana: "といれっとぺーぱー",
-    nameRomaji: "toirettopeepaa"
+    nameRomaji: "toirettopeepaa",
+    isCustom: false
   },
   {
     id: "64",
@@ -469,7 +527,8 @@ export const DATA = [
     nameEnglish: "soda",
     nameKatakana: "ソーダ",
     nameHiragana: "そーだ",
-    nameRomaji: "sooda"
+    nameRomaji: "sooda",
+    isCustom: false
   },
   {
     id: "65",
@@ -477,7 +536,8 @@ export const DATA = [
     nameEnglish: "beer",
     nameKatakana: "ビール",
     nameHiragana: "びーる",
-    nameRomaji: "biiru"
+    nameRomaji: "biiru",
+    isCustom: false
   },
   {
     id: "66",
@@ -485,7 +545,8 @@ export const DATA = [
     nameEnglish: "mackerel",
     nameKatakana: "サバ",
     nameHiragana: "さば",
-    nameRomaji: "saba"
+    nameRomaji: "saba",
+    isCustom: false
   },
   {
     id: "67",
@@ -493,7 +554,8 @@ export const DATA = [
     nameEnglish: "tuna",
     nameKatakana: "マグロ",
     nameHiragana: "まぐろ",
-    nameRomaji: "maguro"
+    nameRomaji: "maguro",
+    isCustom: false
   },
   {
     id: "68",
@@ -501,7 +563,8 @@ export const DATA = [
     nameEnglish: "cashew nuts",
     nameKatakana: "カシューナッツ",
     nameHiragana: "かしゅーなっつ",
-    nameRomaji: "kashuunattsu"
+    nameRomaji: "kashuunattsu",
+    isCustom: false
   },
   {
     id: "69",
@@ -509,7 +572,8 @@ export const DATA = [
     nameEnglish: "ginger root",
     nameKatakana: "ショウガ",
     nameHiragana: "しょうが",
-    nameRomaji: "shouga"
+    nameRomaji: "shouga",
+    isCustom: false
   },
   {
     id: "70",
@@ -517,7 +581,8 @@ export const DATA = [
     nameEnglish: "cigarettes",
     nameKatakana: "タバコ",
     nameHiragana: "たばこ",
-    nameRomaji: "tabako"
+    nameRomaji: "tabako",
+    isCustom: false
   },
   {
     id: "71",
@@ -525,7 +590,8 @@ export const DATA = [
     nameEnglish: "tea",
     nameKatakana: "オチャ",
     nameHiragana: "おちゃ",
-    nameRomaji: "ocha"
+    nameRomaji: "ocha",
+    isCustom: false
   },
   {
     id: "72",
@@ -533,7 +599,8 @@ export const DATA = [
     nameEnglish: "banana",
     nameKatakana: "バナナ",
     nameHiragana: "ばなな",
-    nameRomaji: "banana"
+    nameRomaji: "banana",
+    isCustom: false
   },
   {
     id: "74",
@@ -541,7 +608,8 @@ export const DATA = [
     nameEnglish: "bell pepper",
     nameKatakana: "ピーマン",
     nameHiragana: "ぴーまん",
-    nameRomaji: "pīman"
+    nameRomaji: "pīman",
+    isCustom: false
   },
   {
     id: "75",
@@ -549,6 +617,7 @@ export const DATA = [
     nameEnglish: "pork",
     nameKatakana: "ブタニク",
     nameHiragana: "ぶたにく",
-    nameRomaji: "butaniku"
+    nameRomaji: "butaniku",
+    isCustom: false
   }
 ]

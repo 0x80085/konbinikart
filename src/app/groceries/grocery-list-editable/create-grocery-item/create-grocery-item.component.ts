@@ -20,7 +20,8 @@ export class CreateGroceryItemComponent {
     nameHiragana: '',
     nameRomaji: '',
     dateLastInteraction: new Date(),
-    isInStorage: true
+    isInStorage: true,
+    isCustom: true
   };
 
   constructor(
@@ -64,7 +65,8 @@ export class CreateGroceryItemComponent {
       nameEnglish: this.groceryItem.nameEnglish.trim(),
       nameHiragana: this.groceryItem.nameHiragana.trim(),
       nameKatakana: this.groceryItem.nameKatakana.trim(),
-      nameRomaji: this.groceryItem.nameRomaji.trim()
+      nameRomaji: this.groceryItem.nameRomaji.trim(),
+      isCustom: true
     };
 
     const isHiraganaValid = isHiragana(newItem.nameHiragana);
@@ -109,7 +111,8 @@ export class CreateGroceryItemComponent {
       nameHiragana: '',
       nameRomaji: '',
       dateLastInteraction: new Date(),
-      isInStorage: true
+      isInStorage: true,
+      isCustom: true
     };
   }
 }

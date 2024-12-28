@@ -23,6 +23,8 @@ export class CustomItemsService {
 
     add(item: GroceryItem): GroceryItem {
         item.id = generateGuid();
+        item.isCustom =  true;
+
         this.storageService.add(this.storageKey, item);
         return item;
     }

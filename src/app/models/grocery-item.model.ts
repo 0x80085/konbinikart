@@ -5,6 +5,7 @@ export interface GroceryItem {
   nameKatakana: string;
   nameHiragana: string;
   nameRomaji: string;
+  isCustom: boolean;
 }
 
 export interface EditableGroceryItem extends GroceryItem {

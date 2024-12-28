@@ -32,7 +32,8 @@ export class GroceryTranslationAssistantComponent {
     dateLastInteraction: new Date(),
     isInStorage: true,
     explanation: "",
-    originalAiTranslation: ""
+    originalAiTranslation: "",
+    isCustom:true
   };
 
   constructor(
@@ -105,7 +106,8 @@ export class GroceryTranslationAssistantComponent {
       nameEnglish: this.groceryItem.nameEnglish.trim(),
       nameHiragana: this.groceryItem.nameHiragana.trim(),
       nameKatakana: this.groceryItem.nameKatakana.trim(),
-      nameRomaji: this.groceryItem.nameRomaji.trim()
+      nameRomaji: this.groceryItem.nameRomaji.trim(),
+      isCustom:true
     };
 
     const isHiraganaValid = isHiragana(newItem.nameHiragana);
@@ -172,7 +174,8 @@ export class GroceryTranslationAssistantComponent {
       dateLastInteraction: new Date(),
       isInStorage: true,
       explanation: "",
-      originalAiTranslation: ''
+      originalAiTranslation: '',
+      isCustom:true
 
     };
   }

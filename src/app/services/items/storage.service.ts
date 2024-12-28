@@ -40,19 +40,22 @@ export class StorageService {
     }
 
     update(storageKey: StorageKey, item: GroceryItem) {
-        if (this.exists(storageKey, item.id.toString())) {
-            const items = this.getAll(storageKey);
-            const itemToUpdateIndex = items.findIndex(it => it.id === item.id);
-            items[itemToUpdateIndex] = {
-                id: item.id,
-                emoji: item.emoji,
-                nameEnglish: item.nameEnglish,
-                nameHiragana: item.nameHiragana,
-                nameKatakana: item.nameKatakana,
-                nameRomaji: item.nameRomaji,
-            }
-            this.save(storageKey, items);
-        }
+
+      // uncommi f u gon use it
+
+      // if (this.exists(storageKey, item.id.toString())) {
+        //     const items = this.getAll(storageKey);
+        //     const itemToUpdateIndex = items.findIndex(it => it.id === item.id);
+        //     items[itemToUpdateIndex] = {
+        //         id: item.id,
+        //         emoji: item.emoji,
+        //         nameEnglish: item.nameEnglish,
+        //         nameHiragana: item.nameHiragana,
+        //         nameKatakana: item.nameKatakana,
+        //         nameRomaji: item.nameRomaji,
+        //     }
+        //     this.save(storageKey, items);
+        // }
     }
 
     exists(storageKey: StorageKey, itemId: string): boolean {

@@ -93,13 +93,14 @@ export class GroceryListEditableComponent implements OnInit {
   }
 
   private refreshList() {
-    this.itemsOnGroceryList = this.groceryListService.getAll().map(it => ({ ...it, isInStorage: true }) as EditableGroceryItem);
-
+    this.itemsOnGroceryList = this.groceryListService.getAll();
     this.defaultItems = this.defaultItemsService.getAll();
     this.customItems = this.customItemsService.getAll();
+
     const idsOfItemsOnGroceryList = this.itemsOnGroceryList.map(it => it.id);
 
     const allAvailableItems = [...this.defaultItems, ...this.customItems]
+
     const allAvailableItemsAndMarkedForGroceryList =
       allAvailableItems.map(availableItem => {
         if (idsOfItemsOnGroceryList.some(id => availableItem.id === id)) {
