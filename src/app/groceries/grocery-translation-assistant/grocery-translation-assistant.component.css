@@ -1,0 +1,27 @@
+/* Container for the loading spinner */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* The actual spinner */
+.loading-spinner {
+    width: 24; /* Size of the spinner */
+    height: 24; /* Size of the spinner */
+    animation: spin 1s linear infinite; /* Apply the spin animation */
+    transform-origin: center center;
+    text-align: center;
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* End at 360 degrees (full rotation) */
+    }
+}
+

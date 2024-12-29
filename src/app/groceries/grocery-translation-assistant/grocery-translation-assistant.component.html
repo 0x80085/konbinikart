@@ -10,7 +10,7 @@
 
   <Button [text]="!isLoading ? 'Translate' : 'Translating...'" (tap)="translate()" class="translate-btn"  [isEnabled]="!isLoading"></Button>
 
-  <Label *ngIf="isLoading === true" textWrap="true" text="Loading..." marginLeft="15"></Label>
+  <Label *ngIf="isLoading === true" text="⌛️" textWrap="true" class="loading-spinner"></Label>
 
   <!-- Emoji -->
   <TextField
