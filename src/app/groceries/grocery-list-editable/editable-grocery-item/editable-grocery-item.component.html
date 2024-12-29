@@ -11,15 +11,17 @@
     <Label class="h3" [text]="item.nameEnglish" textAlignment="center" col="2" row="1"></Label>
 
     <!-- 4th Column: Edit Button -->
-    <Button
-        *ngIf="item.isCustom === true"
-        class="item-btn edit ion"
-        [text]="'ion-pencil-outline' | fonticon"
-        col="3"
-        row="0"
-        rowSpan="1"
-        [nsRouterLink]="['/edit-grocery-item', item.id]"
-    ></Button>
+     <ng-container *ngIf="item.isCustom === true">
+       <Button
+           *ngIf="viewMode !== 'modal'"
+           class="item-btn edit ion"
+           [text]="'ion-pencil-outline' | fonticon"
+           col="3"
+           row="0"
+           rowSpan="1"
+           [nsRouterLink]="['/edit-grocery-item', item.id]"
+       ></Button>
+     </ng-container>
 
     <!-- Buttons below the 3 columns -->
     <StackLayout colSpan="4" row="2" orientation="horizontal" horizontalAlignment="center">

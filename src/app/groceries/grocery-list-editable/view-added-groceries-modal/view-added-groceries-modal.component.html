@@ -13,6 +13,7 @@
     <ng-template let-item="item">
       <ns-editable-grocery-item
         [item]="item"
+        viewMode="modal"
         (delete)="onDelete(item)"
       ></ns-editable-grocery-item>
     </ng-template>

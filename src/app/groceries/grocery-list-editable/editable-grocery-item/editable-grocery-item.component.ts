@@ -11,13 +11,13 @@ export class EditableGroceryItemComponent {
   @Input()
   item: EditableGroceryItem;
 
+  @Input()
+  viewMode: "modal" | undefined;
+
   @Output()
   delete = new EventEmitter<EditableGroceryItem>();
 
   @Output()
   add = new EventEmitter<EditableGroceryItem>();
-
-  @Output()
-  edit = new EventEmitter<EditableGroceryItem>();
 
 }
